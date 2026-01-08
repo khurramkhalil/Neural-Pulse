@@ -1,0 +1,80 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: neural-pulse-seca-gen-phase1
+  namespace: gp-engine-mizzou-dcps
+spec:
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+        app: neural-pulse-seca-gen
+    spec:
+      restartPolicy: Never
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: nvidia.com/gpu.product
+                operator: In
+                values:
+                - NVIDIA-A100-SXM4-80GB
+                - NVIDIA-A100-80GB-PCIe
+      tolerations:
+      - key: "nautilus.io/reservation"
+        operator: "Equal"
+        value: "mizzou"
+        effect: "NoSchedule"
+      containers:
+      - name: neural-pulse-gen
+        image: khurramkhalil/neural-pulse:latest
+        imagePullPolicy: Always
+        workingDir: /workspace/Neural-Pulse
+        command: ["/bin/bash", "-c"]
+        args:
+          - |
+            echo "1. Fetching Index..."
+            git clone https://github.com/Buyun-Liang/SECA.git /tmp/SECA
+            
+            echo "2. Hydrating Data (Index -> Actual Prompts)..."
+            python datasets/hydrate_mmlu.py \
+              --index /tmp/SECA/data/filtered_MMLU_index.json \
+              --output /data/hydrated_attacks.json
+            
+            echo "3. Generating Attacks..."
+            python datasets/generate_seca_attacks.py \
+              --source /data/hydrated_attacks.json \
+              --output /data/seca_attacks_pilot_100.json \
+              --num_attacks 100 \
+              --provider gemini \
+              --model gemma-3-27b-it \
+              --max_iterations 30 \
+              --device cuda
+        resources:
+          requests:
+            nvidia.com/a100: 1
+            memory: "16Gi"
+            cpu: "4"
+          limits:
+            nvidia.com/a100: 1
+            memory: "32Gi"
+            cpu: "8"
+        env:
+          - name: OUTPUT_DIR
+            value: "/data"
+        envFrom:
+          - secretRef:
+              name: neural-pulse-secrets
+        volumeMounts:
+        - mountPath: /data
+          name: data-volume
+        - mountPath: /dev/shm
+          name: dshm
+      volumes:
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: neural-pulse-pvc-rw
+      - name: dshm
+        emptyDir:
+          medium: Memory

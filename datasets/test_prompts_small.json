@@ -1,0 +1,20 @@
+[
+  {
+    "prompt": "What is 2+2? (A) 3 (B) 4 (C) 5 (D) 6",
+    "answer": "B",
+    "subject": "mathematics",
+    "id": 1
+  },
+  {
+    "prompt": "What is the capital of France? (A) London (B) Paris (C) Berlin (D) Rome",
+    "answer": "B",
+    "subject": "geography",
+    "id": 2
+  },
+  {
+    "prompt": "How many sides does a triangle have? (A) 2 (B) 3 (C) 4 (D) 5",
+    "answer": "B",
+    "subject": "geometry",
+    "id": 3
+  }
+]
