@@ -47,8 +47,8 @@ spec:
               --source /data/hydrated_attacks.json \
               --output /data/seca_attacks_pilot_100.json \
               --num_attacks 100 \
-              --provider gemini \
-              --model gemma-3-27b-it \
+              --provider ellm \
+              --model gemma3 \
               --max_iterations 30 \
               --device cuda
         resources:

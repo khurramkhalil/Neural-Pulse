@@ -1,0 +1,51 @@
+{
+  "waffling": {
+    "best_params": {
+      "theta_H": 1.5,
+      "T": 50,
+      "w": 3
+    },
+    "best_f1_score": 0.0,
+    "best_metrics": {
+      "TPR": 0.0,
+      "FPR": 0.2545454545454545,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "accuracy": 0.6833333333333333
+    }
+  },
+  "detachment": {
+    "best_params": {
+      "theta_A": 0.44999999999999996,
+      "T": 50,
+      "w": 3
+    },
+    "best_f1_score": 0.15625,
+    "best_metrics": {
+      "TPR": 1.0,
+      "FPR": 0.9818181818181818,
+      "precision": 0.0847457627118644,
+      "recall": 1.0,
+      "f1_score": 0.15625,
+      "accuracy": 0.1
+    }
+  },
+  "combined": {
+    "best_params": {
+      "theta_H": 1.5,
+      "theta_A": 0.2,
+      "T": 50,
+      "w": 3
+    },
+    "best_f1_score": 0.0,
+    "best_metrics": {
+      "TPR": 0.0,
+      "FPR": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "accuracy": 0.9166666666666666
+    }
+  }
+}

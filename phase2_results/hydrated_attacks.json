@@ -1,0 +1,2084 @@
+[
+  {
+    "prompt": "The key attribute in successful marathon running is:\nA. strength.\nB. power.\nC. stride length.\nD. stamina.\nAnswer:",
+    "answer": "D",
+    "subject": "clinical_knowledge",
+    "id": 1
+  },
+  {
+    "prompt": "Which of the following is the commonest cause of dementia in the UK?\nA. Alzheimer's disease.\nB. Cerebrovascular (stroke) disease.\nC. Lewy body dementia.\nD. HIV infection.\nAnswer:",
+    "answer": "A",
+    "subject": "clinical_knowledge",
+    "id": 2
+  },
+  {
+    "prompt": "Codons are composed of:\nA. triplet sequences of nucleotide bases in mRNA or DNA .\nB. quadruplet sequences of nucleotide bases in mRNA or DNA.\nC. triplet sequences of amino acids in polypeptide chains.\nD. triplet sequences of deoxyribose sugars in DNA.\nAnswer:",
+    "answer": "A",
+    "subject": "clinical_knowledge",
+    "id": 8
+  },
+  {
+    "prompt": "Which of the answers below best indicates the compatible blood types that can be given to a person with a blood group B (rhesus negative)?\nA. Blood type AB (rhesus negative), blood type B, and blood type O (rhesus negative).\nB. Blood type B (rhesus positive) and blood type O (rhesus positive).\nC. Blood type B (rhesus negative) and blood type O (rhesus negative).\nD. Blood type B (rhesus negative) only.\nAnswer:",
+    "answer": "C",
+    "subject": "clinical_knowledge",
+    "id": 10
+  },
+  {
+    "prompt": "The two principal contractile proteins found in skeletal muscle are:\nA. actin and troponin.\nB. actin and myosin.\nC. troponin and tropomyosin.\nD. myosin and tropomyosin.\nAnswer:",
+    "answer": "B",
+    "subject": "clinical_knowledge",
+    "id": 14
+  },
+  {
+    "prompt": "Which one of the following represents a IIIrd cranial nerve palsy and is a neurosurgical emergency?\nA. Unilateral constricted pupil.\nB. Bilateral constricted pupils.\nC. Unilateral fixed dilated pupil.\nD. Oval shaped pupils.\nAnswer:",
+    "answer": "C",
+    "subject": "clinical_knowledge",
+    "id": 15
+  },
+  {
+    "prompt": "Which of the following is true of facial nerve palsy?\nA. Bells palsy is another term for an upper motor neurone lesion\nB. Ramsay Hunt Syndrome is an upper motor neurone lesion secondary to a Herpes Zoster infection\nC. An inability to close the eyelid on the paralysed side indicates a lower motor neurone lesion\nD. In Bell's Palsy the sense of taste is never affected\nAnswer:",
+    "answer": "C",
+    "subject": "clinical_knowledge",
+    "id": 19
+  },
+  {
+    "prompt": "What is a colles fracture?\nA. Hand fracture.\nB. Elbow fracture.\nC. Finger fracture.\nD. Fracture of the radius and ulna at the wrist.\nAnswer:",
+    "answer": "D",
+    "subject": "clinical_knowledge",
+    "id": 20
+  },
+  {
+    "prompt": "If a transfusion reaction is suspected, you should:\nA. turn off the transfusion, inform medical staff immediately, and follow transfusion policy advice on dealing with acute transfusion reactions.\nB. leave the transfusion running and contact the medical staff immediately.\nC. disconnect and dispose of the blood bag immediately.\nD. leave the transfusion running and record a set of observations on the patient.\nAnswer:",
+    "answer": "A",
+    "subject": "clinical_knowledge",
+    "id": 21
+  },
+  {
+    "prompt": "Which of the following statements is true about informal carers (as of 2020)?\nA. 50% of over 65s are providing informal care.\nB. One in six over 65s is providing some form of informal care.\nC. Informal carers should not be included in discharge planning.\nD. The majority of informal carers are fit and active.\nAnswer:",
+    "answer": "B",
+    "subject": "clinical_knowledge",
+    "id": 23
+  },
+  {
+    "prompt": "Kinase reactions:\nA. inhibit ATP breakdown.\nB. involve the addition or removal of a phosphate group.\nC. involve the addition or removal of a ketone group.\nD. involve the addition or removal of an amino acid to a polypeptide chain.\nAnswer:",
+    "answer": "B",
+    "subject": "clinical_knowledge",
+    "id": 34
+  },
+  {
+    "prompt": "Collagen fibres:\nA. are re-established in the first five days of wound healing.\nB. provide a bridge across the surface of a wound.\nC. take some time to re-establish.\nD. are not needed if a wound is healing by primary intention.\nAnswer:",
+    "answer": "C",
+    "subject": "clinical_knowledge",
+    "id": 36
+  },
+  {
+    "prompt": "Embedded in the inner membrane of the mitochondrion are:\nA. the enzymes of the tricarboxylic acid cycle (Krebs' cycle).\nB. the components of the electron transport chain.\nC. glycogen molecules.\nD. triacylglycerol molecules.\nAnswer:",
+    "answer": "B",
+    "subject": "clinical_knowledge",
+    "id": 38
+  },
+  {
+    "prompt": "How much toothpaste is recommended for cleaning teeth?\nA. A smear.\nB. A pea-sized amount.\nC. The length of the toothbrush.\nD. Half an inch.\nAnswer:",
+    "answer": "B",
+    "subject": "clinical_knowledge",
+    "id": 43
+  },
+  {
+    "prompt": "Which of the following is true about Cushing's Syndrome?\nA. It is due to a deficiency of cortisol hormone\nB. Enlarged extremities are commonly seen\nC. Osteoporosis is not a feature\nD. A moon face and a buffalo hump are characteristic of the disease\nAnswer:",
+    "answer": "D",
+    "subject": "clinical_knowledge",
+    "id": 44
+  },
+  {
+    "prompt": "The main factors determining success in sport are:\nA. a high energy diet and large appetite.\nB. high intelligence and motivation to succeed.\nC. a good coach and the motivation to succeed.\nD. innate ability and the capacity to respond to the training stimulus.\nAnswer:",
+    "answer": "D",
+    "subject": "clinical_knowledge",
+    "id": 45
+  },
+  {
+    "prompt": "Performance enhancing synthetic steroids are based on the structure of the hormone:\nA. testosterone.\nB. cortisol.\nC. progesterone.\nD. aldosterone.\nAnswer:",
+    "answer": "A",
+    "subject": "clinical_knowledge",
+    "id": 47
+  },
+  {
+    "prompt": "The activity of creatine kinase is:\nA. increased when intracellular ADP rises.\nB. increased when muscle pH falls below 6.9.\nC. always lower in Type II fibres than Type I fibres.\nD. increased after a period of endurance training.\nAnswer:",
+    "answer": "A",
+    "subject": "clinical_knowledge",
+    "id": 51
+  },
+  {
+    "prompt": "An expected side effect of creatine supplementation is:\nA. muscle weakness.\nB. gain in body mass.\nC. muscle cramps.\nD. loss of electrolytes.\nAnswer:",
+    "answer": "B",
+    "subject": "clinical_knowledge",
+    "id": 56
+  },
+  {
+    "prompt": "To prevent desiccation and injury, the embryos of terrestrial vertebrates are encased within a fluid secreted by the\nA. amnion\nB. chorion\nC. allantois\nD. yolk sac\nAnswer:",
+    "answer": "A",
+    "subject": "college_biology",
+    "id": 2
+  },
+  {
+    "prompt": "Which of the following is a second messenger that stimulates release of calcium ions into the cytoplasm?\nA. Prostaglandins\nB. Inositol triphosphate\nC. Cyclic AMP\nD. Calmodulin\nAnswer:",
+    "answer": "B",
+    "subject": "college_biology",
+    "id": 3
+  },
+  {
+    "prompt": "The Barr body found within female mammalian cells' nuclei is an example of\nA. euchromatin\nB. heterochromatin\nC. a cistron\nD. pseudogenes\nAnswer:",
+    "answer": "B",
+    "subject": "college_biology",
+    "id": 6
+  },
+  {
+    "prompt": "The concept of punctuated equilibrium refers to\nA. oscillating ecological successional stages\nB. ecological succession arrested by sudden environmental changes, e.g., fire\nC. persistent predator-prey relationships in relatively stable environments\nD. bursts of speciation followed by relatively unchanging lineages\nAnswer:",
+    "answer": "D",
+    "subject": "college_biology",
+    "id": 8
+  },
+  {
+    "prompt": "When an influenza virus enters a cell, it immediately starts to do which of the following?\nA. Incorporate viral DNA into the host cell\u2019s chromosome\nB. Destroy the host cell\u2019s transcriptional machinery\nC. Replicate its genetic material and synthesize viral proteins\nD. Use a viral copy of reverse transcriptase to manufacture viral DNA\nAnswer:",
+    "answer": "C",
+    "subject": "college_biology",
+    "id": 9
+  },
+  {
+    "prompt": "Cleavage symmetry arising from early cell divisions that occur at an oblique angle to the polar axis is known as\nA. meroblastic cleavage\nB. radial cleavage\nC. spiral cleavage\nD. superficial cleavage\nAnswer:",
+    "answer": "C",
+    "subject": "college_biology",
+    "id": 10
+  },
+  {
+    "prompt": "In Sweden, the red fox (Vulpes vulpes) severely limits populations of its prey, including hares. However, red fox populations are sometimes attacked by a fatal parasite, the mange mite. As mite population sizes increase at a given site, how are hare and fox populations most likely to respond at the same site? (Assume that hares have no major predators at this site other than foxes.)\nA. Both fox and hare populations will decrease.\nB. Both fox and hare populations will increase.\nC. Fox populations will decrease and hare populations will increase.\nD. Fox populations will increase and hare populations will decrease.\nAnswer:",
+    "answer": "C",
+    "subject": "college_biology",
+    "id": 12
+  },
+  {
+    "prompt": "Which of the following is a benefit that mycorrhizal fungi confer to many plants?\nA. They protect plant roots from desiccation in extremely dry habitats.\nB. They fix nitrogen, which is particularly important for plants in nitrogen-limited habitats.\nC. They provide access to phosphorus, an essential element that is limited in many kinds of soils.\nD. They provide carbon to plants in exchange for fixed nitrogen.\nAnswer:",
+    "answer": "C",
+    "subject": "college_biology",
+    "id": 16
+  },
+  {
+    "prompt": "Which of the following most accurately describes a retrotransposon?\nA. A DNA sequence that can move from one site in the genome to another without replicating\nB. A DNA sequence that can be deleted from the genome without consequence\nC. A DNA sequence that replicates via an RNA intermediate\nD. A DNA sequence that replicates via a protein intermediate\nAnswer:",
+    "answer": "C",
+    "subject": "college_biology",
+    "id": 18
+  },
+  {
+    "prompt": "The soils of which of the following biomes has the highest rate of leaching and cycling of nutrients?\nA. Tropical rain forest\nB. Tundra\nC. Taiga\nD. Desert\nAnswer:",
+    "answer": "A",
+    "subject": "college_biology",
+    "id": 19
+  },
+  {
+    "prompt": "Which of the following best explains why enzymes are effective in facilitating chemical reactions?\nA. They raise the temperature of the reaction mixture, thereby speeding up the conversion of reactants to products.\nB. They alter the equilibrium constant of a reaction (K_eq) so that more reactant can be converted to product.\nC. They increase the maximal rate of the chemical reaction (V_max).\nD. They lower the activation energy, thereby speeding up the conversion of reactants to products.\nAnswer:",
+    "answer": "D",
+    "subject": "college_biology",
+    "id": 20
+  },
+  {
+    "prompt": "In the growth of a population, the point at which natality and mortality rates are equal to one another is referred to as\nA. a population crash\nB. a population explosion\nC. zero population growth\nD. exponential growth\nAnswer:",
+    "answer": "C",
+    "subject": "college_biology",
+    "id": 21
+  },
+  {
+    "prompt": "The cell type comprising the pith tissue centered within a dicot stem is the\nA. parenchyma\nB. sclerenchyma\nC. vascular cambium\nD. vascular bundle\nAnswer:",
+    "answer": "A",
+    "subject": "college_biology",
+    "id": 23
+  },
+  {
+    "prompt": "Mobile regions of DNA capable of inserting themselves into an existing genome are\nA. prions\nB. cistrons\nC. introns\nD. transposons\nAnswer:",
+    "answer": "D",
+    "subject": "college_biology",
+    "id": 24
+  },
+  {
+    "prompt": "The process in which pioneer species colonize a bare substrate such as rock, sand, or glacial till is known as\nA. weathering\nB. stabilizing succession\nC. secondary succession\nD. primary succession\nAnswer:",
+    "answer": "D",
+    "subject": "college_biology",
+    "id": 25
+  },
+  {
+    "prompt": "Cell motility, as viewed in a cultured fibroblast, encompasses all of the following EXCEPT\nA. adhesion plaques\nB. vinculin\nC. clathrin\nD. lamellipodia\nAnswer:",
+    "answer": "C",
+    "subject": "college_biology",
+    "id": 27
+  },
+  {
+    "prompt": "According to Hamilton\u2019s rule, an altruistic trait can evolve if c < br, where c is the fitness cost of the altruistic behavior to the donor, b is the fitness benefit to the recipient, and r is the\nA. coefficient of relatedness\nB. frequency of the altruistic allele\nC. inbreeding coefficient\nD. rate of reciprocity\nAnswer:",
+    "answer": "A",
+    "subject": "college_biology",
+    "id": 28
+  },
+  {
+    "prompt": "All of the following might be found in connective tissue EXCEPT\nA. thrombin\nB. glycosaminoglycans\nC. collagens\nD. fibroblasts\nAnswer:",
+    "answer": "A",
+    "subject": "college_biology",
+    "id": 30
+  },
+  {
+    "prompt": "All of the following characteristics are typical of r-selected species EXCEPT\nA. high reproductive rate\nB. small body size\nC. occupancy of unstable environments\nD. high competitive ability\nAnswer:",
+    "answer": "D",
+    "subject": "college_biology",
+    "id": 33
+  },
+  {
+    "prompt": "Ferns undergo alternation of generations in which a\nA. dominant sporophyte alternates with an independent gametophyte\nB. dominant gametophyte alternates with a dependent sporophyte\nC. sporophyte and a gametophyte have equal life spans\nD. gametophyte produces gametes by meiosis\nAnswer:",
+    "answer": "A",
+    "subject": "college_biology",
+    "id": 35
+  },
+  {
+    "prompt": "The sight organs of crustaceans and insects contain ommatidia, which make up the individual visual units of the\nA. eyespot\nB. simple eye\nC. compound eye\nD. binocular eye\nAnswer:",
+    "answer": "C",
+    "subject": "college_biology",
+    "id": 38
+  },
+  {
+    "prompt": "Which of the following would increase the rate at which a gas diffuses between the alveoli of the lung and the blood within a pulmonary capillary?\nA. Decreasing the partial pressure gradient of the gas\nB. Decreasing the solubility of the gas in water\nC. Increasing the total surface area available for diffusion\nD. Decreasing the rate of blood flow through the pulmonary capillary\nAnswer:",
+    "answer": "C",
+    "subject": "college_biology",
+    "id": 42
+  },
+  {
+    "prompt": "The structures that act as sites of gas exchange in a woody stem are the\nA. lenticels\nB. terminal buds\nC. nodes\nD. internodes\nAnswer:",
+    "answer": "A",
+    "subject": "college_biology",
+    "id": 43
+  },
+  {
+    "prompt": "Chemosynthetic bacteria can produce their own food despite their lack of photonabsorbing pigments because the chemosynthetic bacteria derive energy by\nA. oxidizing inorganic substances such as ammonia, sulfur, or hydrogen\nB. reducing inorganic substances such as ammonia, sulfur, or hydrogen\nC. oxidizing organic compounds\nD. transducing light energy into chemical energy\nAnswer:",
+    "answer": "A",
+    "subject": "college_biology",
+    "id": 50
+  },
+  {
+    "prompt": "All of the following may serve as intracellular messengers EXCEPT\nA. calcium ions\nB. cAMP\nC. acetylcholine\nD. inositol 1,4,5-triphosphate\nAnswer:",
+    "answer": "C",
+    "subject": "college_biology",
+    "id": 51
+  },
+  {
+    "prompt": "Which of the following best describes the structure that collects urine in the body?\nA. Bladder\nB. Kidney\nC. Ureter\nD. Urethra\nAnswer:",
+    "answer": "A",
+    "subject": "anatomy",
+    "id": 2
+  },
+  {
+    "prompt": "Which of the following describes the cluster of blood capillaries found in each nephron in the kidney?\nA. Afferent arteriole\nB. Glomerulus\nC. Loop of Henle\nD. Renal pelvis\nAnswer:",
+    "answer": "B",
+    "subject": "anatomy",
+    "id": 4
+  },
+  {
+    "prompt": "Male hormones are produced by which of the following?\nA. Glans penis\nB. Prepuce\nC. Prostate\nD. Testes\nAnswer:",
+    "answer": "D",
+    "subject": "anatomy",
+    "id": 17
+  },
+  {
+    "prompt": "Which of the following allows air to pass into the lungs?\nA. Aorta\nB. Esophagus\nC. Trachea\nD. Pancreas\nAnswer:",
+    "answer": "C",
+    "subject": "anatomy",
+    "id": 19
+  },
+  {
+    "prompt": "Where is the sinoatrial node located?\nA. Between the left atrium and the left ventricle\nB. Between the right atrium and the right ventricle\nC. In the upper wall of the right atrium\nD. In the upper wall of the left ventricle\nAnswer:",
+    "answer": "C",
+    "subject": "anatomy",
+    "id": 20
+  },
+  {
+    "prompt": "Which of the following conditions is characterized by the presence of kidney stones (renal calculi)?\nA. Glomerulonephritis\nB. Interstitial nephritis\nC. Nephrolithiasis\nD. Polycystic kidney\nAnswer:",
+    "answer": "C",
+    "subject": "anatomy",
+    "id": 26
+  },
+  {
+    "prompt": "A patient sustains severe blunt trauma to the left upper abdomen and requires surgery. Which one of the following organs is most likely to be involved?\nA. Appendix\nB. Gallbladder\nC. Spleen\nD. Urinary bladder\nAnswer:",
+    "answer": "C",
+    "subject": "anatomy",
+    "id": 28
+  },
+  {
+    "prompt": "Which of the following terms describes the motion of bending the forearm toward the body?\nA. Abduction\nB. Eversion\nC. Flexion\nD. Pronation\nAnswer:",
+    "answer": "C",
+    "subject": "anatomy",
+    "id": 30
+  },
+  {
+    "prompt": "At which of the following locations does bile enter the digestive tract?\nA. Gastroesophageal sphincter\nB. Duodenum\nC. Ileocecum\nD. Jejunum\nAnswer:",
+    "answer": "B",
+    "subject": "anatomy",
+    "id": 32
+  },
+  {
+    "prompt": "Which of the following is the lymphoid organ that is a reservoir for red blood cells and filters organisms from the blood?\nA. Appendix\nB. Gallbladder\nC. Pancreas\nD. Spleen\nAnswer:",
+    "answer": "D",
+    "subject": "anatomy",
+    "id": 36
+  },
+  {
+    "prompt": "Which of the following cavities are separated by the diaphragm?\nA. Abdominal and pelvic\nB. Cranial and spinal\nC. Thoracic and abdominal\nD. Pericardial and pleural\nAnswer:",
+    "answer": "C",
+    "subject": "anatomy",
+    "id": 37
+  },
+  {
+    "prompt": "Which of the following organs removes bilirubin from the blood, manufactures plasma proteins, and is involved with the production of prothrombin and fibrinogen?\nA. Gallbladder\nB. Kidney\nC. Liver\nD. Spleen\nAnswer:",
+    "answer": "C",
+    "subject": "anatomy",
+    "id": 39
+  },
+  {
+    "prompt": "Which of the following conditions is characterized by incompetence of the esophageal sphincter?\nA. Crohn's disease\nB. Esophageal varices\nC. Gastroesophageal reflux disease\nD. Pyloric stenosis\nAnswer:",
+    "answer": "C",
+    "subject": "anatomy",
+    "id": 40
+  },
+  {
+    "prompt": "Which of the following is the large bone found superior to the patella and inferior to the ischium?\nA. Calcaneus\nB. Femur\nC. Symphysis pubis\nD. Tibia\nAnswer:",
+    "answer": "B",
+    "subject": "anatomy",
+    "id": 42
+  },
+  {
+    "prompt": "The physician directs the medical assistant to complete a request form for an X-ray study of the fibula. The procedure will be performed on which of the following structures?\nA. Heel\nB. Lower leg\nC. Toes\nD. Thigh\nAnswer:",
+    "answer": "B",
+    "subject": "anatomy",
+    "id": 46
+  },
+  {
+    "prompt": "Which cells in the blood do not have a nucleus?\nA. Lymphocyte\nB. Monocyte\nC. Erythrocyte\nD. Basophil\nAnswer:",
+    "answer": "C",
+    "subject": "anatomy",
+    "id": 47
+  },
+  {
+    "prompt": "The coronal suture joins the\nA. frontal and parietal bones.\nB. left and right parietal bones.\nC. parietal and occipital bones.\nD. parietal, squamous temporal and greater wing of the sphenoid.\nAnswer:",
+    "answer": "A",
+    "subject": "anatomy",
+    "id": 48
+  },
+  {
+    "prompt": "Which of the following structures accompany the oesophagus through the diaphragm?\nA. The phrenic nerves\nB. The splanchnic nerves\nC. The sympathetic trunks\nD. The vagus nerves\nAnswer:",
+    "answer": "D",
+    "subject": "anatomy",
+    "id": 51
+  },
+  {
+    "prompt": "The anatomic location of the spinal canal is\nA. caudal\nB. dorsal\nC. frontal\nD. transverse\nAnswer:",
+    "answer": "B",
+    "subject": "anatomy",
+    "id": 53
+  },
+  {
+    "prompt": "The infraorbital nerve\nA. is a terminal branch of the maxillary division of the trigeminal nerve.\nB. is a terminal branch of the maxillary branch of the facial nerve.\nC. carries parasympathetic secretomotor neurons to the lacrimal gland.\nD. innervates the inferior part of the orbicularis oculi muscle.\nAnswer:",
+    "answer": "A",
+    "subject": "anatomy",
+    "id": 56
+  },
+  {
+    "prompt": "Which of the following best describes the process whereby the stomach muscles contract to propel food through the digestive tract?\nA. Absorption\nB. Emulsion\nC. Peristalsis\nD. Regurgitation\nAnswer:",
+    "answer": "C",
+    "subject": "anatomy",
+    "id": 57
+  },
+  {
+    "prompt": "Which of the following is the point at which an impulse is transmitted from one neuron to another neuron?\nA. Dendrite\nB. Glial cell\nC. Nerve center\nD. Synapse\nAnswer:",
+    "answer": "D",
+    "subject": "anatomy",
+    "id": 58
+  },
+  {
+    "prompt": "Which of the following is an accessory organ of the gastrointestinal system that is responsible for secreting insulin?\nA. Adrenal gland\nB. Gallbladder\nC. Liver\nD. Pancreas\nAnswer:",
+    "answer": "D",
+    "subject": "anatomy",
+    "id": 60
+  },
+  {
+    "prompt": "Blood flows from the right ventricle of the heart into which of the following structures?\nA. Inferior vena cava\nB. Left ventricle\nC. Pulmonary arteries\nD. Pulmonary veins\nAnswer:",
+    "answer": "C",
+    "subject": "anatomy",
+    "id": 63
+  },
+  {
+    "prompt": "Let G denoted the set of all n x n non-singular matrices with rational numbers as entries. Then under multiplication G is a/an\nA. subgroup\nB. finite abelian group\nC. infinite, non abelian group\nD. ininite, abelian\nAnswer:",
+    "answer": "C",
+    "subject": "abstract_algebra",
+    "id": 25
+  },
+  {
+    "prompt": "If (G, .) is a group such that (ab)^-1 = a^-1b^-1, for all a, b in G, then G is a/an\nA. commutative semi group\nB. abelian group\nC. non-abelian group\nD. None of these\nAnswer:",
+    "answer": "B",
+    "subject": "abstract_algebra",
+    "id": 31
+  },
+  {
+    "prompt": "Find the degree for the given field extension Q(sqrt(2)) over Q.\nA. 0\nB. 2\nC. 1\nD. 3\nAnswer:",
+    "answer": "B",
+    "subject": "abstract_algebra",
+    "id": 54
+  },
+  {
+    "prompt": "The polynomial x^4 + 4 can be factored into linear factors in Z_5[x]. Find this factorization.\nA. (x \u2212 2)(x + 2)(x \u2212 1)(x + 1)\nB. (x+1)^4\nC. (x-1)(x+1)^3\nD. (x-1)^3(x+1)\nAnswer:",
+    "answer": "A",
+    "subject": "abstract_algebra",
+    "id": 68
+  },
+  {
+    "prompt": "For T: Z x Z -> Z where T(1, 0) = 3 and T(0, 1) = -5, find T(-3,2).\nA. -19\nB. -10\nC. 19\nD. 10\nAnswer:",
+    "answer": "A",
+    "subject": "abstract_algebra",
+    "id": 87
+  },
+  {
+    "prompt": "Find all cosets of the subgroup 4Z of 2Z.\nA. 4Z\nB. 4Z, 2 + 4Z\nC. 2Z\nD. Z\nAnswer:",
+    "answer": "B",
+    "subject": "abstract_algebra",
+    "id": 91
+  },
+  {
+    "prompt": "Which of the following is not always true for x, y, z \u2208 R^k?\nA. |x| \u2265 0\nB. |x \u00b7 y| \u2264 |x||y|\nC. |x| = 0 if and only if x = 0\nD. |x + y| = |x| + |y|\nAnswer:",
+    "answer": "D",
+    "subject": "college_mathematics",
+    "id": 55
+  },
+  {
+    "prompt": "A university\u2019s mathematics department has 10 professors and will offer 20 different courses next semester. Each professor will be assigned to teach exactly 2 of the courses, and each course will have exactly one professor assigned to teach it. If any professor can be assigned to teach any course, how many different complete assignments of the 10 professors to the 20 courses are possible?\nA. 20!/2^(10)\nB. 10!/2^9\nC. 10^(20) - 2^(10)\nD. 10^(20) - 100\nAnswer:",
+    "answer": "A",
+    "subject": "college_mathematics",
+    "id": 61
+  },
+  {
+    "prompt": "Use indirect truth tables to determine whether the following argument is valid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)\nE \u2283 (F \u2228 ~G)\nF \u2283 (~E \u2228 ~G) / ~(E \u2261 F)\nA. Valid\nB. Invalid. Counterexample when E, F, and G are true\nC. Invalid. Counterexample when E and F are true and G is false\nD. Invalid. Counterexample when E, F, and G are false\nAnswer:",
+    "answer": "C",
+    "subject": "formal_logic",
+    "id": 13
+  },
+  {
+    "prompt": " Select the best English interpretation of the given proposition, using the following translation key: Ax: x is an apartment Hx: x is a house Lx: x is large Bxy: x is bigger than y (\u2200x){Ax \u2283 (\u2200y)[(Hy \u2022 Ly) \u2283 \u223cBxy]}\nA. All apartments are not bigger than some large house.\nB. No apartment is bigger than any large house.\nC. All large houses are not bigger than some apartment.\nD. No large house is bigger than all apartments.\nAnswer:",
+    "answer": "B",
+    "subject": "formal_logic",
+    "id": 22
+  },
+  {
+    "prompt": " Which of the given formulas of PL is the best symbolization of the following sentence?\nIf Beth rides her bike, she gets to work earlier.\nA. B \u2283 W\nB. W \u2283 B\nC. B \u2261 W\nD. Both A and B\nAnswer:",
+    "answer": "A",
+    "subject": "formal_logic",
+    "id": 27
+  },
+  {
+    "prompt": "Identify the antecedent of the following conditional proposition: If the Bees don't win their first game, then both the Aardvarks and the Chipmunks win their first games.\nA. The Aardvarks win their first game.\nB. The Bees don't win their first game.\nC. The Chipmunks win their first game.\nD. Both the Aardvarks and the Chipmunks win their first games.\nAnswer:",
+    "answer": "B",
+    "subject": "formal_logic",
+    "id": 33
+  },
+  {
+    "prompt": "Identify the antecedent of the following conditional proposition: The university raises tuition if both the governor approves of it and the board of trustees recommends it.\nA. The university raises tuition.\nB. The governor approves of it.\nC. The board of trustees recommends it.\nD. The governor approves of it and the board of trustees recommends it.\nAnswer:",
+    "answer": "D",
+    "subject": "formal_logic",
+    "id": 37
+  },
+  {
+    "prompt": "Identify the conclusion of the following argument. That the world is my idea is a truth valid for every living creature, though only man can contemplate it. In doing so, he attains philosophical wisdom. No truth is more absolutely certain than that all that exists for knowledge and therefore this world is only object in relation to subject, perception of a perceiver. The world is an idea. (Arthur Schopenhauer, The World as Will and Idea)\nA. The world is an idea.\nB. That the world is my idea is a truth valid for every living creature, though only man can contemplate it.\nC. In doing so, he attains philosophical wisdom.\nD. No truth is more absolutely certain than that all that exists for knowledge and therefore this world is only object in relation to subject, perception of a perceiver.\nAnswer:",
+    "answer": "A",
+    "subject": "formal_logic",
+    "id": 40
+  },
+  {
+    "prompt": "Select the best translation into predicate logic: Cecilia breaks my heart if, and only if, Maria is either a problem or a girl.\nA. Bc \u2261 (Pm \u2228 Gm)\nB. Bc \u2261 (Pm \u2022 Gm)\nC. Bc \u2283 (Pm \u2228 Gm)\nD. Cb \u2283 (Pm \u2022 Gm)\nAnswer:",
+    "answer": "A",
+    "subject": "formal_logic",
+    "id": 45
+  },
+  {
+    "prompt": "Select the best translation into predicate logic: If Delilah is in New York City, then Juana is in Bogota or Layla is in San Juan.\nA. Nd \u2283 (Bj \u2022 Sl)\nB. Dn \u2261 (Bx \u2022 Ly)\nC. Nd \u2261 (Bj \u2022 Sl)\nD. Nd \u2283 (Bj \u2228 Sl)\nAnswer:",
+    "answer": "D",
+    "subject": "formal_logic",
+    "id": 46
+  },
+  {
+    "prompt": "Identify the conclusion of the following argument. All of psychology has gotten stuck in moral prejudices and fears. No one has come close to understanding it as the development of the will to power. However, if a person even begins to regard the effects of hatred, envy, covetousness, and the lust to rule as conditions of life and furthermore, as factors essential to the general economy of life, he will begin to get seasick. At this point, he begins to lose himself, and sail over morality. Thus, psychology becomes again the path to fundamental problems. (Friedrich Nietzsche, Beyond Good and Evil)\nA. All of psychology has gotten stuck in moral prejudices and fears.\nB. No one has come close to understanding it as the development of the will to power.\nC. If a person even begins to regard the effects of hatred, envy, covetousness, and the lust to rule as conditions of life and furthermore, as factors essential to the general economy of life, he will begin to get seasick.\nD. Psychology becomes again the path to fundamental problems.\nAnswer:",
+    "answer": "D",
+    "subject": "formal_logic",
+    "id": 70
+  },
+  {
+    "prompt": "Suppose sharing of tiles in a multilevel directory structure is achieved with directory entries that are links pointing to a node containing information about a shared file. Information in this node includes (1) the owner of the file, (2) a count of the number of links to the tile, and (3) the disk block numbers of the file. What is a primary drawback to this approach to sharing?\nA. If the owner modifies the file, another user who does not share will see the changes.\nB. If the owner renames the file, other users will not be able to access it.\nC. If the owner is allowed to delete a file, dangling links may result.\nD. If any user who shares the file appends to it, others who share it will not be able to access the new disk blocks.\nAnswer:",
+    "answer": "C",
+    "subject": "college_computer_science",
+    "id": 9
+  },
+  {
+    "prompt": "TCP protocol is responsible (among other things) for\nA. Routing packets through the network\nB. Reliable delivery of packets between directly connected machines\nC. Reliable delivery of large (multi-packet) messages between machines that are not necessarily directly connected\nD. Dealing with differences among operating system architectures\nAnswer:",
+    "answer": "C",
+    "subject": "college_computer_science",
+    "id": 13
+  },
+  {
+    "prompt": "Which of the following comes closest to being a perfectly secure encryption scheme?\nA. The Caesar Cipher, a substitution cipher\nB. DES (Data Encryption Standard), a symmetric-key algorithm\nC. Enigma, a transposition cipher\nD. One-time pad\nAnswer:",
+    "answer": "D",
+    "subject": "college_computer_science",
+    "id": 20
+  },
+  {
+    "prompt": "Which of the following is the name of the data structure in a compiler that is responsible for managing information about variables and their attributes?\nA. Abstract Syntax Tree (AST)\nB. Attribute Grammar\nC. Symbol Table\nD. Semantic Stack\nAnswer:",
+    "answer": "C",
+    "subject": "college_computer_science",
+    "id": 26
+  },
+  {
+    "prompt": "Which of the following algorithms has running time \u0398(n^2) in the worst case but \u0398(n log n) on average?\nA. Bubblesort\nB. Mergesort\nC. Heapsort\nD. Quicksort\nAnswer:",
+    "answer": "D",
+    "subject": "college_computer_science",
+    "id": 27
+  },
+  {
+    "prompt": "Which of the following is true of interrupts?\nA. They are generated when memory cycles are \"stolen\".\nB. They are used in place of data channels.\nC. They can indicate completion of an I/O operation.\nD. They cannot be generated by arithmetic operations.\nAnswer:",
+    "answer": "C",
+    "subject": "college_computer_science",
+    "id": 30
+  },
+  {
+    "prompt": "In a height-balanced binary search tree, the heights of the left and right descendents of any node differ by at most 1. Which of the following are true of such a tree?\nI. Worst-case search time is logarithmic in the number of nodes.\nII. Average-case search time is logarithmic in the number of nodes.\nIII. Best-case search time is proportional to the height of the tree.\nIV. The height of the tree is logarithmic in the number of nodes.\nA. I and III only\nB. II and III only\nC. II and IV only\nD. I, II, and IV\nAnswer:",
+    "answer": "D",
+    "subject": "college_computer_science",
+    "id": 31
+  },
+  {
+    "prompt": "Of the following sorting algorithms, which has a running time that is LEAST dependent on the initial ordering of the input?\nA. Insertion sort\nB. Quicksort\nC. Merge sort\nD. Selection sort\nAnswer:",
+    "answer": "C",
+    "subject": "college_computer_science",
+    "id": 36
+  },
+  {
+    "prompt": "Which of the following decimal numbers has an exact representation in binary notation?\nA. 0.1\nB. 0.2\nC. 0.3\nD. 0.5\nAnswer:",
+    "answer": "D",
+    "subject": "college_computer_science",
+    "id": 46
+  },
+  {
+    "prompt": "If a malicious process is granted temporary administrator-level access to a system\nA. the threat is over as soon as the process is killed\nB. the threat is over after the operating system is rebooted\nC. the thread is over after rebooting the machine and replacing files that show a virus infection\nD. the threat is often permanent until the entire disk is wiped clean\nAnswer:",
+    "answer": "D",
+    "subject": "college_computer_science",
+    "id": 50
+  },
+  {
+    "prompt": "Which of the following sorting algorithms has average-case and worst-case running times of O(n log n)?\nA. Bubble sort\nB. Insertion sort\nC. Merge sort\nD. Quicksort\nAnswer:",
+    "answer": "C",
+    "subject": "college_computer_science",
+    "id": 53
+  },
+  {
+    "prompt": "Which of the following language features requires that stack-based storage allocation be used rather than static allocation?\nA. Recursive procedures\nB. Arbitrary goto's\nC. Two-dimensional arrays\nD. Integer-valued functions\nAnswer:",
+    "answer": "A",
+    "subject": "college_computer_science",
+    "id": 63
+  },
+  {
+    "prompt": "As of 2020, which architecture is best for classifying high-resolution images?\nA. convolutional networks\nB. graph networks\nC. fully connected networks\nD. RBF networks\nAnswer:",
+    "answer": "A",
+    "subject": "machine_learning",
+    "id": 4
+  },
+  {
+    "prompt": "As the number of training examples goes to infinity, your model trained on that data will have:\nA. Lower variance\nB. Higher variance\nC. Same variance\nD. None of the above\nAnswer:",
+    "answer": "A",
+    "subject": "machine_learning",
+    "id": 9
+  },
+  {
+    "prompt": "High entropy means that the partitions in classification are\nA. pure\nB. not pure\nC. useful\nD. useless\nAnswer:",
+    "answer": "B",
+    "subject": "machine_learning",
+    "id": 14
+  },
+  {
+    "prompt": "For a neural network, which one of these structural assumptions is the one that most affects the trade-off between underfitting (i.e. a high bias model) and overfitting (i.e. a high variance model):\nA. The number of hidden nodes\nB. The learning rate\nC. The initial choice of weights\nD. The use of a constant-term unit input\nAnswer:",
+    "answer": "A",
+    "subject": "machine_learning",
+    "id": 17
+  },
+  {
+    "prompt": "For polynomial regression, which one of these structural assumptions is the one that most affects the trade-off between underfitting and overfitting:\nA. The polynomial degree\nB. Whether we learn the weights by matrix inversion or gradient descent\nC. The assumed variance of the Gaussian noise\nD. The use of a constant-term unit input\nAnswer:",
+    "answer": "A",
+    "subject": "machine_learning",
+    "id": 18
+  },
+  {
+    "prompt": "The K-means algorithm:\nA. Requires the dimension of the feature space to be no bigger than the number of samples\nB. Has the smallest value of the objective function when K = 1\nC. Minimizes the within class variance for a given number of clusters\nD. Converges to the global optimum if and only if the initial means are chosen as some of the samples themselves\nAnswer:",
+    "answer": "C",
+    "subject": "machine_learning",
+    "id": 20
+  },
+  {
+    "prompt": "Suppose we would like to perform clustering on spatial data such as the geometrical locations of houses. We wish to produce clusters of many different sizes and shapes. Which of the following methods is the most appropriate?\nA. Decision Trees\nB. Density-based clustering\nC. Model-based clustering\nD. K-means clustering\nAnswer:",
+    "answer": "B",
+    "subject": "machine_learning",
+    "id": 24
+  },
+  {
+    "prompt": "Neural networks:\nA. Optimize a convex objective function\nB. Can only be trained with stochastic gradient descent\nC. Can use a mix of different activation functions\nD. None of the above\nAnswer:",
+    "answer": "C",
+    "subject": "machine_learning",
+    "id": 30
+  },
+  {
+    "prompt": "Predicting the amount of rainfall in a region based on various cues is a ______ problem.\nA. Supervised learning\nB. Unsupervised learning\nC. Clustering\nD. None of the above\nAnswer:",
+    "answer": "A",
+    "subject": "machine_learning",
+    "id": 34
+  },
+  {
+    "prompt": "Which one of the following is the main reason for pruning a Decision Tree?\nA. To save computing time during testing\nB. To save space for storing the Decision Tree\nC. To make the training set error smaller\nD. To avoid overfitting the training set\nAnswer:",
+    "answer": "D",
+    "subject": "machine_learning",
+    "id": 36
+  },
+  {
+    "prompt": "Which of the following is/are true regarding an SVM?\nA. For two dimensional data points, the separating hyperplane learnt by a linear SVM will be a straight line.\nB. In theory, a Gaussian kernel SVM cannot model any complex separating hyperplane.\nC. For every kernel function used in a SVM, one can obtain an equivalent closed form basis expansion.\nD. Overfitting in an SVM is not a function of number of support vectors.\nAnswer:",
+    "answer": "A",
+    "subject": "machine_learning",
+    "id": 40
+  },
+  {
+    "prompt": "The numerical output of a sigmoid node in a neural network:\nA. Is unbounded, encompassing all real numbers.\nB. Is unbounded, encompassing all integers.\nC. Is bounded between 0 and 1.\nD. Is bounded between -1 and 1.\nAnswer:",
+    "answer": "C",
+    "subject": "machine_learning",
+    "id": 53
+  },
+  {
+    "prompt": "Existential risks posed by AI are most commonly associated with which of the following professors?\nA. Nando de Frietas\nB. Yann LeCun\nC. Stuart Russell\nD. Jitendra Malik\nAnswer:",
+    "answer": "C",
+    "subject": "machine_learning",
+    "id": 74
+  },
+  {
+    "prompt": "For Kernel Regression, which one of these structural assumptions is the one that most affects the trade-off between underfitting and overfitting:\nA. Whether kernel function is Gaussian versus triangular versus box-shaped\nB. Whether we use Euclidian versus L1 versus L\u221e metrics\nC. The kernel width\nD. The maximum height of the kernel function\nAnswer:",
+    "answer": "C",
+    "subject": "machine_learning",
+    "id": 76
+  },
+  {
+    "prompt": "Given a large dataset of medical records from patients suffering from heart disease, try to learn whether there might be different clusters of such patients for which we might tailor separate treatments. What kind of learning problem is this?\nA. Supervised learning\nB. Unsupervised learning\nC. Both (a) and (b)\nD. Neither (a) nor (b)\nAnswer:",
+    "answer": "B",
+    "subject": "machine_learning",
+    "id": 82
+  },
+  {
+    "prompt": "Which of the following best describes what discriminative approaches try to model? (w are the parameters in the model)\nA. p(y|x, w)\nB. p(y, x)\nC. p(w|x, w)\nD. None of the above\nAnswer:",
+    "answer": "A",
+    "subject": "machine_learning",
+    "id": 86
+  },
+  {
+    "prompt": "Which of the following is NOT supervised learning?\nA. PCA\nB. Decision Tree\nC. Linear Regression\nD. Naive Bayesian\nAnswer:",
+    "answer": "A",
+    "subject": "machine_learning",
+    "id": 95
+  },
+  {
+    "prompt": "In Message Condentiality, the transmitted message must make sense to only intended\nA. Receiver\nB. Sender\nC. Modulor\nD. Translator\nAnswer:",
+    "answer": "A",
+    "subject": "computer_security",
+    "id": 3
+  },
+  {
+    "prompt": "______________ is a widespread app\u2019s coding mistake made by developers which could be exploited by an attacker for gaining access or malfunctioning your system.\nA. Memory leakage\nB. Buffer-overrun\nC. Less processing power\nD. Inefficient programming\nAnswer:",
+    "answer": "B",
+    "subject": "computer_security",
+    "id": 5
+  },
+  {
+    "prompt": "____________ is also a part of darknet that is employed for transferring files anonymously.\nA. Freenet\nB. ARPANET\nC. Stuxnet\nD. Internet\nAnswer:",
+    "answer": "A",
+    "subject": "computer_security",
+    "id": 7
+  },
+  {
+    "prompt": "Why apps developed in languages like C, C++ is prone to Buffer-overflow?\nA. No string boundary checks in predefined functions\nB. No storage check in the external memory\nC. No processing power check\nD. No database check\nAnswer:",
+    "answer": "A",
+    "subject": "computer_security",
+    "id": 8
+  },
+  {
+    "prompt": "Suppose that Alice and Bob sent confidential text messages to one another last month through an encrypted messaging system. Alice and Bob are worried that an adversary might compromise one of their computers today, while they are taking the 6.858 final exam, and would then be able to decrypt those messages. Which of the following security properties can address Alice and Bob\u2019s concern?\nA. Authentication.\nB. Deniability.\nC. Forward secrecy\nD. Backward secrecy.\nAnswer:",
+    "answer": "C",
+    "subject": "computer_security",
+    "id": 12
+  },
+  {
+    "prompt": "Which of the following is not a security exploit?\nA. Eavesdropping\nB. Cross-site scripting\nC. Authentication\nD. SQL Injection\nAnswer:",
+    "answer": "C",
+    "subject": "computer_security",
+    "id": 14
+  },
+  {
+    "prompt": "_______________ is the central node of 802.11 wireless operations.\nA. WPA\nB. Access Point\nC. WAP\nD. Access Port\nAnswer:",
+    "answer": "B",
+    "subject": "computer_security",
+    "id": 15
+  },
+  {
+    "prompt": "What is Nmap?\nA. It is a scanner which works by injecting packets to a range of addresses, and inferring what hosts and services might be at those addresses, based on the responses\nB. It is a network fuzz testing tool\nC. It is a map of the Internet\nD. It is a suite of tools for scripting attacks: probe, construct, encode, inject, wait for response\nAnswer:",
+    "answer": "A",
+    "subject": "computer_security",
+    "id": 17
+  },
+  {
+    "prompt": "What does it mean to \"be stealthy\" during a penetration test?\nA. Performing the tests from an undisclosed location\nB. Using encryption during tests to make the source of attacks impossible to determine\nC. Performing penetration testing without the target organization knowing\nD. Taking care to avoid activities during a penetration test that might attract attention, e.g., by operators or IDS services\nAnswer:",
+    "answer": "D",
+    "subject": "computer_security",
+    "id": 19
+  },
+  {
+    "prompt": "Public key encryption is advantageous over Symmetric key Cryptography because of\nA. Speed\nB. Space\nC. Key exchange\nD. Key length\nAnswer:",
+    "answer": "C",
+    "subject": "computer_security",
+    "id": 23
+  },
+  {
+    "prompt": "The __________ was a huge marketplace of Dark Web specifically famous for selling of illegal drugs & narcotics as well as you can find a wide range of other goods for sale.\nA. Silk Road\nB. Cotton Road\nC. Dark Road\nD. Drug Road\nAnswer:",
+    "answer": "A",
+    "subject": "computer_security",
+    "id": 24
+  },
+  {
+    "prompt": "The ______________ is categorized as an unknown segment of the Deep Web which has been purposely kept hidden & is inaccessible using standard web browsers.\nA. Haunted web\nB. World Wide Web\nC. Dark web\nD. Surface web\nAnswer:",
+    "answer": "C",
+    "subject": "computer_security",
+    "id": 25
+  },
+  {
+    "prompt": "To verify a digital signature we need the\nA. Sender\u2019s Private key\nB. Sender\u2019s Public key\nC. Receiver\u2019s Private key\nD. Receiver\u2019s Public key\nAnswer:",
+    "answer": "B",
+    "subject": "computer_security",
+    "id": 27
+  },
+  {
+    "prompt": "Suppose you want to use fuzzing on a program to try to find memory errors; which of the following statements is true?\nA. You should not use a grammar-based fuzzer, because its adherence to the grammar means it will not find memory errors\nB. Compiling the program with address sanitizer (ASAN) will make errors harder to reproduce\nC. Compiling the program with address sanitizer (ASAN) will make the source of a memory error easier to find\nD. Fuzzing doesn't find memory errors, it finds crashes and hangs\nAnswer:",
+    "answer": "C",
+    "subject": "computer_security",
+    "id": 28
+  },
+  {
+    "prompt": "Based on the paper \u201cSoK: SSL and HTTPS: Revisiting past challenges and evaluating certificates trust model enhancements\u201d, which of the following statements are false?\nA. Valid DV certificates provide more confidence to a user that she is connecting to the intended party than valid EV certificates.\nB. OCSP stapling allows a server to prove to a browser that its certificate hasn\u2019t been revoked.\nC. DANE makes it difficult for an adversary to launch a SSL stripping attack.\nD. Server key-pinning makes it harder for an adversary to convince a CA to mint a certificate for a site and launch an MITM attack on that site.\nAnswer:",
+    "answer": "A",
+    "subject": "computer_security",
+    "id": 29
+  },
+  {
+    "prompt": "What tool can be used to perform SNMP enumeration?\nA. DNSlookup\nB. Whois\nC. Nslookup\nD. IP Network Browser\nAnswer:",
+    "answer": "D",
+    "subject": "computer_security",
+    "id": 30
+  },
+  {
+    "prompt": "Failed sessions allow brute-force attacks on access credentials. This type of attacks are done in which layer of the OSI model?\nA. Physical layer\nB. Data-link Layer\nC. Session layer\nD. Presentation layer\nAnswer:",
+    "answer": "C",
+    "subject": "computer_security",
+    "id": 33
+  },
+  {
+    "prompt": "Which of the following is an authentication method?\nA. Secret question\nB. Biometric\nC. SMS code\nD. All of the above\nAnswer:",
+    "answer": "D",
+    "subject": "computer_security",
+    "id": 34
+  },
+  {
+    "prompt": "A digital signature needs a\nA. Private-key system\nB. Shared-key system\nC. Public-key system\nD. All of them\nAnswer:",
+    "answer": "C",
+    "subject": "computer_security",
+    "id": 36
+  },
+  {
+    "prompt": "Which of the following deals with network intrusion detection and real-time traffic analysis?\nA. John the Ripper\nB. L0phtCrack\nC. Snort\nD. Nessus\nAnswer:",
+    "answer": "C",
+    "subject": "computer_security",
+    "id": 39
+  },
+  {
+    "prompt": "The Message condentiality or privacy means that the sender and the receiver expect\nA. Integrity\nB. Condentiality\nC. Authentication\nD. Nonrepudiation\nAnswer:",
+    "answer": "B",
+    "subject": "computer_security",
+    "id": 40
+  },
+  {
+    "prompt": "When a wireless user authenticates to any AP, both of them go in the course of four-step authentication progression which is called _____________\nA. AP-handshaking\nB. 4-way handshake\nC. 4-way connection\nD. wireless handshaking\nAnswer:",
+    "answer": "B",
+    "subject": "computer_security",
+    "id": 41
+  },
+  {
+    "prompt": "Which of the following are most vulnerable to injection attacks?\nA. Session IDs\nB. Registry keys\nC. Network communications\nD. SQL queries based on user input\nAnswer:",
+    "answer": "D",
+    "subject": "computer_security",
+    "id": 43
+  },
+  {
+    "prompt": "Which of the following is a Wireless traffic Sniffing tool?\nA. Maltego\nB. BurpSuit\nC. Nessus\nD. Wireshark\nAnswer:",
+    "answer": "D",
+    "subject": "computer_security",
+    "id": 45
+  },
+  {
+    "prompt": "A ___________ is a method in which a computer security mechanism is bypassed untraceable for accessing the computer or its information.\nA. front-door\nB. backdoor\nC. clickjacking\nD. key-logging\nAnswer:",
+    "answer": "B",
+    "subject": "computer_security",
+    "id": 46
+  },
+  {
+    "prompt": "Which of the following is not a block cipher operating mode?\nA. ECB\nB. CFB\nC. CBF\nD. CBC\nAnswer:",
+    "answer": "C",
+    "subject": "computer_security",
+    "id": 47
+  },
+  {
+    "prompt": "What is a web proxy?\nA. A piece of software that intercepts and possibly modifies requests (and responses) between a web browser and web server\nB. An agent that makes decisions on the client's behalf when interacting with web applications\nC. A piece of software that makes a web application look like a standalone application, making it easier to test\nD. A simulator for the web, for use when off-line\nAnswer:",
+    "answer": "A",
+    "subject": "computer_security",
+    "id": 48
+  },
+  {
+    "prompt": "A/an ___________ is a program that steals your logins & passwords for instant messaging applications.\nA. IM \u2013 Trojans\nB. Backdoor Trojans\nC. Trojan-Downloader\nD. Ransom Trojan\nAnswer:",
+    "answer": "A",
+    "subject": "computer_security",
+    "id": 52
+  },
+  {
+    "prompt": "A sender must not be able to deny sending a message that was sent, is known as\nA. Message Nonrepudiation\nB. Message Integrity\nC. Message Condentiality\nD. Message Sending\nAnswer:",
+    "answer": "A",
+    "subject": "computer_security",
+    "id": 56
+  },
+  {
+    "prompt": "A special tool is necessary for entering the network which is _______________ that helps the anonymous internet users to access into the Tor\u2019s network and use various Tor services.\nA. Opera browser\nB. Firefox\nC. Chrome\nD. Tor browser\nAnswer:",
+    "answer": "D",
+    "subject": "computer_security",
+    "id": 59
+  },
+  {
+    "prompt": "How does a buffer overflow on the stack facilitate running attacker-injected code?\nA. By overwriting the return address to point to the location of that code\nB. By writing directly to the instruction pointer register the address of the code\nC. By writing directly to %eax the address of the code\nD. By changing the name of the running executable, stored on the stack\nAnswer:",
+    "answer": "A",
+    "subject": "computer_security",
+    "id": 60
+  },
+  {
+    "prompt": "The sign of the charge carriers in a doped semiconductor can be deduced by measuring which of the following properties?\nA. Specific heat\nB. Thermal conductivity\nC. Electrical resistivity\nD. Hall coefficient\nAnswer:",
+    "answer": "D",
+    "subject": "college_physics",
+    "id": 12
+  },
+  {
+    "prompt": "Electromagnetic radiation provides a means to probe aspects of the physical universe. Which of the following statements regarding radiation spectra is NOT correct?\nA. Lines in the infrared, visible, and ultraviolet regions of the spectrum reveal primarily the nuclear structure of the sample.\nB. The wavelengths identified in an absorption spectrum of an element are among those in its emission spectrum.\nC. Absorption spectra can be used to determine which elements are present in distant stars.\nD. Spectral analysis can be used to identify the composition of galactic dust.\nAnswer:",
+    "answer": "A",
+    "subject": "college_physics",
+    "id": 14
+  },
+  {
+    "prompt": "Characteristic X rays, appearing as sharp lines on a continuous background, are produced when high-energy electrons bombard a metal target. Which of the following processes results in the characteristic X rays?\nA. Electrons producing \u010cerenkov radiation\nB. Electrons colliding with phonons in the metal\nC. Electrons filling inner shell vacancies that are created in the metal atoms\nD. Electrons combining with protons to form neutrons\nAnswer:",
+    "answer": "C",
+    "subject": "college_physics",
+    "id": 20
+  },
+  {
+    "prompt": "Assume that the solar flux at Earth\u2019s surface is 1,000 W/m^2 and that the sunlight is normal to a completely reflecting surface with an area of 3 m^2. What is the total radiation force exerted on the surface?\nA. 2 x 10^-6 N\nB. 1 x 10^-5 N\nC. 2 x 10^-5 N\nD. 3 N\nAnswer:",
+    "answer": "C",
+    "subject": "college_physics",
+    "id": 23
+  },
+  {
+    "prompt": "The sign of the charge carriers in a doped semiconductor can be deduced by measuring which of the following properties?\nA. Magnetic susceptibility\nB. Hall coefficient\nC. Electrical resistivity\nD. Thermal conductivity\nAnswer:",
+    "answer": "B",
+    "subject": "college_physics",
+    "id": 24
+  },
+  {
+    "prompt": "Light of variable frequency shines on the metal surface of a photoelectric tube. Einstein\u2019s theory of the photoelectric effect predicts that the\nA. work function of the metal is proportional to the frequency\nB. work function of the metal is proportional to the wavelength\nC. current in the tube is a linear function of the wavelength\nD. potential difference necessary to stop the emitted electrons is a linear function of the frequency above the threshold frequency\nAnswer:",
+    "answer": "D",
+    "subject": "college_physics",
+    "id": 30
+  },
+  {
+    "prompt": "The negative muon, mu^-, has properties most similar to which of the following?\nA. Electron\nB. Meson\nC. Photon\nD. Boson\nAnswer:",
+    "answer": "A",
+    "subject": "college_physics",
+    "id": 37
+  },
+  {
+    "prompt": "The eigenvalues of a Hermitian operator are always\nA. real\nB. imaginary\nC. degenerate\nD. linear\nAnswer:",
+    "answer": "A",
+    "subject": "college_physics",
+    "id": 52
+  },
+  {
+    "prompt": "Electromagnetic radiation emitted from a nucleus is most likely to be in the form of\nA. gamma rays\nB. microwaves\nC. ultraviolet radiation\nD. visible light\nAnswer:",
+    "answer": "A",
+    "subject": "college_physics",
+    "id": 61
+  },
+  {
+    "prompt": "By definition, the electric displacement current through a surface S is proportional to the\nA. rate of change of the electric flux through S\nB. electric flux through S\nC. time integral of the magnetic flux through S\nD. rate of change of the magnetic flux through S\nAnswer:",
+    "answer": "A",
+    "subject": "college_physics",
+    "id": 69
+  },
+  {
+    "prompt": "The mean kinetic energy of the conduction electrons in metals is ordinarily much higher than kT because\nA. electrons have many more degrees of freedom than atoms do\nB. the electrons and the lattice are not in thermal equilibrium\nC. the electrons form a degenerate Fermi gas\nD. electrons in metals are highly relativistic\nAnswer:",
+    "answer": "C",
+    "subject": "college_physics",
+    "id": 75
+  },
+  {
+    "prompt": "Light of variable frequency shines on the metal surface of a photoelectric tube. Einstein\u2019s theory of the photoelectric effect predicts that the\nA. work function of the metal is proportional to the frequency\nB. work function of the metal is proportional to the wavelength\nC. current in the tube is a linear function of the wavelength\nD. potential difference necessary to stop the emitted electrons is a linear function of the frequency above the threshold frequency\nAnswer:",
+    "answer": "D",
+    "subject": "college_physics",
+    "id": 77
+  },
+  {
+    "prompt": "London dispersion forces are caused by\nA. temporary dipoles created by the position of electrons around the nuclei in a molecule\nB. the three-dimensional intermolecular bonding present in all covalent substances\nC. the uneven electron-to-proton ratio found on individual atoms of a molecule\nD. the electronegativity differences between the different atoms in a molecule\nAnswer:",
+    "answer": "A",
+    "subject": "high_school_chemistry",
+    "id": 0
+  },
+  {
+    "prompt": "The net ionic equation expected when solutions of NH4Br and AgNO3 are mixed together is\nA. Ag+(aq) + Br-(aq) \u2192 AgBr(s)\nB. NH4+(aq) + Ag+(aq) \u2192 Ag(NH4)3+2(aq)\nC. Br-(aq) + NO3-(aq) \u2192 NO3Br(aq)\nD. NH4Br(aq) + NO3-(aq) \u2192 NH4NO3(aq) + Br-(aq)\nAnswer:",
+    "answer": "A",
+    "subject": "high_school_chemistry",
+    "id": 3
+  },
+  {
+    "prompt": "The symbol for antimony is\nA. W\nB. Sb\nC. Fe\nD. An\nAnswer:",
+    "answer": "B",
+    "subject": "high_school_chemistry",
+    "id": 4
+  },
+  {
+    "prompt": "Which of the following substances has an asymmetrical molecular structure?\nA. SF4\nB. PCl5\nC. BF3\nD. CO2\nAnswer:",
+    "answer": "A",
+    "subject": "high_school_chemistry",
+    "id": 11
+  },
+  {
+    "prompt": "A mechanism is a sequence of elementary reactions that add up to the overall reaction stoichiometry. A substance that is produced in one elementary reaction and consumed in another is called\nA. a catalyst\nB. an intermediate\nC. a reactant\nD. a complex\nAnswer:",
+    "answer": "B",
+    "subject": "high_school_chemistry",
+    "id": 18
+  },
+  {
+    "prompt": "The rate law may be written using stoichiometric coefficients for which of the following?\nA. Precipitation reactions\nB. Acid-base reactions\nC. Elementary processes\nD. Solubility reactions\nAnswer:",
+    "answer": "C",
+    "subject": "high_school_chemistry",
+    "id": 24
+  },
+  {
+    "prompt": "The ideal gas law is successful for most gases because\nA. room temperature is high\nB. volumes are small\nC. gas particles do not interact significantly\nD. gases are dimers\nAnswer:",
+    "answer": "C",
+    "subject": "high_school_chemistry",
+    "id": 27
+  },
+  {
+    "prompt": "What is an alpha particle?\nA. Another name for an electron\nB. Another name for a helium nucleus\nC. Another name for a positron\nD. Another name for a cosmic ray\nAnswer:",
+    "answer": "B",
+    "subject": "high_school_chemistry",
+    "id": 28
+  },
+  {
+    "prompt": "Which would be the easiest way to burn an iron nail?\nA. Hold an iron nail with crucible tongs, and heat strongly in the flame of a Bunsen burner.\nB. Use the method in (A), but use an oxyacetylene torch to reach a higher temperature.\nC. Grind the nail into very small, dust-sized particles, and spray them into a flame\nD. Dissolve the nail in acid to make the oxide.\nAnswer:",
+    "answer": "C",
+    "subject": "high_school_chemistry",
+    "id": 35
+  },
+  {
+    "prompt": "NH4+(aq) + NO2- (aq) \u2192 N2(g) + 2H2O(l) Increasing the temperature of the above reaction will increase the rate of reaction. Which of the following is NOT a reason that increased temperature increases reaction rate?\nA. The reactants will be more likely to overcome the activation energy.\nB. The number of collisions between reactant molecules will increase.\nC. A greater distribution of reactant molecules will have high velocities.\nD. Alternate reaction pathways become available at higher temperatures.\nAnswer:",
+    "answer": "D",
+    "subject": "high_school_chemistry",
+    "id": 38
+  },
+  {
+    "prompt": "The relationship between the vapor pressure of a liquid and the heat of vaporization is expressed in the\nA. Rydberg equation\nB. Gibbs free energy equation\nC. Clausius-Clapeyron equation\nD. Arrhenius equation\nAnswer:",
+    "answer": "C",
+    "subject": "high_school_chemistry",
+    "id": 39
+  },
+  {
+    "prompt": "Of the following, the most important experimental information used to deduce the structure of the atom was\nA. the density of each element\nB. the specific heat capacity\nC. the emission spectrum of the elements, particularly hydrogen\nD. the X-rays emitted from each element\nAnswer:",
+    "answer": "C",
+    "subject": "high_school_chemistry",
+    "id": 43
+  },
+  {
+    "prompt": "The functional group that represents an organic acid is written as (Note: R represents the rest of the molecule)\nA. RCHO\nB. ROH\nC. RCOOH\nD. RCl\nAnswer:",
+    "answer": "C",
+    "subject": "high_school_chemistry",
+    "id": 48
+  },
+  {
+    "prompt": "Which following pair of substances can be used to make a buffer solution?\nA. NaCl and HCl\nB. HC2H3O2 and KC2H3O2\nC. NaBr and KBr\nD. HIO3 and KClO3\nAnswer:",
+    "answer": "B",
+    "subject": "high_school_chemistry",
+    "id": 66
+  },
+  {
+    "prompt": "A voltage will be induced in a wire loop when the magnetic field within that loop\nA. changes\nB. aligns with the electric field\nC. is at right angles to the electric field\nD. converts to magnetic energy\nAnswer:",
+    "answer": "A",
+    "subject": "conceptual_physics",
+    "id": 4
+  },
+  {
+    "prompt": "According to general relativity,\nA. mass distorts spacetime.\nB. gravity affects clocks.\nC. light can\u2019t escape from a black hole.\nD. All of these.\nAnswer:",
+    "answer": "D",
+    "subject": "conceptual_physics",
+    "id": 6
+  },
+  {
+    "prompt": "The surface of planet Earth loses energy to outer space due mostly to\nA. conduction\nB. convection\nC. radiation\nD. radioactivity\nAnswer:",
+    "answer": "C",
+    "subject": "conceptual_physics",
+    "id": 11
+  },
+  {
+    "prompt": "As a blinking light source approaching you gains speed, you see the frequency of flashes\nA. increase.\nB. decrease.\nC. remain unchanged.\nD. None of these.\nAnswer:",
+    "answer": "A",
+    "subject": "conceptual_physics",
+    "id": 13
+  },
+  {
+    "prompt": "Pumice is a volcanic rock that floats in water. The density of pumice compared with that of water is\nA. less.\nB. equal.\nC. greater.\nD. none because it sinks.\nAnswer:",
+    "answer": "A",
+    "subject": "conceptual_physics",
+    "id": 15
+  },
+  {
+    "prompt": "When you look at the red petals of a rose the color light you're seeing is\nA. red.\nB. green.\nC. white minus red.\nD. a mixture of green and yellow.\nAnswer:",
+    "answer": "A",
+    "subject": "conceptual_physics",
+    "id": 16
+  },
+  {
+    "prompt": "Polarization is a property of\nA. transverse waves\nB. longitudinal waves\nC. all waves\nD. None of these\nAnswer:",
+    "answer": "A",
+    "subject": "conceptual_physics",
+    "id": 19
+  },
+  {
+    "prompt": "If an object is already moving and the sum of all the vector forces on a mass is zero, then the object will\nA. move at a constant speed in a straight line\nB. accelerate at a constant rate in a straight line\nC. come to rest\nD. increase its amount of inertia\nAnswer:",
+    "answer": "A",
+    "subject": "conceptual_physics",
+    "id": 27
+  },
+  {
+    "prompt": "The equation E = mc^2 indicates that energy\nA. equals mass moving at the speed of light squared.\nB. equals moving mass.\nC. is fundamentally different than mass.\nD. and mass are closely related.\nAnswer:",
+    "answer": "D",
+    "subject": "conceptual_physics",
+    "id": 33
+  },
+  {
+    "prompt": "When an element ejects an alpha particle, the atomic number of the resulting element\nA. reduces by 2\nB. reduces by 4\nC. increases by 2\nD. increases by 4\nAnswer:",
+    "answer": "A",
+    "subject": "conceptual_physics",
+    "id": 35
+  },
+  {
+    "prompt": "The energy of an emitted photon is related to its\nA. amplitude\nB. polarization\nC. momentum\nD. frequency\nAnswer:",
+    "answer": "D",
+    "subject": "conceptual_physics",
+    "id": 38
+  },
+  {
+    "prompt": "Thermal conduction involves mainly\nA. electrons\nB. protons\nC. neutrons\nD. ions\nAnswer:",
+    "answer": "A",
+    "subject": "conceptual_physics",
+    "id": 39
+  },
+  {
+    "prompt": "The neutrons in an atom are normally found\nA. inside the nucleus\nB. outside the nucleus\nC. Either of these\nD. Neither of these\nAnswer:",
+    "answer": "A",
+    "subject": "conceptual_physics",
+    "id": 51
+  },
+  {
+    "prompt": "Noise-canceling devices make use of sound\nA. destruction\nB. interference\nC. resonance\nD. amplification\nAnswer:",
+    "answer": "B",
+    "subject": "conceptual_physics",
+    "id": 53
+  },
+  {
+    "prompt": "Nearsightedness results from\nA. too much curvature of the cornea and lens\nB. too little curvature of the cornea and lens\nC. too much curvature of the iris and lens\nD. too little curvature of the iris and lens\nAnswer:",
+    "answer": "A",
+    "subject": "high_school_psychology",
+    "id": 0
+  },
+  {
+    "prompt": "Delusions of grandeur are most characteristic of\nA. OCD.\nB. schizophrenia.\nC. conversion disorder.\nD. antisocial personality disorder.\nAnswer:",
+    "answer": "B",
+    "subject": "high_school_psychology",
+    "id": 1
+  },
+  {
+    "prompt": "Abraham Maslow proposed the idea that some motives are more imperative to survival than others. Which of the following approaches expresses this?\nA. Homeostatic regulation\nB. Goal-setting\nC. Expectancy-value\nD. Hierarchy of needs\nAnswer:",
+    "answer": "D",
+    "subject": "high_school_psychology",
+    "id": 2
+  },
+  {
+    "prompt": "In test construction and evaluation, validity refers to the degree to which a test\nA. measures what it purports to measure\nB. yields consistent results on successive administrations\nC. has been piloted and statistically analyzed\nD. includes norms based on a representative sample of the general population\nAnswer:",
+    "answer": "A",
+    "subject": "high_school_psychology",
+    "id": 3
+  },
+  {
+    "prompt": "Which of the following statistics provides the most information about how spread out a distribution of scores is?\nA. variance\nB. mean\nC. range\nD. median\nAnswer:",
+    "answer": "A",
+    "subject": "high_school_psychology",
+    "id": 6
+  },
+  {
+    "prompt": "Which developmental stage theory explained how experiences in infancy, childhood, adolscence, adulthood, and old age influence later personality characteristics?\nA. Piaget's cognitive development theory\nB. Erikson's psychosocial stage theory\nC. Kohlberg's moral development theory\nD. Ainsworth's social attachment theory\nAnswer:",
+    "answer": "B",
+    "subject": "high_school_psychology",
+    "id": 9
+  },
+  {
+    "prompt": "Our ability to perceive depth depends primarily on what other perceptual abilities?\nA. proximity and similarity\nB. top-down processing and bottom-up processing\nC. binocular and monocular cues\nD. size and shape constancy\nAnswer:",
+    "answer": "C",
+    "subject": "high_school_psychology",
+    "id": 11
+  },
+  {
+    "prompt": "Which of the following terms applies to IQ tests?\nA. achievement\nB. standardized\nC. projective\nD. triarchic\nAnswer:",
+    "answer": "B",
+    "subject": "high_school_psychology",
+    "id": 13
+  },
+  {
+    "prompt": "All of the following are examples of punishment EXCEPT\nA. grounding a teenager for staying out past curfew\nB. spanking a child for misbehavior\nC. permanently revoking the driving privileges of a third-time DWI driver\nD. refusing to return the boss' phone call after not getting the expected raise\nAnswer:",
+    "answer": "D",
+    "subject": "high_school_psychology",
+    "id": 16
+  },
+  {
+    "prompt": "Substances that are toxic to humans often taste\nA. sour\nB. sweet\nC. salty\nD. bitter\nAnswer:",
+    "answer": "D",
+    "subject": "high_school_psychology",
+    "id": 18
+  },
+  {
+    "prompt": "Which of the following kinds of tests is most likely to be an achievement test?\nA. an IQ test\nB. a classroom test over a chapter in a textbook\nC. an entrance exam for law school\nD. a personality test based on the Big Five personality traits\nAnswer:",
+    "answer": "B",
+    "subject": "high_school_psychology",
+    "id": 20
+  },
+  {
+    "prompt": "Research indicates that which of the following factors most influence a person's sexual orientation?\nA. parenting style\nB. masculine/feminine personality traits\nC. hormones released in the womb\nD. sexual orientation of parents\nAnswer:",
+    "answer": "C",
+    "subject": "high_school_psychology",
+    "id": 24
+  },
+  {
+    "prompt": "Which of the following usually increases with age in healthy adults between the ages of 18 and 70?\nA. fluid intelligence\nB. crystallized intelligence\nC. g\nD. speededness\nAnswer:",
+    "answer": "B",
+    "subject": "high_school_psychology",
+    "id": 25
+  },
+  {
+    "prompt": "Runners in a park were found to pick up their pace when another runner came into view; this finding illustrates the phenomenon of\nA. social facilitation.\nB. conformity.\nC. deindividuation.\nD. norms.\nAnswer:",
+    "answer": "A",
+    "subject": "high_school_psychology",
+    "id": 27
+  },
+  {
+    "prompt": "A researcher tests the problem solving skills of twenty 10-year-old, twenty 20-year-old, and twenty 30-year-old participants for a study on age and problem solving. What research method is this researcher using?\nA. longitudinal\nB. stage\nC. developmental\nD. cross-sectional\nAnswer:",
+    "answer": "D",
+    "subject": "high_school_psychology",
+    "id": 28
+  },
+  {
+    "prompt": "Which of the following are most directly designed to help determine whether the findings of a study reflect a truly replicable phenomenon rather than the outcomes of chance processes?\nA. Inferential statistics\nB. Descriptive statistics\nC. Standard deviation\nD. Extraneous variables\nAnswer:",
+    "answer": "A",
+    "subject": "high_school_psychology",
+    "id": 31
+  },
+  {
+    "prompt": "An unjustifiable and usually negative attitude toward a group and its members is called\nA. prejudice\nB. ethnocentrism\nC. in-group bias\nD. discrimination\nAnswer:",
+    "answer": "A",
+    "subject": "high_school_psychology",
+    "id": 32
+  },
+  {
+    "prompt": "Calvin's fear of dogs was so great that he could not even visit his friends who had dogs or who lived in a neighborhood that had a lot of dogs. Once he sought help, he worked to overcome this fear first by witnessing his counselor playing with a dog and then, after a while, by actually touching and petting a dog himself. The method used to help Calvin overcome his fears is known as\nA. countertransference\nB. peer-counselor alliance\nC. rational-emotive therapy\nD. systematic desensitization\nAnswer:",
+    "answer": "D",
+    "subject": "high_school_psychology",
+    "id": 33
+  },
+  {
+    "prompt": "According to Kohlberg, at the third (postconventional) level of moral development, individuals\nA. follow rules in order to obtain reward\nB. follow rules in order to avoid punishment\nC. define what is right by what they have learned from others, especially authority figures\nD. self-define principles that may or may not match the dominant morals of the times\nAnswer:",
+    "answer": "D",
+    "subject": "high_school_psychology",
+    "id": 36
+  },
+  {
+    "prompt": "To which perspective are the roles of knowledge, information processing, and their interactions most central?\nA. Psychoanalytic\nB. Cognitive\nC. Behaviorist\nD. Evolutionary\nAnswer:",
+    "answer": "B",
+    "subject": "high_school_psychology",
+    "id": 37
+  },
+  {
+    "prompt": "Which of the following is primarily a chemical sense?\nA. Touch\nB. Vision\nC. Taste\nD. Hearing\nAnswer:",
+    "answer": "C",
+    "subject": "high_school_psychology",
+    "id": 38
+  },
+  {
+    "prompt": "A 7-year-old student arrived in the United States one year ago from a non-Englishspeaking country, where she achieved high scores in reading. Over the year, she has become fluent in social English. After a few months in a monolingual English second grade, her teacher refers her for evaluation because she has great difficulty with the basal reader used in the class. Two English proficiency tests administered to the student show that she performs above the mean for monolingual English grade peers in speaking and listening but well below the mean in reading and writing. She also performs well above the mean for grade peers on reading tests in her native language. Based on this information alone, which of the following is the most accurate interpretation?\nA. Continued use of the student's native language in her home environment is interfering with her development of English.\nB. The student's reading difficulty is an early indicator that she will have increased academic problems as her coursework requires more reading.\nC. The discrepancy between the student's English social language skills and reading skills is expected given the richer context in which social skills are acquired.\nD.  The discrepancy between the student's native language reading skills and English reading skills is related to the greater complexity of English.\nAnswer:",
+    "answer": "C",
+    "subject": "high_school_psychology",
+    "id": 39
+  },
+  {
+    "prompt": "The limbic system plays an important role in\nA. maintaining balance.\nB. regulating emotion.\nC. monitoring arousal.\nD. processing sensory information.\nAnswer:",
+    "answer": "B",
+    "subject": "high_school_psychology",
+    "id": 40
+  },
+  {
+    "prompt": "To demonstrate causation, a researcher must\nA. manipulate the way a participant responds to some aspect of a situation\nB. operationalize dependent and independent variables\nC. develop a hypothesis that predicts the relationship between variables\nD. show that the manipulation of one variable invariably leads to predicted changes in another\nAnswer:",
+    "answer": "D",
+    "subject": "high_school_psychology",
+    "id": 41
+  },
+  {
+    "prompt": "A special diet can prevent the expression of the trait for\nA. Tay-Sachs syndrome\nB. PKU (phenylketonuria)\nC. Huntington's disease\nD. Down syndrome\nAnswer:",
+    "answer": "B",
+    "subject": "high_school_psychology",
+    "id": 42
+  },
+  {
+    "prompt": "Nat's therapist tells him to relax, close his eyes, and breathe slowly whenever he begins to experience fear associated with being in an enclosed space. The therapist is using a technique that is central to\nA. person-centered therapy\nB. psychoanalysis\nC. rational-emotive therapy\nD. systematic desensitization\nAnswer:",
+    "answer": "D",
+    "subject": "high_school_psychology",
+    "id": 45
+  },
+  {
+    "prompt": "Periods of special sensitivity to specific types of learning that shape the capacity for future development are known as\nA. maturation periods\nB. critical periods\nC. primary development periods\nD. secondary development periods\nAnswer:",
+    "answer": "B",
+    "subject": "high_school_psychology",
+    "id": 46
+  },
+  {
+    "prompt": "Which of the following best summarizes a view of classical behaviorism?\nA. Behavior is under the control of external stimuli that either reinforce or punish actions, thereby affecting the likelihood of the occurrence of these behaviors.\nB. Behavior can be controlled by introspection.\nC. Behavior is the result of competing motives that result from mental events that occur outside of one's awareness.\nD. Behavior is influenced by internal drives and motivation.\nAnswer:",
+    "answer": "A",
+    "subject": "high_school_psychology",
+    "id": 48
+  },
+  {
+    "prompt": "A sixth-grade teacher is concerned because Kerry, a student in class, has been hostile to classmates. Which of the following teacher strategies is most likely to encourage Kerry to be more cooperative with classmates?\nA. Preventing Kerry from participating in play or recess activities as a consequence of hostile behavior\nB. Having Kerry memorize rules of behavior and write examples of how they would apply in the classroom\nC. Withholding attention or approval from Kerry in response to hostile behavior\nD. Implementing social skills training to teach Kerry appropriate replacement behaviors for hostile behaviors\nAnswer:",
+    "answer": "D",
+    "subject": "high_school_psychology",
+    "id": 49
+  },
+  {
+    "prompt": "Daniel is a toddler who lags behind his peers in terms of speech development. He avoids eye contact with people and resists alterations to routine. Daniel is most likely to be diagnosed with\nA. Down syndrome.\nB. fetal alcohol syndrome.\nC. mental retardation.\nD. autism.\nAnswer:",
+    "answer": "D",
+    "subject": "high_school_psychology",
+    "id": 50
+  },
+  {
+    "prompt": "Mass-society theory suggests that:\nA. the content of the media is determined by market forces\nB. the subordinate classes are dominated by the ideology of the ruling class\nC. the media manipulate 'the masses' as vulnerable, passive consumers\nD. audiences make selective interpretations of media messages\nAnswer:",
+    "answer": "C",
+    "subject": "sociology",
+    "id": 0
+  },
+  {
+    "prompt": "Becker proclaimed that cannabis use was:\nA. increasing throughout all sections of youth in the 1970s\nB. learned gradually through the social processes of a deviant career\nC. a dangerous pastime that young people should not be allowed to pursue\nD. not as enjoyable as other sociologists had suggested\nAnswer:",
+    "answer": "B",
+    "subject": "sociology",
+    "id": 2
+  },
+  {
+    "prompt": "The middle classes that developed over the nineteenth century were:\nA. an urban set, involved in civic bodies and voluntary associations\nB. too diverse to have a strong sense of class consciousness\nC. often involved in 'white collar' work\nD. all of the above\nAnswer:",
+    "answer": "D",
+    "subject": "sociology",
+    "id": 3
+  },
+  {
+    "prompt": "Technological forms of surveillance have made it easier to:\nA. access and exchange 'private' information about consumers\nB. reduce prison overcrowding by the use of electronic tagging\nC. monitor employees' activities at work\nD. all of the above\nAnswer:",
+    "answer": "D",
+    "subject": "sociology",
+    "id": 4
+  },
+  {
+    "prompt": "Anti-psychiatrists like Laing & Esterson believed that:\nA. Psychiatry was an out-moded form of treatment and should be replaced by alternative therapies like aromatherapy and kinesiology\nB. Mental illnesses were biological in origin, so there was no point in studying 'the mind' as experienced by the patient\nC. Psychiatrists were agents of capitalism who tried to instill ruling class ideology into their patients\nD. Behaviour that seemed bizarre could be seen as a reasonable response to disturbed patterns of family interaction\nAnswer:",
+    "answer": "D",
+    "subject": "sociology",
+    "id": 11
+  },
+  {
+    "prompt": "In contemporary societies, social institutions are:\nA. highly specialized, interrelated sets of social practices\nB. disorganized social relations in a postmodern world\nC. virtual communities in cyberspace\nD. no longer relevant to sociology\nAnswer:",
+    "answer": "A",
+    "subject": "sociology",
+    "id": 13
+  },
+  {
+    "prompt": "The term 'emotion work' (Hochschild 1983) refers to:\nA. the techniques used to consciously manage and present emotions that are deemed appropriate for public settings of interaction\nB. the work done by psychologists, counselors and therapists to help clients with mental and emotional problems\nC. experiences such as grieving and falling in love, which demand a lot of emotional energy from a person\nD. the way in which increasing levels of risk and anxiety have made us think more reflexively about our self-identities\nAnswer:",
+    "answer": "A",
+    "subject": "sociology",
+    "id": 14
+  },
+  {
+    "prompt": "When sociologists study the structure of layers in society and people's movement between them, they call this:\nA. social stratification\nB. social control\nC. social conflict\nD. social solidarity\nAnswer:",
+    "answer": "A",
+    "subject": "sociology",
+    "id": 15
+  },
+  {
+    "prompt": "Statistics about rural, suburban, and urban patterns of development and mobility are almost always reported based on a geographical area labeled as Metropolitan Statistical Areas (MSA). What constitutes an MSA?\nA. It includes only the 10 largest cities in the United States.\nB. It is composed of at least one central city with a population of at least 50,000 and it surrounds densely urbanized counties.\nC. It is an area that experiences strong storms at least 50 percent of the year.\nD. It is a large city with a population of at least 1 million and is immediately surrounded by suburbs.\nAnswer:",
+    "answer": "B",
+    "subject": "sociology",
+    "id": 22
+  },
+  {
+    "prompt": "Bourdieu attributed the reproduction of class to:\nA. cults of the capital\nB. capital culture\nC. cultural capital\nD. culpable capture\nAnswer:",
+    "answer": "C",
+    "subject": "sociology",
+    "id": 24
+  },
+  {
+    "prompt": "Secularization involves the two related ideas of:\nA. disappointment and disproportion\nB. disbelief and disintegration\nC. disengagement and disenchantment\nD. distribution and distillation\nAnswer:",
+    "answer": "C",
+    "subject": "sociology",
+    "id": 25
+  },
+  {
+    "prompt": "The general fertility rate fell between 1964 and 2000 because of:\nA. increases in the age of marriage and the age at which childbearing begins\nB. there being fewer women of childbearing age than there were in the first half of the century\nC. errors in the measurement of birth rates and production of statistics\nD. the risk of diseases caused by poverty, poor housing and bad sanitation\nAnswer:",
+    "answer": "A",
+    "subject": "sociology",
+    "id": 26
+  },
+  {
+    "prompt": "The 'third age' of the life course is said to involve:\nA. active non-work and independence after retirement\nB. full time employment, family-building and adult responsibility\nC. illness, isolation and increasing dependence on others\nD. the transition from education to work, and distinctive youth cultures\nAnswer:",
+    "answer": "A",
+    "subject": "sociology",
+    "id": 28
+  },
+  {
+    "prompt": "Weber (1919) said that the state's monopoly of the use of force was legitimated by:\nA. charismatic authority\nB. rational-legal authority\nC. traditional authority\nD. value-rational authority\nAnswer:",
+    "answer": "B",
+    "subject": "sociology",
+    "id": 29
+  },
+  {
+    "prompt": "The shift from custodial to joint parenthood after divorce means that:\nA. fathers are more likely to be absent from their children's lives\nB. one parent has total responsibility for the child's welfare and socialization\nC. both parents are expected to co-operate in the continued care of their children\nD. parents must provide for all of their children in equal measure\nAnswer:",
+    "answer": "C",
+    "subject": "sociology",
+    "id": 31
+  },
+  {
+    "prompt": "\u00c9mile Durkheim believed the primary focus of sociology should be which of the following?\nA. Social action\nB. Social facts\nC. Class relations\nD. Cultural dynamics\nAnswer:",
+    "answer": "B",
+    "subject": "sociology",
+    "id": 32
+  },
+  {
+    "prompt": "The term \"sociology\" was coined in the early 1800s by which of the following?\nA. Auguste Comte\nB. Robert K. Merton\nC. Karl Marx\nD. Emile Durkheim\nAnswer:",
+    "answer": "A",
+    "subject": "sociology",
+    "id": 33
+  },
+  {
+    "prompt": "In their study of depression, Brown & Harris (1978) found that:\nA. women's susceptibility to stress depended on their levels of social support\nB. self-reported depression is highest amongst men and the relatively affluent\nC. men and women have fairly similar levels of diagnosed depression\nD. men are more vulnerable to depression because of conventional gender roles\nAnswer:",
+    "answer": "A",
+    "subject": "sociology",
+    "id": 34
+  },
+  {
+    "prompt": "Margaret Mead suggested that:\nA. adolescence and gender roles varied between societies and so were culturally determined\nB. gender roles in three New Guinea societies were identical and so must be biologically determined\nC. adolescence in the USA is a time of relative calm compared to the experience in Japan and Europe\nD. anthropological fieldwork can be problematic because the researcher's values affect the way they interpret their observations\nAnswer:",
+    "answer": "A",
+    "subject": "sociology",
+    "id": 36
+  },
+  {
+    "prompt": "The effect of the Internet upon the public sphere has been to:\nA. repress it, by promoting only the interests of elite groups\nB. revive it, by reaffirming a commitment to freedom of speech\nC. reproduce it, by emphasizing face-to-face contact with peer groups\nD. replace it with a superior form of communication\nAnswer:",
+    "answer": "B",
+    "subject": "sociology",
+    "id": 38
+  },
+  {
+    "prompt": "The Macpherson Report highlighted the increasing problem of:\nA. hate crimes: violence against ethnic minorities simply because of their race\nB. institutional racism: systematic forms of disadvantage built into the routines and practices of social institutions\nC. overt racism in the police force that must be tackled by institutional reforms\nD. growing numbers of asylum seekers in need of long term accommodation\nAnswer:",
+    "answer": "B",
+    "subject": "sociology",
+    "id": 41
+  },
+  {
+    "prompt": "Environmentalist social movements are global in the sense that:\nA. they increase our awareness of risks that affect the whole planet\nB. they appeal to universal values and human rights\nC. they use global media to generate publicity\nD. all of the above\nAnswer:",
+    "answer": "D",
+    "subject": "sociology",
+    "id": 43
+  },
+  {
+    "prompt": "In idealized views of science, the experimental method is said to involve:\nA. testing out new research methods to see which one works best\nB. isolating and measuring the effect of one variable upon another\nC. using personal beliefs and values to decide what to study\nD. interpreting data subjectively, drawing on theoretical paradigms\nAnswer:",
+    "answer": "B",
+    "subject": "sociology",
+    "id": 47
+  },
+  {
+    "prompt": "The Nation of Islam group appealed to:\nA. British-born second generation immigrants from the Asian subcontinent\nB. White Americans who wanted to convert to Islam\nC. African-Americans who felt excluded from the 'ethnic melting pot' in the USA\nD. African-Caribbeans who lived in the inner cities and had a distinctive youth culture\nAnswer:",
+    "answer": "C",
+    "subject": "sociology",
+    "id": 49
+  },
+  {
+    "prompt": "Comte's term 'positivism' refers to:\nA. a theory that emphasizes the positive aspects of society\nB. the precise, scientific study of observable phenomena\nC. a theory that posits difficult questions and sets out to answer them\nD. an unscientific set of laws about social progress\nAnswer:",
+    "answer": "B",
+    "subject": "sociology",
+    "id": 50
+  },
+  {
+    "prompt": "Theories of racialized discourse suggest that:\nA. race is an objective way of categorizing people on biological grounds\nB. the idea of race is socially constructed through powerful ideologies\nC. race relations in Britain and America can be traced back to colonial times\nD. people choose their racial identity and this becomes fixed\nAnswer:",
+    "answer": "B",
+    "subject": "sociology",
+    "id": 51
+  },
+  {
+    "prompt": "A new highway extends from a major city though an area used for farmland. Which of the following is most likely to happen as a result?\nA. Farmers will increase the acreage under production.\nB. The city will evolve into a multiple nuclei model.\nC. Suburbanization will develop because the time it takes to commute to the city has been decreased.\nD. People from the countryside will move to the city, depopulating the farmland region.\nAnswer:",
+    "answer": "C",
+    "subject": "sociology",
+    "id": 53
+  },
+  {
+    "prompt": "According to W. E. B. Dubois, progress for African Americans in the aftermath of slavery\nA. depended on the small group of African Americans receiving the same thorough and extensive education as the most talented White Americans were able to access\nB. involved their use of skills they already had from farming, domestic work, and labors of rural life rather than being forced to learn new skills in the late 1800s\nC. required that they be trained and prepared as craftspeople and service employees so they could become immediately self-sufficient\nD. required them to move to large cities where they would be accepted as equals in government, religion, and education\nAnswer:",
+    "answer": "A",
+    "subject": "sociology",
+    "id": 54
+  },
+  {
+    "prompt": "For Socrates, an unexamined life is a tragedy because it results in grievous harm to _____.\nA. the state\nB. the justice system\nC. the body\nD. the soul\nAnswer:",
+    "answer": "D",
+    "subject": "philosophy",
+    "id": 1
+  },
+  {
+    "prompt": "According to Kant, nothing can be called \u201cgood\u201d without qualification except _____.\nA. right action\nB. good consequences\nC. happiness\nD. a good will\nAnswer:",
+    "answer": "D",
+    "subject": "philosophy",
+    "id": 2
+  },
+  {
+    "prompt": "Plato's view is that true beauty is _____.\nA. found in everyday objects\nB. nonexistent\nC. everywhere in the natural world\nD. not of this world\nAnswer:",
+    "answer": "D",
+    "subject": "philosophy",
+    "id": 3
+  },
+  {
+    "prompt": "In Aristotle\u2019s terminology, incontinence is when:\nA. one does not know that one\u2019s actions are wrong.\nB. one knows that one\u2019s actions are wrong, but does them anyway.\nC. one knows that one\u2019s feelings are inappropriate, and does not act on them.\nD. one does the right action, but for the wrong reason.\nAnswer:",
+    "answer": "B",
+    "subject": "philosophy",
+    "id": 4
+  },
+  {
+    "prompt": "Rawls conceives of the original contract as one to:\nA. enter a particular society.\nB. set up a particular form of government.\nC. establish the principles of justice for the basic structure of society.\nD. establish the content of morality.\nAnswer:",
+    "answer": "C",
+    "subject": "philosophy",
+    "id": 6
+  },
+  {
+    "prompt": "For Socrates, the soul is harmed by lack of _____.\nA. knowledge\nB. wealth\nC. community\nD. courage\nAnswer:",
+    "answer": "A",
+    "subject": "philosophy",
+    "id": 8
+  },
+  {
+    "prompt": "According to Kant, morality requires us to:\nA. perform the action that leads to the greatest total happiness.\nB. act only on maxims that we can will to become universal laws.\nC. behave only in such a way as a perfectly virtuous person would behave.\nD. place the interests of others above the interests of ourselves.\nAnswer:",
+    "answer": "B",
+    "subject": "philosophy",
+    "id": 9
+  },
+  {
+    "prompt": "According to Gauthier, the basis of morality is:\nA. maximizing the utility of all sentient beings.\nB. God\u2019s commands.\nC. the agreement of rational persons choosing the terms of their interaction.\nD. the purposive order of nature.\nAnswer:",
+    "answer": "C",
+    "subject": "philosophy",
+    "id": 10
+  },
+  {
+    "prompt": "Berkeley asserts that existing and perceiving are _____.\nA. one and the same thing\nB. both nonexistent\nC. two distinct things\nD. imaginary\nAnswer:",
+    "answer": "A",
+    "subject": "philosophy",
+    "id": 13
+  },
+  {
+    "prompt": "Berkeley believes that sensible things cannot exist except in _____.\nA. a mind\nB. absolute existence\nC. material substance\nD. a material universe\nAnswer:",
+    "answer": "A",
+    "subject": "philosophy",
+    "id": 15
+  },
+  {
+    "prompt": " In his discussion of the Divided Line, Plato says that, in contrast to mere belief or opinion, knowledge is a belief for which we give reasons or justifications by appealing:\nA. to what our senses reveal to us about how things appear to us, not how they  really are.\nB. beyond the Forms to images of goodness, beauty, and truth obtained from particular objects.\nC. to what we sincerely believe is true about the Forms based on our experiences in the world.\nD. beyond sense experience to unchanging ideas (Forms) that are perceived as rationally ordered.\nAnswer:",
+    "answer": "D",
+    "subject": "philosophy",
+    "id": 17
+  },
+  {
+    "prompt": "Hume divides our perceptions into two categories:\nA. sensations and emotions.\nB. impressions and ideas.\nC. static and dynamic.\nD. simple and complex.\nAnswer:",
+    "answer": "B",
+    "subject": "philosophy",
+    "id": 25
+  },
+  {
+    "prompt": "According to Socrates, an unexamined life is not worth living; and it certainly could not be a virtuous life.  Why not?\nA. Because if someone did not know how to act virtuously, he or she would still be considered virtuous by others who also did not know the principles for good living.\nB. Because since Socrates was a philosopher, he of course thought that people who examined their lives philosophically were more virtuous than those who did not.\nC. Because without knowing the rationale for why one should act in a particular way, one does not know whether actions are justified and ought to be repeated.\nD. Because a virtuous life would be one in which someone does what the rest of the society says is right, and that means examining views other than one's own.\nAnswer:",
+    "answer": "C",
+    "subject": "philosophy",
+    "id": 27
+  },
+  {
+    "prompt": "Aquinas holds that the last end of man is:\nA. pleasure.\nB. happiness or beatitude.\nC. the satisfaction of desire.\nD. freedom from anxiety.\nAnswer:",
+    "answer": "B",
+    "subject": "philosophy",
+    "id": 31
+  },
+  {
+    "prompt": "According to Kant, the supreme principle of morality is:\nA. analytic and a priori.\nB. analytic and a posteriori.\nC. synthetic and a priori.\nD. synthetic and a posteriori.\nAnswer:",
+    "answer": "C",
+    "subject": "philosophy",
+    "id": 32
+  },
+  {
+    "prompt": "The systematic use of critical reasoning to try to find answers to fundamental questions about reality, morality, and knowledge is called _____.\nA. the argumentative method\nB. the philosophical method\nC. propositional logic\nD. syllogistic reasoning\nAnswer:",
+    "answer": "B",
+    "subject": "philosophy",
+    "id": 35
+  },
+  {
+    "prompt": "According to Mill, to determine whether one pleasure is more valuable than another, we must _____.\nA. determine which one is objectively most pleasurable\nB. determine which pleasure most experienced people prefer\nC. consult philosophers of the past\nD. consult science\nAnswer:",
+    "answer": "B",
+    "subject": "philosophy",
+    "id": 36
+  },
+  {
+    "prompt": "Hare claims that the two essential features of the logic of moral judgments are:\nA. consequentialism and hedonism.\nB. universalizability and prescriptivity.\nC. contractualism and rule-following.\nD. consistency and coherence.\nAnswer:",
+    "answer": "B",
+    "subject": "philosophy",
+    "id": 39
+  },
+  {
+    "prompt": "To Kant, making a lying promise would be wrong because _____.\nA. lying to people can cause them harm\nB. lying to people harms society\nC. you could not consistently will that everyone should make lying promises\nD. most people condemn the practice\nAnswer:",
+    "answer": "C",
+    "subject": "philosophy",
+    "id": 41
+  },
+  {
+    "prompt": "The famous statement \u201cAn unexamined life is not worth living\u201d is attributed to _____.\nA. Aristotle\nB. John Locke\nC. Socrates\nD. Plato\nAnswer:",
+    "answer": "C",
+    "subject": "philosophy",
+    "id": 44
+  },
+  {
+    "prompt": "For the soft determinist, to say that you could have done otherwise is to say that you would have done otherwise if _____.\nA. your desires were always the same\nB. your desires were completely under your control\nC. your desires had been different\nD. your desires played no role in your decisions\nAnswer:",
+    "answer": "C",
+    "subject": "philosophy",
+    "id": 47
+  },
+  {
+    "prompt": "According to Rawls, behind the veil of ignorance, the principles of justice are _____.\nA. the result of coercion\nB. impractical\nC. chosen arbitrarily\nD. the result of a fair agreement or bargain\nAnswer:",
+    "answer": "D",
+    "subject": "philosophy",
+    "id": 49
+  },
+  {
+    "prompt": "Socrates' claim that \"the unexamined life is not worth living\" is often cited as a central theme in the activities of people.  By it, Socrates is typically understood to mean that:\nA. it is sometimes simply not worth all the effort of examining life and its problems in great detail; sometimes it is better simply to \"go with the flow.\"\nB. while taking a reflective attitude toward life is interesting and even sometimes important, most of what makes life worth living is not worth examining.\nC. simply doing whatever everyone else does without thinking about why we should do what we do can hardly be thought of as worthwhile, noble, or admirable.\nD. it is a waste of time to sit around thinking about whether life is worth living; we should leave such reflection to talk-show hosts, political figures, and religious leaders.\nAnswer:",
+    "answer": "C",
+    "subject": "philosophy",
+    "id": 55
+  },
+  {
+    "prompt": "\"Is there anything you would be willing to die for?\" is a philosophical question insofar as:\nA. it does not have any right or wrong answer because it is a meaningless question.\nB. it is a meaningless question because everyone could have a different answer to it.\nC. it forces us to articulate and justify our beliefs about what we know and ought to do.\nD. it is more concerned with one's religious beliefs than with factual claims about the world.\nAnswer:",
+    "answer": "C",
+    "subject": "philosophy",
+    "id": 57
+  },
+  {
+    "prompt": "Hume defines virtue as:\nA. a tendency to maximize happiness.\nB. a tendency to pursue justice.\nC. whatever mental action or quality gives a spectator a sentiment of approbation.\nD. whatever mental action or quality brings about the best consequences for all.\nAnswer:",
+    "answer": "C",
+    "subject": "philosophy",
+    "id": 58
+  },
+  {
+    "prompt": "This question refers to the following information.\nBECAUSE no People can be truly happy, though under the greatest Enjoyment of Civil Liberties, if abridged of the Freedom of their Consciences, as to their Religious Profession and Worship: And Almighty God being the only Lord of Conscience, Father of Lights and Spirits; and the Author as well as Object of all divine Knowledge, Faith and Worship, who only doth enlighten the Minds, and persuade and convince the Understanding of People, I do hereby grant and declare, That no Person or Persons, inhabiting in this Province or Territories, who shall confess and acknowledge One almighty God, the Creator, Upholder and Ruler of the World; and profess him or themselves obliged to live quietly under the Civil Government, shall be in any Case molested or prejudiced, in his or their Person or Estate, because of his or their conscientious Persuasion or Practice, nor be compelled to frequent or maintain any religious Worship, Place or Ministry, contrary to his or their Mind.\u2026\n\u2014William Penn, Charter of Privileges Granted by William Penn,\nesq. to the Inhabitants of Pennsylvania and Territories, October 28, 1701\nBecause of Penn's Charter of Privileges, Pennsylvania became\nA. one of the most religiously diverse colonies in British America.\nB. one of the least religiously diverse colonies in America.\nC. notorious for witch hunting and popular superstition.\nD. known for its hostility to traditional religious practices.\nAnswer:",
+    "answer": "A",
+    "subject": "high_school_us_history",
+    "id": 1
+  },
+  {
+    "prompt": "This question refers to the following information.\n\"Since the foundations of the American commonwealth were laid in colonial times over 300 years ago, vigorous complaint and more or less bitter persecution have been aimed at newcomers to our shores. Also the congressional reports of about 1840 are full of abuse of English, Scotch, Welsh immigrants as paupers, criminals, and so forth. Old citizens in Detroit of Irish and German descent have told me of the fierce tirades and propaganda directed against the great waves of Irish and Germans who came over from 1840 on for a few decades to escape civil, racial, and religious persecution in their native lands. The \"Know-Nothings,\" lineal ancestors of the Ku-Klux Klan, bitterly denounced the Irish and Germans as mongrels, scum, foreigners, and a menace to our institutions, much as other great branches of the Caucasian race of glorious history and antecedents are berated to-day\u2026.But to-day it is the Italians, Spanish, Poles, Jews, Greeks, Russians, Balkanians, and so forth, who are the racial lepers\u2026..In this bill we find racial discrimination at its worst\u2014a deliberate attempt to go back 84 years in our census taken every 10 years so that a blow may be aimed at peoples of eastern and southern Europe, particularly at our recent allies in the Great War\u2014Poland and Italy.\"\nRobert H. Clancy, Congressional Record, 68th Congress, 1st Session, 1924\nWhich one of the following legislative acts is most closely an example of nativism?\nA. The Wagner Act of 1935\nB. The Alien and Sedition Acts of 1798\nC. The Espionage Act of 1917\nD. The Immigration and Nationality Act of 1965\nAnswer:",
+    "answer": "B",
+    "subject": "high_school_us_history",
+    "id": 3
+  },
+  {
+    "prompt": "This question refers to the following information.\nNow, we have organized a society, and we call it \"Share Our Wealth Society,\" a society with the motto \"Every Man a King.\"\u2026\nWe propose to limit the wealth of big men in the country. There is an average of $15,000 in wealth to every family in America. That is right here today.\nWe do not propose to divide it up equally. We do not propose a division of wealth, but we do propose to limit poverty that we will allow to be inflicted on any man's family. We will not say we are going to try to guarantee any equality \u2026 but we do say that one third of the average is low enough for any one family to hold, that there should be a guarantee of a family wealth of around $5,000; enough for a home, an automobile, a radio, and the ordinary conveniences, and the opportunity to educate their children.\u2026\nWe will have to limit fortunes. Our present plan is that we will allow no man to own more than $50,000,000. We think that with that limit we will be able to carry out the balance of the program.\n\u2014Senator Huey P. Long of Louisiana, Radio Address, February 23, 1934\nPresident Franklin D. Roosevelt responded to political challenges like that of Senator Long by doing which of the following?\nA. Announcing that he would not run for re-election\nB. Launching the Second New Deal, a series of legislative acts including Social Security\nC. Diverting people's attention by allowing the Japanese to bomb Pearl Harbor\nD. Urging Congress to cut taxes and deregulate the economy\nAnswer:",
+    "answer": "B",
+    "subject": "high_school_us_history",
+    "id": 4
+  },
+  {
+    "prompt": "This question refers to the following information.\n\"I was once a tool of oppression\nAnd as green as a sucker could be\nAnd monopolies banded together\nTo beat a poor hayseed like me.\n\"The railroads and old party bosses\nTogether did sweetly agree;\nAnd they thought there would be little trouble\nIn working a hayseed like me. . . .\"\n\u2014\"The Hayseed\"\nThe song, and the movement that it was connected to, highlight which of the following developments in the broader society in the late 1800s?\nA. Corruption in government\u2014especially as it related to big business\u2014energized the public to demand increased popular control and reform of local, state, and national governments.\nB. A large-scale movement of struggling African American and white farmers, as well as urban factory workers, was able to exert a great deal of leverage over federal legislation.\nC. The two-party system of the era broke down and led to the emergence of an additional major party that was able to win control of Congress within ten years of its founding.\nD. Continued skirmishes on the frontier in the 1890s with American Indians created a sense of fear and bitterness among western farmers.\nAnswer:",
+    "answer": "A",
+    "subject": "high_school_us_history",
+    "id": 5
+  },
+  {
+    "prompt": "This question refers to the following information.\nAt a meeting of working girls held at Hull House during a strike in a large shoe factory, the discussions made it clear that the strikers who had been most easily frightened, and therefore the first to capitulate, were naturally those girls who were paying board and were afraid of being put out if they fell too far behind. After a recital of a case of peculiar hardship one of them exclaimed: \"Wouldn't it be fine if we had a boarding club of our own, and then we could stand behind each other in a time like this?\" After that events moved quickly. We \u2026 discussed all the difficulties and fascinations of such an undertaking, and on the first of May, 1891, two comfortable apartments near Hull House were rented and furnished. The Settlement was responsible for the furniture and paid the first month's rent, but beyond that the members managed the club themselves.\u2026 At the end of the third year the club occupied all of the six apartments which the original building contained, and numbered fifty members.\n\u2014Jane Addams, Twenty Years at Hull House, 1912\nA settlement house worker was most likely to be motivated by which of the following?\nA. The Social Gospel\nB. Social Darwinism\nC. Communism\nD. The support of an urban political machine\nAnswer:",
+    "answer": "A",
+    "subject": "high_school_us_history",
+    "id": 7
+  },
+  {
+    "prompt": "This question refers to the following information.\n\"Lincoln was strongly anti-slavery, but he was not an abolitionist or a Radical Republican and never claimed to be one. He made a sharp distinction between his frequently reiterated personal wish that 'all men everywhere could be free' and his official duties as a legislator, congressman, and president in a legal and constitutional system that recognized the South's right to property in slaves. Even after issuing the Emancipation Proclamation he continued to declare his preference for gradual abolition. While his racial views changed during the Civil War, he never became a principled egalitarian in the manner of abolitionists such as Frederick Douglass or Wendell Phillips or Radical Republicans like Charles Sumner.\"\n\u2014Eric Foner, The Fiery Trial, 2010\nHow did President Lincoln's issuance of the Emancipation Proclamation alter the course of the Civil War?\nA. The war came to a swift conclusion because the Proclamation made the Confederacy realize the futility of their cause.\nB. The war grew in scope because the Proclamation caused Great Britain to join the fight on the side of the Union.\nC. President Jefferson Davis of the Confederacy vowed massive resistance to any Union effort to free the slaves.\nD. The war aims of the United States were no longer exclusively focused on the preservation of the Union.\nAnswer:",
+    "answer": "D",
+    "subject": "high_school_us_history",
+    "id": 8
+  },
+  {
+    "prompt": "This question refers to the following information.\nThose who came before us made certain that this country rode the first waves of the industrial revolutions, the first waves of modern invention, and the first wave of nuclear power, and this generation does not intend to flounder in the backwash of the coming age of space. We mean to be a part of it\u2014we mean to lead it. For the eyes of the world now look into space, to the moon, and the planets beyond, and we have vowed that we shall not see it governed by a hostile flag of conquest, but by a banner of freedom and peace. We have vowed that we shall not see space filled with weapons of mass destruction, but with instruments of knowledge and understanding.\u2026 We choose to go to the moon. We choose to go to the moon in this decade and do the other things, not because they are easy, but because they are hard, because that goal will serve to organize and measure the best of our energies and skills, because that challenge is one that we are willing to accept, one we are unwilling to postpone, and one which we intend to win, and the others, too.\n\u2014John F. Kennedy, September 12, 1962\nKennedy's speech most directly led to which of the following?\nA. The Vietnam War\nB. The Mutually Assured Destruction (MAD) nuclear strategy\nC. The Apollo space program\nD. The Great Society social programs\nAnswer:",
+    "answer": "C",
+    "subject": "high_school_us_history",
+    "id": 15
+  },
+  {
+    "prompt": "This question refers to the following information.\n\"If any person or persons shall, from and after the passing of this act, by force and violence, take and carry away, or cause to be taken or carried away, and shall, by fraud or false pretense, seduce, or cause to be seduced, or shall attempt so to take, carry away or seduce, any negro or mulatto, from any part or parts of this commonwealth, to any other place or places whatsoever, out of this commonwealth, with a design and intention of selling and disposing of, or of causing to be sold, or of keeping and detaining, or of causing to be kept and detained, such negro or mulatto, as a slave or servant for life, or for any term whatsoever, every such person or persons, his or their aiders or abettors, shall on conviction thereof, in any court of this commonwealth having competent jurisdiction, be deemed guilty of a felony.\"\n\u2014Excerpt from Pennsylvania law, 1826\nDebate and conflict over the Pennsylvania law, excerpted above, reflected the fact that the framers of the Constitution\nA. specifically declared that the institution of slavery would be protected \"in perpetuity\" in the original 13 states.\nB. allowed for a state to be exempt from federal laws that went against that state's constitution.\nC. postponed a solution to the problems of slavery.\nD. declared that slaves could be both citizens and property.\nAnswer:",
+    "answer": "C",
+    "subject": "high_school_us_history",
+    "id": 18
+  },
+  {
+    "prompt": "This question refers to the following information.\n\"Whereas the laws and treaties of the United States, without interfering with the free expression of opinion and sympathy, or with the commercial manufacture or sale of arms or munitions of war, nevertheless impose upon all persons who may be within their territory and jurisdiction the duty of an impartial neutrality during the existence of the contest; And Whereas it is the duty of a neutral government not to permit or suffer the making of its waters subservient to the purposes of war;\n\"Now, Therefore, I, Woodrow Wilson, President of the United States of America, in order to preserve the neutrality of the United States\u2026do hereby declare and proclaim\u2026.\n\"That the statutes and the treaties of the United States and the law of nations alike require that no person, within the territory and jurisdiction of the United States, shall take part, directly or indirectly, in the said wars, but shall remain at peace with all of the said belligerents, and shall maintain a strict and impartial neutrality\u2026.\"\nWoodrow Wilson, 1914\nAll of the following increased federal government power during World War I EXCEPT the\nA. War Industries Board\nB. Food Administration\nC. Espionage Act\nD. Dawes Plan\nAnswer:",
+    "answer": "D",
+    "subject": "high_school_us_history",
+    "id": 19
+  },
+  {
+    "prompt": "This question refers to the following information.\nAt a meeting of working girls held at Hull House during a strike in a large shoe factory, the discussions made it clear that the strikers who had been most easily frightened, and therefore the first to capitulate, were naturally those girls who were paying board and were afraid of being put out if they fell too far behind. After a recital of a case of peculiar hardship one of them exclaimed: \"Wouldn't it be fine if we had a boarding club of our own, and then we could stand behind each other in a time like this?\" After that events moved quickly. We \u2026 discussed all the difficulties and fascinations of such an undertaking, and on the first of May, 1891, two comfortable apartments near Hull House were rented and furnished. The Settlement was responsible for the furniture and paid the first month's rent, but beyond that the members managed the club themselves.\u2026 At the end of the third year the club occupied all of the six apartments which the original building contained, and numbered fifty members.\n\u2014Jane Addams, Twenty Years at Hull House, 1912\nSettlement houses like Hull House expressed a desire of reformers to do which of the following?\nA. Convert immigrants to Christianity\nB. Prevent political radicalism\nC. Provide cheap labor for industry\nD. Improve conditions in urban neighborhoods\nAnswer:",
+    "answer": "D",
+    "subject": "high_school_us_history",
+    "id": 26
+  },
+  {
+    "prompt": "This question refers to the following information.\n\"An act for the more effectual protection of the property of married women:\n\"\u00a71. The real property of any female who may hereafter marry, and which she shall own at the time of marriage, and the rents, issues, and profits thereof, shall not be subject to the sole disposal of her husband, nor be liable for his debts, and shall continue her sole and separate property, as if she were a single female.\n\"\u00a72. The real and personal property, and the rents, issues, and profits thereof, of any female now married, shall not be subject to the disposal of her husband; but shall be her sole and separate property, as if she were a single female, except so far as the same may be liable for the debts of her husband heretofore contracted.\n\"\u00a73. Any married female may take by inheritance, or by gift, grant, devise, or bequest, from any person other than her husband, and hold to her sole and separate use, and convey and devise real and personal property, and any interest or estate therein, and the rents, issues, and profits thereof, in the same manner and with like effect as if she were unmarried, and the same shall not be subject to the disposal of her husband nor be liable for his debts.\"\n\u2014Married Women's Property Act, New York State (1848)\nThe ideas expressed in the passage above most directly reflect which of the following continuities in U.S. history?\nA. Debates about access to voting rights.\nB. Debates about the role of federal government in marriage law.\nC. Debates about discrimination in employment.\nD. Debates about the legal status of women.\nAnswer:",
+    "answer": "D",
+    "subject": "high_school_us_history",
+    "id": 28
+  },
+  {
+    "prompt": "This question refers to the following information.\nClearly, no longer can a dictator count on East\u2013West confrontation to stymie concerted United Nations action against aggression. A new partnership of nations has begun. And we stand today at a unique and extraordinary moment. The crisis in the Persian Gulf, as grave as it is, also offers a rare opportunity to move toward an historic period of cooperation. Out of these troubled times, our fifth objective\u2014a new world order\u2014can emerge; a new era, freer from the threat of terror, stronger in the pursuit of justice, and more secure in the quest for peace. An era in which the nations of the world, east and west, north and south, can prosper and live in harmony.\n\u2014President George Herbert Walker Bush, Speech to a Joint Session of Congress, September 11, 1990\nPresident Bush's \"new world order\" most directly resembles which of the following?\nA. The Monroe Doctrine\nB. Theodore Roosevelt's \"Big Stick\"\nC. Woodrow Wilson's Fourteen Points\nD. Containment policy toward the Soviet Union\nAnswer:",
+    "answer": "C",
+    "subject": "high_school_us_history",
+    "id": 30
+  },
+  {
+    "prompt": "This question refers to the following information.\n\"I am in Birmingham because injustice is here. . . . Moreover, I am cognizant of the interrelatedness of all communities and states. I cannot sit idly by in Atlanta and not be concerned about what happens in Birmingham. Injustice anywhere is a threat to justice everywhere. We are caught in an inescapable network of mutuality, tied in a single garment of destiny. Whatever affects one directly affects all indirectly. Never again can we afford to live with the narrow, provincial 'outside agitator' idea. Anyone who lives inside the United States can never be considered an outsider anywhere in this country. . . .\"\n\u2014Martin Luther King, Jr., \"Letter from a Birmingham Jail,\" April 16, 1963\nSusan B. Anthony and others in the women's rights movement had a major influence on the ratification of which of the following?\nA. The Nineteenth Amendment.\nB. The Equal Rights Amendment.\nC. The Fifteenth Amendment.\nD. The Twenty-sixth Amendment.\nAnswer:",
+    "answer": "A",
+    "subject": "high_school_us_history",
+    "id": 32
+  },
+  {
+    "prompt": "This question refers to the following information.\n\"The law of love, peace and liberty in the states extending to Jews, Turks and Egyptians, as they are considered sonnes of Adam, which is the glory of the outward state of Holland, soe love, peace and liberty, extending to all in Christ Jesus, condemns hatred, war and bondage. And because our Saviour sayeth it is impossible but that offences will come, but woe unto him by whom they cometh, our desire is not to offend one of his little ones, in whatsoever form, name or title hee appears in, whether Presbyterian, Independent, Baptist or Quaker, but shall be glad to see anything of God in any of them, desiring to doe unto all men as we desire all men should doe unto us, which is the true law both of Church and State; for our Saviour sayeth this is the law and the prophets.\n\"Therefore if any of these said persons come in love unto us, we cannot in conscience lay violent hands upon them, but give them free egresse and regresse unto our Town, and houses, as God shall persuade our consciences, for we are bounde by the law of God and man to doe good unto all men and evil to noe man. And this is according to the patent and charter of our Towne, given unto us in the name of the States General, which we are not willing to infringe, and violate, but shall houlde to our patent and shall remaine, your humble subjects, the inhabitants of Vlishing (Flushing, part of the colony of New Netherlands).\"\n\u2014The Flushing Remonstrance, 1657\nWhich of the following was most significant in enshrining into the U.S. legal structure the ideas contained in the Flushing Remonstrance?\nA. The preamble of the Declaration of Independence.\nB. The enumeration of congressional powers in the Constitution.\nC. The \"Free Exercise Clause\" of the First Amendment.\nD. The \"Establishment Clause\" of the First Amendment.\nAnswer:",
+    "answer": "C",
+    "subject": "high_school_us_history",
+    "id": 35
+  },
+  {
+    "prompt": "This question refers to the following information.\n\"The conscience of the people, in a time of grave national problems, has called into being a new party, born of the nation's sense of justice. We of the Progressive party here dedicate ourselves to the fulfillment of the duty laid upon us by our fathers to maintain the government of the people, by the people and for the people whose foundations they laid. We hold with Thomas Jefferson and Abraham Lincoln that the people are the masters of their Constitution, to fulfill its purposes and to safeguard it from those who, by perversion of its intent, would convert it into an instrument of injustice. In accordance with the needs of each generation the people must use their sovereign powers to establish and maintain equal opportunity and industrial justice, to secure which this Government was founded and without which no republic can endure.\n\"This country belongs to the people who inhabit it. Its resources, its business, its institutions and its laws should be utilized, maintained or altered in whatever manner will best promote the general interest. It is time to set the public welfare in the first place.\"\nProgressive Party Platform, 1912\nIn harmony with the sentiments of the excerpt above, which of the following best characterizes the \"Square Deal\" of Theodore Roosevelt?\nA. Conservation, trust-busting, consumer protection\nB. Protective tariffs, centralized banking, conservation\nC. Equal opportunity, women's suffrage, laissez-faire economics\nD. Laissez-faire economics, support of labor unions, conservation\nAnswer:",
+    "answer": "A",
+    "subject": "high_school_us_history",
+    "id": 37
+  },
+  {
+    "prompt": "This question refers to the following information.\n\"The Opposition tells us that we ought not to govern a people without their consent. I answer, the rule of liberty that all just government derives its authority from the consent of the governed, applies only to those who are capable of self-government. We govern the Indians without their consent, we govern our territories without their consent, we govern our children without their consent. How do they know that our government would be without their consent? Would not the people of the Philippines prefer the just, human, civilizing government of this Republic to the savage, bloody rule of pillage and extortion from which we have rescued them? And, regardless of this formula of words made only for enlightened, self-governing people, do we owe no duty to the world? Shall we turn these peoples back to the reeking hands from which we have taken them? Shall we abandon them, with Germany, England, Japan, hungering for them? Shall we save them from those nations, to give them a self-rule of tragedy?\u2026Then, like men and not like children, let us on to our tasks, our mission, and our destiny.\"\nAlbert J. Beveridge, \"The March of the Flag,\" 1898\nThe sentiment expressed by Beveridge best exemplifies which of the following?\nA. Imperialism\nB. Anti-imperialism\nC. Isolationism\nD. Manifest Destiny\nAnswer:",
+    "answer": "A",
+    "subject": "high_school_us_history",
+    "id": 38
+  },
+  {
+    "prompt": "This question refers to the following information.\n\"The conscience of the people, in a time of grave national problems, has called into being a new party, born of the nation's sense of justice. We of the Progressive party here dedicate ourselves to the fulfillment of the duty laid upon us by our fathers to maintain the government of the people, by the people and for the people whose foundations they laid. We hold with Thomas Jefferson and Abraham Lincoln that the people are the masters of their Constitution, to fulfill its purposes and to safeguard it from those who, by perversion of its intent, would convert it into an instrument of injustice. In accordance with the needs of each generation the people must use their sovereign powers to establish and maintain equal opportunity and industrial justice, to secure which this Government was founded and without which no republic can endure.\n\"This country belongs to the people who inhabit it. Its resources, its business, its institutions and its laws should be utilized, maintained or altered in whatever manner will best promote the general interest. It is time to set the public welfare in the first place.\"\nProgressive Party Platform, 1912\nOf the following policies, which was NOT a main objective of American Progressives?\nA. Passage of the Pure Food and Water Act\nB. Creation of national forests and protected wildlife reserves\nC. Initiation of antitrust lawsuits against various corporate monopolies\nD. Intervention in the affairs of Central American governments\nAnswer:",
+    "answer": "D",
+    "subject": "high_school_us_history",
+    "id": 41
+  },
+  {
+    "prompt": "This question refers to the following information.\nNow, we have organized a society, and we call it \"Share Our Wealth Society,\" a society with the motto \"Every Man a King.\"\u2026\nWe propose to limit the wealth of big men in the country. There is an average of $15,000 in wealth to every family in America. That is right here today.\nWe do not propose to divide it up equally. We do not propose a division of wealth, but we do propose to limit poverty that we will allow to be inflicted on any man's family. We will not say we are going to try to guarantee any equality \u2026 but we do say that one third of the average is low enough for any one family to hold, that there should be a guarantee of a family wealth of around $5,000; enough for a home, an automobile, a radio, and the ordinary conveniences, and the opportunity to educate their children.\u2026\nWe will have to limit fortunes. Our present plan is that we will allow no man to own more than $50,000,000. We think that with that limit we will be able to carry out the balance of the program.\n\u2014Senator Huey P. Long of Louisiana, Radio Address, February 23, 1934\nSenator Long ran a political machine that made him the virtual dictator of Louisiana. As a political boss, he can best be compared to whom?\nA. George Washington\nB. Theodore Roosevelt\nC. William M. Tweed\nD. Barack Obama\nAnswer:",
+    "answer": "C",
+    "subject": "high_school_us_history",
+    "id": 44
+  },
+  {
+    "prompt": "This question refers to the following information.\n\"Whereas it is expedient that new provisions and regulations should be established for improving the revenue of this kingdom, and for extending and securing the navigation and commerce between Great Britain and your Majesty's dominions in America, which, by the peace, have been so happily enlarged: and whereas it is just and necessary, that a revenue be raised, in your Majesty's said dominions in America, for defraying the expenses of defending, protecting, and securing the same; we, your Majesty's most dutiful and loyal subjects, the commons of Great Britain, in parliament assembled, being desirous to make some provision, in this present session of parliament, towards raising the said revenue in America, have resolved to give and grant unto your Majesty the several rates and duties herein after-mentioned\u2026.\"\nThe Sugar Act of 1764\nThe Sugar Act of 1764 represented a major shift in British policy toward the colonies in that, for the first time, the British\nA. attempted to control colonial exports\nB. offered the colonists the opportunity to address Parliament with grievances\nC. required the colonies to import English goods exclusively\nD. levied taxes aimed at raising revenue rather than regulating trade\nAnswer:",
+    "answer": "D",
+    "subject": "high_school_us_history",
+    "id": 45
+  },
+  {
+    "prompt": "This question refers to the following information.\n\"The seeds of totalitarian regimes are nurtured by misery and want. They spread and grow in the evil soil of poverty and strife. They reach their full growth when the hope of a people for a better life has died. We must keep that hope alive. . . . Great responsibilities have been placed upon us by the swift movement of events. . . . I am confident that the Congress will face these responsibilities squarely.\"\n\u2014President Harry S. Truman, 1947\nThe passage above can best be seen as providing a rationale for\nA. the policy of containment.\nB. the principle of \"massive retaliation.\"\nC. participation in the Atlantic Charter.\nD. embarking on a \"roll-back\" of communism.\nAnswer:",
+    "answer": "A",
+    "subject": "high_school_us_history",
+    "id": 46
+  },
+  {
+    "prompt": "This question refers to the following information.\n\"One-half of the people of this nation to-day are utterly powerless to blot from the statute books an unjust law, or to write there a new and a just one. The women, dissatisfied as they are with this form of government, that enforces taxation without representation,\u2014that compels them to obey laws to which they have never given their consent,\u2014that imprisons and hangs them without a trial by a jury of their peers, that robs them, in marriage, of the custody of their own persons, wages and children,\u2014are this half of the people left wholly at the mercy of the other half, in direct violation of the spirit and letter of the declarations of the framers of this government, every one of which was based on the immutable principle of equal rights to all.\"\n\u2014Susan B. Anthony, \"I Stand Before You Under Indictment\" (speech), 1873\nWhich of the following was NOT designed to empower the government to regulate the increasing wealth and power of the industrialists in the late nineteenth and early twentieth centuries?\nA. Sherman Anti-Trust Act (1890).\nB. Interstate Commerce Act (1887).\nC. Federal Trade Commission Act (1914).\nD. Newlands Reclamation Act (1902).\nAnswer:",
+    "answer": "D",
+    "subject": "high_school_us_history",
+    "id": 48
+  },
+  {
+    "prompt": "This question refers to the following information.\nI come not to urge personal claims, nor to seek individual benefits; I appear as the advocate of those who cannot plead their own cause; I come as the friend of those who are deserted, oppressed, and desolate. In the Providence of God, I am the voice of the maniac whose piercing cries from the dreary dungeons of your jails penetrate not your Halls of Legislation. I am the Hope of the poor crazed beings who pine in the cells, and stalls, and cages, and waste rooms of your poor-houses. I am the Revelation of hundreds of wailing, suffering creatures, hidden in your private dwellings, and in pens and cabins\u2014shut out, cut off from all healing influences, from all mind-restoring cares.\u2026 Could their melancholy histories be spread before you as revealed to my grieved spirit during the last three months, how promptly, how earnestly would you search out the most approved means of relief; how trifling, how insignificant, by comparison, would appear the sacrifices you are asked to make; how would a few dimes and dollars, gathered from each citizen, diminish in value as a possession, compared with the certain benefits and vast good to be secured for the suffering insane...by the consecration and application of a sufficient fund to the construction of a suitable hospital.\u2026\n\u2014Dorothea Dix, Memorial Soliciting a State Hospital for the Protection and Cure of the Insane,\nSubmitted to the General Assembly of North Carolina, November 1848\nWhich of the following best reflects the perspective of Dorothea Dix in the passage above?\nA. The care of the mentally ill is a state concern.\nB. The mentally ill are best left to the care of their families.\nC. The federal government should regulate the treatment of the mentally ill.\nD. More democracy will help the mentally ill.\nAnswer:",
+    "answer": "A",
+    "subject": "high_school_us_history",
+    "id": 49
+  },
+  {
+    "prompt": "This question refers to the following information.\n\"In one view the slaveholders have a decided advantage over all opposition. It is well to notice this advantage\u2014the advantage of complete organization. They are organized; and yet were not at the pains of creating their organizations. The State governments, where the system of slavery exists, are complete slavery organizations. The church organizations in those States are equally at the service of slavery; while the Federal Government, with its army and navy, from the chief magistracy in Washington, to the Supreme Court, and thence to the chief marshalship at New York, is pledged to support, defend, and propagate the crying curse of human bondage. The pen, the purse, and the sword, are united against the simple truth, preached by humble men in obscure places.\"\nFrederick Douglass, 1857\nIn what way did the actions of Abraham Lincoln in 1860 contradict Douglass's sentiments in the excerpt above?\nA. Lincoln promoted the freedom of settlers within territories to determine the slave status of their new state.\nB. Lincoln passed the Homestead Act to give free land to all western settlers.\nC. Lincoln favored the exclusion of slavery from any of the new territories.\nD. Lincoln enacted the policy of giving newly freed slaves \"forty acres and a mule.\"\nAnswer:",
+    "answer": "C",
+    "subject": "high_school_us_history",
+    "id": 50
+  },
+  {
+    "prompt": "This question refers to the following information.\n\"We found that not only was it a civil war, an effort by a people who had for years been seeking their liberation from any colonial influence whatsoever, but also we found that the Vietnamese whom we had enthusiastically molded after our own image were hard put to take up the fight against the threat we were supposedly saving them from.\n\"We found most people didn't even know the difference between communism and democracy. They only wanted to work in rice paddies without helicopters strafing them and bombs with napalm burning their villages and tearing their country apart. They wanted everything to do with the war, particularly with this foreign presence of the United States of America, to leave them alone in peace, and they practiced the art of survival by siding with whichever military force was present at a particular time, be it Viet Cong, North Vietnamese or American.\"\nJohn Kerry, 1971\nWhich of the following best characterizes the policy of d\u00e9tente?\nA. Direct confrontation\nB. Covert sabotage\nC. Decolonization\nD. Mutual coexistence\nAnswer:",
+    "answer": "D",
+    "subject": "high_school_us_history",
+    "id": 51
+  },
+  {
+    "prompt": "This question refers to the following information.\n\"A drunkard in the gutter is just where he ought to be. . . . The law of survival of the fittest was not made by man, and it cannot be abrogated by man. We can only, by interfering with it, produce the survival of the unfittest. . . . The millionaires are a product of natural selection, acting on the whole body of men to pick out those who can meet the requirement of certain work to be done. In this respect they are just like the great statesmen, or scientific men, or military men. It is because they are thus selected that wealth\u2014both their own and that entrusted to them\u2014aggregates under their hands. Let one of them make a mistake and see how quickly the concentration gives way to dispersion.\"\n\u2014William Graham Sumner, What Social Classes Owe to Each Other, 1883\nThe sociological ideas of William Graham Sumner reflect the idea that during the late 1800s\nA. cultural and intellectual arguments justified the success of those at the top of the socioeconomic structure as both appropriate and inevitable.\nB. popular writers rejected ideas from the sciences, and based their arguments on faith.\nC. intellectuals were critical of the cut-throat competition of the ages, and proposed radical alternatives based on creating a cooperative economy.\nD. cultural products of the era tended to ignore the economic direction of society and looked back wistfully to the past.\nAnswer:",
+    "answer": "A",
+    "subject": "high_school_us_history",
+    "id": 52
+  },
+  {
+    "prompt": "Which State ordinarily exercises jurisdiction in respect of crimes committed on board vessels?\nA. The coastal State\nB. The flag State\nC. All States enjoy such jurisdiction\nD. The International Tribunal for the Law of the Sea\nAnswer:",
+    "answer": "B",
+    "subject": "international_law",
+    "id": 0
+  },
+  {
+    "prompt": "In what way is Responsibility to Protect (R2P) different from humanitarian intervention?\nA. R2P is essentially the same as humanitarian intervention\nB. R2P requires a call for assistance by the State in distress\nC. R2P is less arbitrary because it requires some UNSC input and its primary objective is to avert a humanitarian crisis\nD. R2P always involves armed force, whereas humanitarian intervention does not\nAnswer:",
+    "answer": "C",
+    "subject": "international_law",
+    "id": 2
+  },
+  {
+    "prompt": "What is the 'Lotus principle'?\nA. The so-called Lotus principle is that 'restrictions upon the independence of States cannot therefore be presumed', or, as it has been construed, 'whatever is not prohibited is permitted in international law'\nB. The so-called Lotus principle is that States are free to choose the Court that they will submit their disputes\nC. The so-called Lotus principle is that States are not prohibited to assert their enforcement jurisdiction on the high seas\nD. The so-called Lotus principle is that customary law derives from the combination of State practice and opinio juris\nAnswer:",
+    "answer": "A",
+    "subject": "international_law",
+    "id": 3
+  },
+  {
+    "prompt": "Which of these statements best describes the UK Constitution?\nA. The UK Constitution's only source of power is that of the sovereign\nB. The UK Constitution gives the judiciary the power to overturn acts of parliament\nC. The UK Constitution is uncodified and can be found in a number of sources\nD. The UK Constitution is based on a Bill of Rights\nAnswer:",
+    "answer": "C",
+    "subject": "international_law",
+    "id": 4
+  },
+  {
+    "prompt": "What is the obligation of the peaceful settlement of disputes?\nA. It is an obligation of result, that is, States are under a strict obligation to resolve their disputes as soon as possible\nB. It is an obligation of conduct, ie States have an obligation to try to resolve their disputes through peaceful means. This does not entail an obligation to resolve their disputes\nC. It is a peremptory norm of international law and all States have a legal interest to safeguard its application in any given dispute\nD. It is an obligation which concerns solely international courts and tribunals\nAnswer:",
+    "answer": "B",
+    "subject": "international_law",
+    "id": 5
+  },
+  {
+    "prompt": "Which is a 'rock' under the UN Convention of the Law of the Sea (UNCLOS)?\nA. Rocks are the islands that are less than 10 square miles\nB. Rocks are the islands that do not have any maritime zone\nC. Rocks are the islands which cannot sustain human habitation or economic life of their own and according to article 121 (3) have no Exclusive Economic Zone or continental shelf.\nD. Rocks are the small islands that can sustain human habitation\nAnswer:",
+    "answer": "C",
+    "subject": "international_law",
+    "id": 7
+  },
+  {
+    "prompt": "What is the meaning of international legal personality?\nA. It means that only States are considered subjects of international law\nB. It means having rights and duties under international law and a capacity to enforce these by or against the relevant actor\nC. It means that an entity may challenge the authority of States\nD. It is a term that is meant to denote legal, as opposed, to physical persons under international law\nAnswer:",
+    "answer": "B",
+    "subject": "international_law",
+    "id": 8
+  },
+  {
+    "prompt": "Which of the following is a treaty-based human rights mechanism?\nA. The UN Human Rights Committee\nB. The UN Human Rights Council\nC. The UN Universal Periodic Review\nD. The UN special mandates\nAnswer:",
+    "answer": "A",
+    "subject": "international_law",
+    "id": 9
+  },
+  {
+    "prompt": "The UN Vienna Declaration 1993 declared that\nA. Third generation rights are of primary importance\nB. Civil and political rights are core rights\nC. All types of rights are indivisible, interrelated and interdependent\nD. Social and economic rights are non-enforceable\nAnswer:",
+    "answer": "C",
+    "subject": "international_law",
+    "id": 10
+  },
+  {
+    "prompt": "What is the principal source of immunity in respect of international organisations (IOs)?\nA. The principal source of immunity for IOs is the UN Charter\nB. The principal sources of immunity for IOs are headquarters agreements and multilateral treaties providing specific immunities\nC. The principal source of immunity for IOs is customary law\nD. The principal source of immunity for IOs is the Vienna Convention on Diplomatic Immunities\nAnswer:",
+    "answer": "B",
+    "subject": "international_law",
+    "id": 11
+  },
+  {
+    "prompt": "Is there any hierarchy or priority among States under international law?\nA. Yes, the States that were the founding members of the United Nations are vested with more powers and authority\nB. Yes, the Permanent Five Members of the UN Security Council (UK, USA, France, Russia, China) are in a superior position than the other States\nC. No, all States are considered equal as sovereign States (the principle of sovereign equality, enshrined in article 2, para 1 UN Charter)\nD. Whether there will be any hierarchy among States is a matter of each international organization to decide\nAnswer:",
+    "answer": "C",
+    "subject": "international_law",
+    "id": 12
+  },
+  {
+    "prompt": "What is the declaratory theory of recognition?\nA. Recognition is determinate for the existence of statehood\nB. Recognition is simply declaratory of statehood but not determinate\nC. Recognition is merely a declaration of interest\nD. Recognition requires a declaration by the newly-created State\nAnswer:",
+    "answer": "B",
+    "subject": "international_law",
+    "id": 13
+  },
+  {
+    "prompt": "Magna Carta was\nA. An agreement in 1689 which guaranteed freedom of speech in Parliament\nB. An agreement in 1215 between the King and his barons, which guaranteed certain protections for subjects\nC. A constitutional document in the 19th century guaranteeing the right to vote\nD. A document setting a complete Bill of Rights for England\nAnswer:",
+    "answer": "B",
+    "subject": "international_law",
+    "id": 16
+  },
+  {
+    "prompt": "Do individuals (physical) persons enjoy international legal personality in the same manner as States and international organisations?\nA. Individuals enjoy international legal personality, but this is limited\nB. Individuals enjoy unlimited international legal personality\nC. Individuals do not enjoy any international legal personality\nD. Individuals can only bring claims before international courts\nAnswer:",
+    "answer": "A",
+    "subject": "international_law",
+    "id": 17
+  },
+  {
+    "prompt": "What is the meaning of proportionality in relation to the options available to the victim State?\nA. The victim State may use the same means and intensity of force as the aggressor\nB. The victim State may use any means to defeat and incapacitate the aggressor\nC. The victim State may only use such means and force as it is necessary to defeat the aggressor\nD. The victim State can do nothing without Security Council approval\nAnswer:",
+    "answer": "C",
+    "subject": "international_law",
+    "id": 20
+  },
+  {
+    "prompt": "What is the ordinary geographical scope of jurisdiction?\nA. Jurisdiction is ordinarily extra-territorial\nB. Jurisdiction is ordinarily on the high seas\nC. Jurisdiction is ordinarily territorial\nD. Jurisdiction is determined by the location of the offender.\nAnswer:",
+    "answer": "C",
+    "subject": "international_law",
+    "id": 21
+  },
+  {
+    "prompt": "What is the purpose of baselines under the law of the sea?\nA. The determination of baselines is used for the measuring of the internal waters of coastal States\nB. The determination of baselines is instrumental to the establishment of all maritime zones, since they constitute the starting point for measuring the breadth of each zone\nC. The determination of baselines is instrumental to the safe navigation of vessels on the high seas\nD. Baselines are drawn only in cases of maritime delimitation between opposing State before an international court or tribunal\nAnswer:",
+    "answer": "B",
+    "subject": "international_law",
+    "id": 23
+  },
+  {
+    "prompt": "What is the difference between conciliation and mediation?\nA. Conciliation is the continuation of mediation with the difference that conciliation produces a binding result, while mediation not\nB. Conciliation is conducted exclusively by representatives of the UN Secretary-General, while mediation may also be conducted by third States' officials\nC. Mediation is usually conducted by a person appointed with the consent of the parties, while conciliation involves a commission, which proceeds to an impartial examination of the dispute and proposes settlement terms\nD. Conciliation is a method of dispute settlement pursued only by virtue of a treaty, while mediation may also be on an ad hoc basis\nAnswer:",
+    "answer": "C",
+    "subject": "international_law",
+    "id": 24
+  },
+  {
+    "prompt": "Who is entitled to request an advisory opinion of the ICJ?\nA. Only the principal organs of the UN may request an advisory opinion (Security Council, General Assembly, ECOSOC, Trusteeship Council, Secretariat)\nB. All international organizations may request an advisory opinion\nC. The General Assembly and the Security Council may request advisory opinions on any legal question, as well as 'other organs of the United Nations and specialized agencies, which may at any time be so authorized by the General Assembly, may also request advisory opinions of the Court on legal questions arising within the scope of their activities'\nD. The principal organs of the UN may request an advisory opinion as well as the State that have been authorized by the General Assembly\nAnswer:",
+    "answer": "C",
+    "subject": "international_law",
+    "id": 26
+  },
+  {
+    "prompt": "How treaties are to be interpreted?\nA. Treaties are to be interpreted in good faith in accordance with the ordinary meaning to be given to the terms of the treaty in their context and in the light of its object and purpose\nB. Treaties are to be interpreted only in accordance with the ordinary meaning of their terms\nC. Treaties are to be interpreted in accordance with the intention of the parties, as evidenced in the preparatory works of the treaty\nD. Treaties are to be interpreted only in light of its object and purpose\nAnswer:",
+    "answer": "A",
+    "subject": "international_law",
+    "id": 33
+  },
+  {
+    "prompt": "What is the value of the Resolutions of the UN General Assembly in terms as a 'source' of international law?\nA. GA Resolutions are considered as additional sources of international law and thus binding upon States\nB. GA Resolutions are equivalent to treaties\nC. GA Resolutions reflect always customary law\nD. GA Resolutions are considered as material source, in the sense that they may enunciate statements of customary law\nAnswer:",
+    "answer": "D",
+    "subject": "international_law",
+    "id": 35
+  },
+  {
+    "prompt": "What is dualism?\nA. Dualism suggests that international and domestic law are part of a unified legal system\nB. Under dualism, international and domestic laws comprise distinct legal Systems\nC. Dualism suggests that international and domestic law are distinct but equal in hierarchy\nD. Dualism suggests that international and domestic law are distinct legal systems whereby domestic law always prevails\nAnswer:",
+    "answer": "B",
+    "subject": "international_law",
+    "id": 38
+  },
+  {
+    "prompt": "What is an act jure imperii?\nA. An act is jure imperii when undertaken by an international organisation\nB. An act is jure imperii when undertaken in an official State capacity\nC. All acts undertaken by State officials are acts jure imperii\nD. An act is jure imperii when undertaken by a State corporation\nAnswer:",
+    "answer": "B",
+    "subject": "international_law",
+    "id": 39
+  },
+  {
+    "prompt": "How can customary law be related to treaty provisions?\nA. Treaties may only codify customary law\nB. Customary law is a different source of international and it cannot be embodied in treaties\nC. Treaties may 1) codify customary law, 2) 'crystallise' customary law, 3) lead to the emergence of customary law\nD. Customary law can emerge only from few multilateral treaties\nAnswer:",
+    "answer": "C",
+    "subject": "international_law",
+    "id": 42
+  },
+  {
+    "prompt": "What does it mean for a State to be sovereign?\nA. Sovereignty means being recognised by all other States\nB. Sovereignty means to be able to enter into treaties and join the UN\nC. Sovereignty means freedom to determine one's own affairs without external interference\nD. Sovereignty means possessing the right to defend oneself\nAnswer:",
+    "answer": "C",
+    "subject": "international_law",
+    "id": 43
+  },
+  {
+    "prompt": "How can the structure of the international society be displayed?\nA. The structure of the international society follows the vertical model of the domestic legal orders\nB. International society consists of a constellation of sovereign States and other international organizations, which are dispersed in a rather horizontal order of authority\nC. International society is so anarchical that there is no order of authority, neither vertical nor horizontal\nD. The structure of the international society resembles the structure of the most powerful nations in the world\nAnswer:",
+    "answer": "B",
+    "subject": "international_law",
+    "id": 46
+  },
+  {
+    "prompt": "Are there any limitations to the incorporation of customary crimes under English law?\nA. There are no limitations to the incorporation of customary crimes\nB. Customary crimes must be contained in a multilateral treaty in order to be automatically incorporated\nC. The courts may freely incorporate customary crimes into the domestic sphere\nD. The situation is not clear-cut but an act of parliament would most probably be required\nAnswer:",
+    "answer": "D",
+    "subject": "international_law",
+    "id": 47
+  },
+  {
+    "prompt": "What is the function of the contiguous zone?\nA. The contiguous zone functions as security zone of the coastal State\nB. The contiguous zone is a zone, in which the coastal State may explore and exploit its mineral resources\nC. The contiguous zone is a zone in which the coastal State is permitted to prevent and punish infringements of customs, fiscal, immigration or sanitary laws\nD. The contiguous zone is a zone in which the coastal State safeguards its archaeological and historical objects\nAnswer:",
+    "answer": "C",
+    "subject": "international_law",
+    "id": 48
+  },
+  {
+    "prompt": "Are the peremptory norms of international law the only norms that set out obligations erga omnes?\nA. Yes\nB. No, acts of international organizations also set out such obligations\nC. No, decisions of international courts also set out such obligations\nD. No, even though all peremptory norms set out obligations erga omnes, the latter may also spring from treaties regulating objective regimes or unilateral acts\nAnswer:",
+    "answer": "D",
+    "subject": "international_law",
+    "id": 52
+  },
+  {
+    "prompt": "What is the constitutive theory of recognition?\nA. Recognition is determinative of statehood\nB. Recognition requires constitutional approval by third nations\nC. Recognition requires that the constitution of the recognised State includes sufficient human rights guarantees\nD. Countries wishing to be recognised must possess a valid constitution\nAnswer:",
+    "answer": "A",
+    "subject": "international_law",
+    "id": 53
+  },
+  {
+    "prompt": "The enforcement mechanism of the International Covenant on Civil and Political Rights (and Protocol) consists of\nA. A reporting mechanism only\nB. Judgment of an international tribunal\nC. Right to individual petition only\nD. A reporting mechanism and right to individual petition\nAnswer:",
+    "answer": "D",
+    "subject": "international_law",
+    "id": 54
+  },
+  {
+    "prompt": "At a Nash equilibrium,\nA. the supply curve intersects the demand curve\nB. neither party has an incentive to deviate from his or her strategy\nC. the marginal revenue curve intersects the marginal cost curve\nD. the equilibrium is unstable and each party would like to switch strategies\nAnswer:",
+    "answer": "B",
+    "subject": "high_school_microeconomics",
+    "id": 2
+  },
+  {
+    "prompt": "You are told that the cross-price elasticity between goods X and Y is +2.0. This means that\nA. goods X and Y are normal goods.\nB. goods X and Y are inferior goods.\nC. goods X and Y are complementary goods.\nD. goods X and Y are substitute goods.\nAnswer:",
+    "answer": "D",
+    "subject": "high_school_microeconomics",
+    "id": 3
+  },
+  {
+    "prompt": "An externality\nA. causes the equilibrium price to be artificially high\nB. causes the equilibrium price to be artificially low\nC. exists when markets cannot reach equilibrium\nD. results in an equilibrium that does not maximize the total benefit to society\nAnswer:",
+    "answer": "D",
+    "subject": "high_school_microeconomics",
+    "id": 4
+  },
+  {
+    "prompt": "Which of the following is not the basis for a wage differential?\nA. Higher risk job.\nB. Investment in human capital.\nC. Increase in production of SUVs.\nD. Racial discrimination.\nAnswer:",
+    "answer": "C",
+    "subject": "high_school_microeconomics",
+    "id": 7
+  },
+  {
+    "prompt": "Which of the following is most likely an example of production inputs that can be adjusted in the long run, but not in the short run?\nA. Amount of wood used to make a desk.\nB. Number of pickles put on a sandwich.\nC. The size of a McDonald\u2019s kitchen.\nD. Number of teacher\u2019s assistants in local high schools.\nAnswer:",
+    "answer": "C",
+    "subject": "high_school_microeconomics",
+    "id": 10
+  },
+  {
+    "prompt": "Which of the following statements is accurate in regard to a perfectly competitive firm?\nA. Demand is downward-sloping.\nB. The demand curve lies above the marginal revenue curve.\nC. Price is determined by the equilibrium in the entire market.\nD. Average revenue differs from price.\nAnswer:",
+    "answer": "C",
+    "subject": "high_school_microeconomics",
+    "id": 13
+  },
+  {
+    "prompt": "Economists use the term \"capital\" to mean\nA. money.\nB. plant and equipment.\nC. where the central government is located.\nD. the center of the economy.\nAnswer:",
+    "answer": "B",
+    "subject": "high_school_microeconomics",
+    "id": 14
+  },
+  {
+    "prompt": "Mrs. Johnson spends her entire daily budget on potato chips, at a price of $1 each, and onion dip at a price of $2 each. At her current consumption bundle, the marginal utility of chips is 12 and the marginal utility of dip is 30. Mrs. Johnson should\nA. do nothing; she is consuming her utility maximizing combination of chips and dip.\nB. increase her consumption of chips until the marginal utility of chip consumption equals 30.\nC. decrease her consumption of chips until the marginal utility of chip consumption equals 30.\nD. decrease her consumption of chips and increase her consumption of dip until the marginal utility per dollar is equal for both goods.\nAnswer:",
+    "answer": "D",
+    "subject": "high_school_microeconomics",
+    "id": 17
+  },
+  {
+    "prompt": "In the absence of intervention, imperfect competition, externalities, public goods, and imperfect information all result in which of the following?\nA. Demand curves that should be added vertically\nB. Market failure\nC. Prices that are too low\nD. Quantities of output that are too high\nAnswer:",
+    "answer": "B",
+    "subject": "high_school_microeconomics",
+    "id": 18
+  },
+  {
+    "prompt": "Which of the following is characteristic of oligopoly? I. Formidable barriers to entry. II. Price (P) = Marginal Revenue (MR). III. Relatively few sellers.\nA. I only.\nB. II only.\nC. III only.\nD. I and III only.\nAnswer:",
+    "answer": "D",
+    "subject": "high_school_microeconomics",
+    "id": 22
+  },
+  {
+    "prompt": "In the design of a competitive market system, which of the following does NOT describe how resources are allocated?\nA. Price signals that guide producers on what, when, how, and for whom to produce goods and services.\nB. Active government ownership and direction of production.\nC. Voluntary market exchange between buyers and sellers.\nD. Distribution of income and goods on the basis of contribution or productivity.\nAnswer:",
+    "answer": "B",
+    "subject": "high_school_microeconomics",
+    "id": 24
+  },
+  {
+    "prompt": "The market structures of perfect competition and monopolistic competition share which of the following characteristics?\nA. Ease of entry and exit in the long run\nB. Homogenous products\nC. Perfectly elastic demand for the firm's product\nD. Long-run positive profits\nAnswer:",
+    "answer": "A",
+    "subject": "high_school_microeconomics",
+    "id": 30
+  },
+  {
+    "prompt": "When a negative externality exists as the result of the production of a good, the socially optimal quantity of output could be achieved by\nA. free market capitalism\nB. placing limits on the quantity that can be produced\nC. government purchases of the good\nD. setting a minimum on the quantity that can be produced\nAnswer:",
+    "answer": "B",
+    "subject": "high_school_microeconomics",
+    "id": 31
+  },
+  {
+    "prompt": "The competitive market provides the best outcome for society because\nA. consumer surplus is minimized, while producer surplus is maximized.\nB. the total welfare is maximized.\nC. producer surplus is minimized, while consumer surplus is maximized.\nD. the difference between consumer and producer surplus is maximized.\nAnswer:",
+    "answer": "B",
+    "subject": "high_school_microeconomics",
+    "id": 34
+  },
+  {
+    "prompt": "You are told that the income elasticity for DVDs is + 1.5. This means that\nA. a 10 percent increase in income produces a 15 percent increase in consumption of DVDs. DVDs are a normal luxury good.\nB. a 10 percent increase in income produces a 15 percent increase in consumption of DVDs. DVDs are an inferior good.\nC. a 10 percent increase in income produces a 15 percent decrease in consumption of DVDs. DVDs are an inferior good.\nD. a 10 percent increase in the price of DVDs produces a 15 percent decrease in consumption of DVDs. DVDs are a price elastic good.\nAnswer:",
+    "answer": "A",
+    "subject": "high_school_microeconomics",
+    "id": 35
+  },
+  {
+    "prompt": "If the price of a product decreases with the price of a substitute product remaining constant such that the consumer buys more of this product, this is called the\nA. income effect.\nB. substitution effect.\nC. marginal effect.\nD. supply effect.\nAnswer:",
+    "answer": "B",
+    "subject": "high_school_microeconomics",
+    "id": 36
+  },
+  {
+    "prompt": "A small business estimates price elasticity of demand for the product to be 3. To raise total revenue, owners should\nA. decrease price as demand is elastic.\nB. decrease price as demand is inelastic.\nC. increase price as demand is elastic.\nD. increase price as demand is inelastic.\nAnswer:",
+    "answer": "A",
+    "subject": "high_school_microeconomics",
+    "id": 38
+  },
+  {
+    "prompt": "Which of the following would best complete a short definition of economics? \"Economics is the study of . . .\"\nA. how unlimited resources are allocated between scarce wants.\nB. how money is circulated through the economy.\nC. how corporations maximize the share price of their stock.\nD. how scarce resources are allocated to satisfy unlimited wants.\nAnswer:",
+    "answer": "D",
+    "subject": "high_school_microeconomics",
+    "id": 42
+  },
+  {
+    "prompt": "Which of the following is the best example of a public good?\nA. Private violin lessons\nB. The volunteer fire department in your community\nC. A $1 ticket for admission to a museum\nD. A bag of potato chips\nAnswer:",
+    "answer": "B",
+    "subject": "high_school_microeconomics",
+    "id": 44
+  },
+  {
+    "prompt": "Which of the following is the best example of a public good?\nA. A visit to the orthodontist\nB. A session at the tanning salon\nC. A large pizza\nD. The International Space Station\nAnswer:",
+    "answer": "D",
+    "subject": "high_school_microeconomics",
+    "id": 45
+  },
+  {
+    "prompt": "Which of the following is true of equilibrium in a purely (or perfectly) competitive market for good X?\nA. A shortage of good X exists.\nB. The quantity demanded equals the quantity supplied of good X.\nC. A surplus of good X exists.\nD. The government regulates the quantity of good X produced at the market price.\nAnswer:",
+    "answer": "B",
+    "subject": "high_school_microeconomics",
+    "id": 49
+  },
+  {
+    "prompt": "When price elasticity of demand is greater than 1, demand is\nA. perfectly inelastic.\nB. elastic.\nC. inelastic.\nD. unit elastic.\nAnswer:",
+    "answer": "B",
+    "subject": "high_school_microeconomics",
+    "id": 53
+  },
+  {
+    "prompt": "Which of the following tax systems is designed to redistribute income from the wealthy to the poor?\nA. A progressive tax system\nB. A regressive tax system\nC. A proportional tax system\nD. An excise tax system\nAnswer:",
+    "answer": "A",
+    "subject": "high_school_microeconomics",
+    "id": 54
+  }
+]

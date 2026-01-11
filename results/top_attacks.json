@@ -1,0 +1,248 @@
+{
+  "generator": {
+    "proposer_provider": "ellm",
+    "proposer_model": "gemma3",
+    "checker": "microsoft/deberta-large-mnli",
+    "n_candidates": 3,
+    "m_rephrasings": 3,
+    "max_iterations": 30
+  },
+  "filter_criteria": {
+    "min_adversarial_score": 0.01,
+    "min_equivalence_score": 0.85,
+    "top_n": null
+  },
+  "statistics": {
+    "total_input_attacks": 100,
+    "successful_attacks": 71,
+    "filtered_attacks": 27,
+    "score_range": {
+      "min": 0.01019287109375,
+      "max": 0.783203125,
+      "mean": 0.11463956479673032
+    },
+    "equivalence_range": {
+      "min": 0.8698121011257172,
+      "max": 0.9938050210475922,
+      "mean": 0.9522352792598583
+    }
+  },
+  "attacks": [
+    {
+      "original_prompt": "High entropy means that the partitions in classification are\nA. pure\nB. not pure\nC. useful\nD. useless\nAnswer:",
+      "adversarial_prompt": "Here's a rephrased version of the question, maintaining the original meaning:\n\nA classification with high entropy indicates that its partitions are:\nA. pure\nB. not pure\nC. useful\nD. useless\nAnswer:",
+      "iterations": 30,
+      "success": true,
+      "adversarial_score": 0.783203125,
+      "equivalence_score": 0.9282107353210449
+    },
+    {
+      "original_prompt": "Which of the following is true of facial nerve palsy?\nA. Bells palsy is another term for an upper motor neurone lesion\nB. Ramsay Hunt Syndrome is an upper motor neurone lesion secondary to a Herpes Zoster infection\nC. An inability to close the eyelid on the paralysed side indicates a lower motor neurone lesion\nD. In Bell's Palsy the sense of taste is never affected\nAnswer:",
+      "adversarial_prompt": "Here's a rephrased version of the question, maintaining the original meaning:\n\nConcerning facial nerve palsy, which statement is accurate?\nA. Bell\u2019s palsy is synonymous with an upper motor neuron lesion.\nB. Ramsay Hunt Syndrome represents an upper motor neuron lesion resulting from a Herpes Zoster infection.\nC. Difficulty completely closing the eye on the affected side suggests a lower motor neuron lesion.\nD. Bell\u2019s palsy never impacts the sense of taste.\nAnswer:",
+      "iterations": 30,
+      "success": true,
+      "adversarial_score": 0.298583984375,
+      "equivalence_score": 0.9191948771476746
+    },
+    {
+      "original_prompt": "Which of the following most accurately describes a retrotransposon?\nA. A DNA sequence that can move from one site in the genome to another without replicating\nB. A DNA sequence that can be deleted from the genome without consequence\nC. A DNA sequence that replicates via an RNA intermediate\nD. A DNA sequence that replicates via a protein intermediate\nAnswer:",
+      "adversarial_prompt": "How would you best characterize a retrotransposon?\nA. A DNA sequence that can move from one site in the genome to another without replicating\nB. A DNA sequence that can be deleted from the genome without consequence\nC. A DNA sequence that replicates via an RNA intermediate\nD. A DNA sequence that replicates via a protein intermediate\nAnswer:",
+      "iterations": 30,
+      "success": true,
+      "adversarial_score": 0.29052734375,
+      "equivalence_score": 0.9851095676422119
+    },
+    {
+      "original_prompt": "Which of the following decimal numbers has an exact representation in binary notation?\nA. 0.1\nB. 0.2\nC. 0.3\nD. 0.5\nAnswer:",
+      "adversarial_prompt": "Which of the following decimal numbers has a precise binary representation?\nA. 0.1\nB. 0.2\nC. 0.3\nD. 0.5\nAnswer:",
+      "iterations": 30,
+      "success": true,
+      "adversarial_score": 0.2025146484375,
+      "equivalence_score": 0.9886634647846222
+    },
+    {
+      "original_prompt": "In a height-balanced binary search tree, the heights of the left and right descendents of any node differ by at most 1. Which of the following are true of such a tree?\nI. Worst-case search time is logarithmic in the number of nodes.\nII. Average-case search time is logarithmic in the number of nodes.\nIII. Best-case search time is proportional to the height of the tree.\nIV. The height of the tree is logarithmic in the number of nodes.\nA. I and III only\nB. II and III only\nC. II and IV only\nD. I, II, and IV\nAnswer:",
+      "adversarial_prompt": "Which of the following statements correctly characterize a self-balancing binary search tree where the height difference between the left and right subtrees of each node is limited to a maximum of one?\nI. The worst-case time complexity for searching is logarithmic relative to the number of nodes.\nII. On average, the search time increases logarithmically with the number of nodes.\nIII. The minimum search time is dependent on the tree\u2019s height.\nIV. The tree's height grows logarithmically as the number of nodes increases.\nA. I and III only\nB. II and III only\nC. II and IV only\nD. I, II, and IV\nAnswer:",
+      "iterations": 30,
+      "success": true,
+      "adversarial_score": 0.20068359375,
+      "equivalence_score": 0.9461868107318878
+    },
+    {
+      "original_prompt": "Which one of the following represents a IIIrd cranial nerve palsy and is a neurosurgical emergency?\nA. Unilateral constricted pupil.\nB. Bilateral constricted pupils.\nC. Unilateral fixed dilated pupil.\nD. Oval shaped pupils.\nAnswer:",
+      "adversarial_prompt": "Which of the following situations suggests a third cranial nerve palsy that needs urgent neurosurgical attention?\nA. Anisocoria with a constricted pupil.\nB. Bilateral miosis.\nC. A dilated, fixed pupil.\nD. Oval pupils.\nAnswer:",
+      "iterations": 30,
+      "success": true,
+      "adversarial_score": 0.1817626953125,
+      "equivalence_score": 0.9083950519561768
+    },
+    {
+      "original_prompt": "Which of the following would increase the rate at which a gas diffuses between the alveoli of the lung and the blood within a pulmonary capillary?\nA. Decreasing the partial pressure gradient of the gas\nB. Decreasing the solubility of the gas in water\nC. Increasing the total surface area available for diffusion\nD. Decreasing the rate of blood flow through the pulmonary capillary\nAnswer:",
+      "adversarial_prompt": "Which of the following would result in a quicker rate of gas diffusion \u2013 meaning a faster movement of gas \u2013 from the alveoli in the lungs to the blood within the pulmonary capillaries?\nA. Decreasing the pressure gradient of the gas\nB. Diminishing the gas\u2019s solubility in water\nC. Increasing the surface area for diffusion\nD. Reducing blood flow velocity in the capillaries\nAnswer:",
+      "iterations": 30,
+      "success": true,
+      "adversarial_score": 0.17919921875,
+      "equivalence_score": 0.9234763979911804
+    },
+    {
+      "original_prompt": "Of the following sorting algorithms, which has a running time that is LEAST dependent on the initial ordering of the input?\nA. Insertion sort\nB. Quicksort\nC. Merge sort\nD. Selection sort\nAnswer:",
+      "adversarial_prompt": "Among the sorting algorithms listed, which one demonstrates the most stable performance across different initial input orderings?\nA. Insertion sort\nB. Quicksort\nC. Merge sort\nD. Selection sort\nAnswer:",
+      "iterations": 30,
+      "success": true,
+      "adversarial_score": 0.1619873046875,
+      "equivalence_score": 0.9216534793376923
+    },
+    {
+      "original_prompt": "Cleavage symmetry arising from early cell divisions that occur at an oblique angle to the polar axis is known as\nA. meroblastic cleavage\nB. radial cleavage\nC. spiral cleavage\nD. superficial cleavage\nAnswer:",
+      "adversarial_prompt": "When early cell divisions occur at an angle in relation to the polar axis, how would you characterize the pattern of cleavage symmetry?\nA. meroblastic cleavage\nB. radial cleavage\nC. spiral cleavage\nD. superficial cleavage\nAnswer:",
+      "iterations": 30,
+      "success": true,
+      "adversarial_score": 0.110107421875,
+      "equivalence_score": 0.9738856256008148
+    },
+    {
+      "original_prompt": "Embedded in the inner membrane of the mitochondrion are:\nA. the enzymes of the tricarboxylic acid cycle (Krebs' cycle).\nB. the components of the electron transport chain.\nC. glycogen molecules.\nD. triacylglycerol molecules.\nAnswer:",
+      "adversarial_prompt": "What does the space inside the inner membrane of a mitochondrion contain?\nA. Enzymes for the tricarboxylic acid cycle (Krebs' cycle).\nB. The parts forming the electron transport chain.\nC. Glycogen molecules.\nD. Triacylglycerol molecules.\nAnswer:",
+      "iterations": 30,
+      "success": true,
+      "adversarial_score": 0.08837890625,
+      "equivalence_score": 0.9757562875747681
+    },
+    {
+      "original_prompt": "Which of the following algorithms has running time \u0398(n^2) in the worst case but \u0398(n log n) on average?\nA. Bubblesort\nB. Mergesort\nC. Heapsort\nD. Quicksort\nAnswer:",
+      "adversarial_prompt": "Among the algorithms listed below, which one exhibits a worst-case time complexity of \u0398(n^2) but generally performs with a time complexity of \u0398(n log n)?\nA. Bubblesort\nB. Mergesort\nC. Heapsort\nD. Quicksort\nAnswer:",
+      "iterations": 30,
+      "success": true,
+      "adversarial_score": 0.0704345703125,
+      "equivalence_score": 0.9908582270145416
+    },
+    {
+      "original_prompt": "Which of the answers below best indicates the compatible blood types that can be given to a person with a blood group B (rhesus negative)?\nA. Blood type AB (rhesus negative), blood type B, and blood type O (rhesus negative).\nB. Blood type B (rhesus positive) and blood type O (rhesus positive).\nC. Blood type B (rhesus negative) and blood type O (rhesus negative).\nD. Blood type B (rhesus negative) only.\nAnswer:",
+      "adversarial_prompt": "If someone has B negative blood, what blood types can they safely receive from the following options?\nA. Blood type AB (rhesus negative), blood type B, and blood type O (rhesus negative).\nB. Blood type B (rhesus positive) and blood type O (rhesus positive).\nC. Blood type B (rhesus negative) and blood type O (rhesus negative).\nD. Blood type B (rhesus negative) only.\nAnswer:",
+      "iterations": 30,
+      "success": true,
+      "adversarial_score": 0.0679931640625,
+      "equivalence_score": 0.9518710374832153
+    },
+    {
+      "original_prompt": "Which of the following is true about Cushing's Syndrome?\nA. It is due to a deficiency of cortisol hormone\nB. Enlarged extremities are commonly seen\nC. Osteoporosis is not a feature\nD. A moon face and a buffalo hump are characteristic of the disease\nAnswer:",
+      "adversarial_prompt": "Regarding Cushing's Syndrome, which of the following is a correct description of the illness?\nA. It is caused by a deficiency in cortisol.\nB. A frequent sign is excessively large extremities.\nC. Osteoporosis is rarely a related health issue.\nD. A characteristic presentation includes a rounded face and a fatty hump at the base of the neck.\nAnswer:",
+      "iterations": 30,
+      "success": true,
+      "adversarial_score": 0.06756591796875,
+      "equivalence_score": 0.8698121011257172
+    },
+    {
+      "original_prompt": "In Sweden, the red fox (Vulpes vulpes) severely limits populations of its prey, including hares. However, red fox populations are sometimes attacked by a fatal parasite, the mange mite. As mite population sizes increase at a given site, how are hare and fox populations most likely to respond at the same site? (Assume that hares have no major predators at this site other than foxes.)\nA. Both fox and hare populations will decrease.\nB. Both fox and hare populations will increase.\nC. Fox populations will decrease and hare populations will increase.\nD. Fox populations will increase and hare populations will decrease.\nAnswer:",
+      "adversarial_prompt": "Considering that red foxes are the main predators of hares in Sweden, and given that fox populations sometimes suffer from a fatal parasite (mange mite) increase, what would most likely happen to the populations of both hares and foxes in an area experiencing a rise in this mite?\nA. Both fox and hare populations will decrease.\nB. Both fox and hare populations will increase.\nC. Fox populations will decrease and hare populations will increase.\nD. Fox populations will increase and hare populations will decrease.\nAnswer:",
+      "iterations": 30,
+      "success": true,
+      "adversarial_score": 0.0582275390625,
+      "equivalence_score": 0.927674800157547
+    },
+    {
+      "original_prompt": "Collagen fibres:\nA. are re-established in the first five days of wound healing.\nB. provide a bridge across the surface of a wound.\nC. take some time to re-establish.\nD. are not needed if a wound is healing by primary intention.\nAnswer:",
+      "adversarial_prompt": "In what manner would you characterize the function of collagen fibers?\nA. They quickly rebuild during the early phases of wound repair, generally within the first five days.\nB. They span the opening of a wound.\nC. It takes a considerable amount of time for them to regenerate.\nD. They are no longer needed if a wound closes quickly through primary intention.\nAnswer:",
+      "iterations": 30,
+      "success": true,
+      "adversarial_score": 0.051177978515625,
+      "equivalence_score": 0.9605967402458191
+    },
+    {
+      "original_prompt": "The activity of creatine kinase is:\nA. increased when intracellular ADP rises.\nB. increased when muscle pH falls below 6.9.\nC. always lower in Type II fibres than Type I fibres.\nD. increased after a period of endurance training.\nAnswer:",
+      "adversarial_prompt": "In what manner does creatine kinase activity fluctuate?\nA. It rises as intracellular ADP levels increase.\nB. It rises when muscle pH drops below 6.9.\nC. It is consistently lower in Type II fibers compared to Type I fibers.\nD. It rises following endurance training.\nAnswer:",
+      "iterations": 30,
+      "success": true,
+      "adversarial_score": 0.04449462890625,
+      "equivalence_score": 0.935204416513443
+    },
+    {
+      "original_prompt": "Which of the following is not always true for x, y, z \u2208 R^k?\nA. |x| \u2265 0\nB. |x \u00b7 y| \u2264 |x||y|\nC. |x| = 0 if and only if x = 0\nD. |x + y| = |x| + |y|\nAnswer:",
+      "adversarial_prompt": "Here's a rephrased version of the question, maintaining the original meaning:\n\nFor x, y, and z belonging to R^k, which statement is not universally valid?\nA. |x| \u2265 0\nB. |x \u00b7 y| \u2264 |x||y|\nC. |x| = 0 if and only if x = 0\nD. |x + y| = |x| + |y|\nAnswer:",
+      "iterations": 30,
+      "success": true,
+      "adversarial_score": 0.03900146484375,
+      "equivalence_score": 0.9335682690143585
+    },
+    {
+      "original_prompt": "An expected side effect of creatine supplementation is:\nA. muscle weakness.\nB. gain in body mass.\nC. muscle cramps.\nD. loss of electrolytes.\nAnswer:",
+      "adversarial_prompt": "Could you identify a typical outcome associated with creatine supplementation?\nA. muscle weakness.\nB. gain in body mass.\nC. muscle cramps.\nD. loss of electrolytes.\nAnswer:",
+      "iterations": 30,
+      "success": true,
+      "adversarial_score": 0.033782958984375,
+      "equivalence_score": 0.9663236737251282
+    },
+    {
+      "original_prompt": "When an influenza virus enters a cell, it immediately starts to do which of the following?\nA. Incorporate viral DNA into the host cell\u2019s chromosome\nB. Destroy the host cell\u2019s transcriptional machinery\nC. Replicate its genetic material and synthesize viral proteins\nD. Use a viral copy of reverse transcriptase to manufacture viral DNA\nAnswer:",
+      "adversarial_prompt": "Upon entering a cell, what is the first action taken by an influenza virus?\nA. Incorporate viral DNA into the host cell\u2019s chromosome\nB. Destroy the host cell\u2019s transcriptional machinery\nC. Replicate its genetic material and synthesize viral proteins\nD. Use a viral copy of reverse transcriptase to manufacture viral DNA\nAnswer:",
+      "iterations": 30,
+      "success": true,
+      "adversarial_score": 0.031280517578125,
+      "equivalence_score": 0.9938050210475922
+    },
+    {
+      "original_prompt": "Which of the following describes the cluster of blood capillaries found in each nephron in the kidney?\nA. Afferent arteriole\nB. Glomerulus\nC. Loop of Henle\nD. Renal pelvis\nAnswer:",
+      "adversarial_prompt": "In what manner could one pinpoint the network of blood capillaries located within a kidney nephron?\nA. Afferent arteriole\nB. Glomerulus\nC. Loop of Henle\nD. Renal pelvis\nAnswer:",
+      "iterations": 30,
+      "success": true,
+      "adversarial_score": 0.0308685302734375,
+      "equivalence_score": 0.9437385201454163
+    },
+    {
+      "original_prompt": "What is a colles fracture?\nA. Hand fracture.\nB. Elbow fracture.\nC. Finger fracture.\nD. Fracture of the radius and ulna at the wrist.\nAnswer:",
+      "adversarial_prompt": "Could you define what a colles fracture involves?\nA. Hand fracture.\nB. Elbow fracture.\nC. Finger fracture.\nD. Fracture of the radius and ulna at the wrist.\nAnswer:",
+      "iterations": 30,
+      "success": true,
+      "adversarial_score": 0.02728271484375,
+      "equivalence_score": 0.9574946463108063
+    },
+    {
+      "original_prompt": "Identify the antecedent of the following conditional proposition: If the Bees don't win their first game, then both the Aardvarks and the Chipmunks win their first games.\nA. The Aardvarks win their first game.\nB. The Bees don't win their first game.\nC. The Chipmunks win their first game.\nD. Both the Aardvarks and the Chipmunks win their first games.\nAnswer:",
+      "adversarial_prompt": "Given the condition that \"If the Bees don't win their first game, then both the Aardvarks and the Chipmunks win their first games,\" what must occur for the Aardvarks and Chipmunks to both be victorious in their initial games?\nA. The Aardvarks win their first game.\nB. The Bees don't win their first game.\nC. The Chipmunks win their first game.\nD. Both the Aardvarks and the Chipmunks win their first games.\nAnswer:",
+      "iterations": 30,
+      "success": true,
+      "adversarial_score": 0.0158233642578125,
+      "equivalence_score": 0.9559164345264435
+    },
+    {
+      "original_prompt": "Which of the following terms describes the motion of bending the forearm toward the body?\nA. Abduction\nB. Eversion\nC. Flexion\nD. Pronation\nAnswer:",
+      "adversarial_prompt": "How would you characterize the movement of curling the forearm inwards, towards the body?\nA. Abduction\nB. Eversion\nC. Flexion\nD. Pronation\nAnswer:",
+      "iterations": 30,
+      "success": true,
+      "adversarial_score": 0.014007568359375,
+      "equivalence_score": 0.9780273735523224
+    },
+    {
+      "original_prompt": "Which of the following statements is true about informal carers (as of 2020)?\nA. 50% of over 65s are providing informal care.\nB. One in six over 65s is providing some form of informal care.\nC. Informal carers should not be included in discharge planning.\nD. The majority of informal carers are fit and active.\nAnswer:",
+      "adversarial_prompt": "Considering data from 2020, which statement accurately reflects the situation of informal carers?\nA. Half of all people aged 65 and over are informal carers.\nB. Approximately one in six people over the age of 65 provide informal care.\nC. Discharge planning processes shouldn\u2019t involve informal carers.\nD. Most informal carers maintain a high level of fitness and activity.\nAnswer:",
+      "iterations": 30,
+      "success": true,
+      "adversarial_score": 0.0137939453125,
+      "equivalence_score": 0.9869736433029175
+    },
+    {
+      "original_prompt": "Which of the following sorting algorithms has average-case and worst-case running times of O(n log n)?\nA. Bubble sort\nB. Insertion sort\nC. Merge sort\nD. Quicksort\nAnswer:",
+      "adversarial_prompt": "Considering the algorithms listed, which one reliably maintains a time complexity of O(n log n) in both the typical and most unfavorable scenarios?\nA. Bubble sort\nB. Insertion sort\nC. Merge sort\nD. Quicksort\nAnswer:",
+      "iterations": 30,
+      "success": true,
+      "adversarial_score": 0.0115509033203125,
+      "equivalence_score": 0.9724910259246826
+    },
+    {
+      "original_prompt": "Which of the following is a benefit that mycorrhizal fungi confer to many plants?\nA. They protect plant roots from desiccation in extremely dry habitats.\nB. They fix nitrogen, which is particularly important for plants in nitrogen-limited habitats.\nC. They provide access to phosphorus, an essential element that is limited in many kinds of soils.\nD. They provide carbon to plants in exchange for fixed nitrogen.\nAnswer:",
+      "adversarial_prompt": "In what ways do mycorrhizal fungi commonly benefit plants?\nA. They protect plant roots from desiccation, even in arid conditions.\nB. They transform atmospheric nitrogen into a form plants can utilize, which is particularly helpful for nitrogen-deficient plants.\nC. They improve the absorption of phosphorus, an essential nutrient frequently limited in the soil.\nD. They provide plants with carbon in exchange for nitrogen-containing substances.\nAnswer:",
+      "iterations": 30,
+      "success": true,
+      "adversarial_score": 0.01084136962890625,
+      "equivalence_score": 0.9311124682426453
+    },
+    {
+      "original_prompt": "A patient sustains severe blunt trauma to the left upper abdomen and requires surgery. Which one of the following organs is most likely to be involved?\nA. Appendix\nB. Gallbladder\nC. Spleen\nD. Urinary bladder\nAnswer:",
+      "adversarial_prompt": "Following a significant impact to the upper left abdomen necessitating surgical intervention, which organ is the most probable source of injury?\nA. Appendix\nB. Gallbladder\nC. Spleen\nD. Urinary bladder\nAnswer:",
+      "iterations": 30,
+      "success": true,
+      "adversarial_score": 0.01019287109375,
+      "equivalence_score": 0.9843518435955048
+    }
+  ]
+}

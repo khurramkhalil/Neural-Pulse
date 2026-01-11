@@ -1,0 +1,269 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: neural-pulse-phase2-analysis
+  namespace: gp-engine-mizzou-dcps
+spec:
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+        app: neural-pulse-phase2
+    spec:
+      restartPolicy: Never
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: nvidia.com/gpu.product
+                operator: In
+                values:
+                - NVIDIA-A100-SXM4-80GB
+                - NVIDIA-A100-80GB-PCIe
+      tolerations:
+      - key: "nautilus.io/reservation"
+        operator: "Equal"
+        value: "mizzou"
+        effect: "NoSchedule"
+      containers:
+      - name: neural-pulse-phase2
+        image: khurramkhalil/neural-pulse:latest
+        imagePullPolicy: Always
+        workingDir: /workspace/Neural-Pulse
+        command: ["/bin/bash", "-c"]
+        args:
+          - |
+            set -e  # Exit on error
+
+            echo "=========================================="
+            echo "PHASE 2: DIAGNOSIS & FORMULA MINING"
+            echo "=========================================="
+
+            # Step 1: Extract Top Attacks
+            echo ""
+            echo "Step 1: Extracting Top Attacks (score > 0.01)..."
+            python scripts/extract_top_attacks.py \
+              --input /data/seca_attacks_pilot_100.json \
+              --output /data/top_attacks.json \
+              --threshold 0.01 \
+              --min-equivalence 0.85
+
+            # Step 2: Generate Traces for All Attacks
+            echo ""
+            echo "Step 2: Generating Entropy & Attention Traces..."
+            echo "This will take ~30-60 minutes for 100 attacks (2 traces each)"
+            python scripts/generate_traces_batch.py \
+              --attacks /data/seca_attacks_pilot_100.json \
+              --output /data/pilot_traces.json \
+              --validation /data/pilot_validation.json \
+              --model meta-llama/Llama-3.1-8B-Instruct \
+              --max-tokens 100
+
+            # Step 3: Statistical Analysis
+            echo ""
+            echo "Step 3: Running Statistical Analysis..."
+            python -c "
+            import json
+            from analysis.statistical_analysis import SignalAnalyzer
+
+            # Load data first
+            with open('/data/pilot_traces.json') as f:
+                traces = json.load(f)
+            with open('/data/pilot_validation.json') as f:
+                validations = json.load(f)
+
+            # Run analysis with lists, not file paths
+            analyzer = SignalAnalyzer()
+            results = analyzer.analyze_dataset(
+                traces=traces,
+                validations=validations,
+                output_path='/data/phase2_statistics.json'
+            )
+
+            print('\n=== Statistical Analysis Complete ===')
+            print(f\"Entropy AUC: {results['roc_curves']['entropy']['auc']:.3f}\")
+            print(f\"Attention AUC: {results['roc_curves']['attention']['auc']:.3f}\")
+
+            # Print new signals if they exist
+            if 'perplexity' in results['roc_curves']:
+                print(f\"Perplexity AUC: {results['roc_curves']['perplexity']['auc']:.3f}\")
+            if 'attention_entropy' in results['roc_curves']:
+                print(f\"Attention Entropy AUC: {results['roc_curves']['attention_entropy']['auc']:.3f}\")
+
+            print(f\"\\nOptimal Entropy Threshold: {results['optimal_thresholds']['entropy']['threshold']:.3f}\")
+            print(f\"Optimal Attention Threshold: {results['optimal_thresholds']['attention']['threshold']:.3f}\")
+
+            if 'perplexity' in results['optimal_thresholds']:
+                print(f\"Optimal Perplexity Threshold: {results['optimal_thresholds']['perplexity']['threshold']:.3f}\")
+            if 'attention_entropy' in results['optimal_thresholds']:
+                print(f\"Optimal Attention Entropy Threshold: {results['optimal_thresholds']['attention_entropy']['threshold']:.3f}\")
+            "
+
+            # Step 4: Generate Visualizations
+            echo ""
+            echo "Step 4: Generating Visualizations..."
+            mkdir -p /data/phase2_figures
+            python -c "
+            from analysis.visualize_signals import SignalVisualizer
+
+            # SignalVisualizer expects file paths, not loaded data
+            visualizer = SignalVisualizer(output_dir='/data/phase2_figures')
+            visualizer.generate_all_visualizations(
+                traces_path='/data/pilot_traces.json',
+                validation_path='/data/pilot_validation.json',
+                prefix='phase2'
+            )
+
+            print('\n=== Visualizations Complete ===')
+            print('Saved to: /data/phase2_figures/')
+            "
+
+            # Step 5: STL Formula Mining
+            echo ""
+            echo "Step 5: Mining Optimal STL Formula Parameters..."
+            echo "This searches ~1000 parameter combinations (may take 10-20 minutes)"
+            python -c "
+            from analysis.formula_mining import FormulaMiner
+
+            # FormulaMiner expects file paths, not loaded data
+            miner = FormulaMiner(
+                theta_H_range=(1.5, 3.5, 0.2),
+                theta_A_range=(0.2, 0.6, 0.05),
+                T_range=(50, 100, 25),
+                w_range=(3, 5, 1),
+                metric='f1_score'
+            )
+
+            results = miner.mine_all_formulas(
+                traces_path='/data/pilot_traces.json',
+                validation_path='/data/pilot_validation.json',
+                output_path='/data/phase2_formula_mining.json',
+                train_ratio=0.7
+            )
+
+            print('\n=== Formula Mining Complete ===')
+            for formula_type, result in results.items():
+                print(f\"\n{formula_type.upper()}:\")
+                print(f\"  Best Params: {result['best_params']}\")
+                print(f\"  F1 Score: {result['best_f1_score']:.3f}\")
+                print(f\"  TPR: {result['best_metrics']['TPR']:.3f}\")
+                print(f\"  FPR: {result['best_metrics']['FPR']:.3f}\")
+            "
+
+            # Step 6: Multi-Signal Classifier
+            echo ""
+            echo "Step 6: Training Multi-Signal Classifier..."
+            python analysis/multi_signal_classifier.py \
+              --traces /data/pilot_traces.json \
+              --validation /data/pilot_validation.json \
+              --output /data/multi_signal_classifier_results.json \
+              --figures-dir /data/multi_signal_figures
+
+            # Step 7: Run Corrected Analysis
+            echo ""
+            echo "Step 7: Running Corrected Pilot Analysis..."
+            python analysis/analyze_pilot_results_corrected.py
+
+            # Step 8: Summary Report
+            echo ""
+            echo "=========================================="
+            echo "PHASE 2 COMPLETE!"
+            echo "=========================================="
+            echo ""
+            echo "Output Files:"
+            echo "  - /data/top_attacks.json                       (27 successful attacks)"
+            echo "  - /data/pilot_traces.json                      (200 traces with 4 signals each)"
+            echo "  - /data/pilot_validation.json                  (200 validation labels)"
+            echo "  - /data/phase2_statistics.json                 (Individual signal statistics)"
+            echo "  - /data/multi_signal_classifier_results.json   (Combined model results)"
+            echo "  - /data/phase2_figures/*.png                   (Signal visualizations)"
+            echo "  - /data/multi_signal_figures/*.png             (Classifier visualizations)"
+            echo "  - /data/phase2_formula_mining.json             (Optimal STL parameters)"
+            echo "  - /data/results/pilot_analysis_corrected/      (Corrected analysis)"
+            echo ""
+            echo "Key Findings:"
+            python -c "
+            import json
+
+            # Load statistics
+            with open('/data/phase2_statistics.json') as f:
+                stats = json.load(f)
+
+            # Load multi-signal classifier results
+            with open('/data/multi_signal_classifier_results.json') as f:
+                multi = json.load(f)
+
+            print('')
+            print('Individual Signals:')
+            print(f\"  - Entropy AUC:           {stats['roc_curves']['entropy']['auc']:.3f}\")
+            print(f\"  - Attention AUC:         {stats['roc_curves']['attention']['auc']:.3f}\")
+
+            if 'perplexity' in stats['roc_curves']:
+                print(f\"  - Perplexity AUC:        {stats['roc_curves']['perplexity']['auc']:.3f}\")
+            if 'attention_entropy' in stats['roc_curves']:
+                print(f\"  - Attention Entropy AUC: {stats['roc_curves']['attention_entropy']['auc']:.3f}\")
+
+            print('')
+            print('Multi-Signal Classifier:')
+            print(f\"  - Test AUC:              {multi['test_auc']:.3f}\")
+            print(f\"  - Test F1 Score:         {multi['f1_score']:.3f}\")
+            print(f\"  - Test Accuracy:         {multi['accuracy']:.3f}\")
+
+            improvement = multi['test_auc'] - max(multi['individual_aucs'].values())
+            print(f\"  - Improvement:           +{improvement:.3f} over best single signal\")
+
+            print('')
+            if multi['test_auc'] >= 0.85:
+                print('✅ SUCCESS: AUC >= 0.85 (publication target reached!)')
+            elif multi['test_auc'] >= 0.75:
+                gap = 0.85 - multi['test_auc']
+                print(f\"⚠️  CLOSE: AUC {multi['test_auc']:.3f} is {gap:.3f} points below 0.85 target\")
+            else:
+                gap = 0.85 - multi['test_auc']
+                print(f\"❌ INSUFFICIENT: AUC {multi['test_auc']:.3f} is {gap:.3f} points below 0.85 target\")
+
+            if stats['roc_curves']['entropy']['auc'] > 0.7:
+                print('\n✅ WAFFLING SIGNATURE CONFIRMED!')
+                print('   High-score attacks show distinct entropy patterns.')
+            else:
+                print('\n⚠️ WAFFLING SIGNATURE UNCLEAR')
+                print('   May need more data or different signals.')
+            "
+
+            echo ""
+            echo "Next Steps:"
+            echo "  1. Review visualizations in /data/phase2_figures/"
+            echo "  2. Validate formula performance on test set"
+            echo "  3. If validation successful, proceed to Phase 3 (Real-time Monitor)"
+            echo ""
+        resources:
+          requests:
+            nvidia.com/a100: 1
+            memory: "32Gi"
+            cpu: "8"
+          limits:
+            nvidia.com/a100: 1
+            memory: "64Gi"
+            cpu: "16"
+        env:
+          - name: OUTPUT_DIR
+            value: "/data"
+          - name: PYTHONUNBUFFERED
+            value: "1"
+        envFrom:
+          - secretRef:
+              name: neural-pulse-secrets
+        volumeMounts:
+        - mountPath: /data
+          name: data-volume
+        - mountPath: /dev/shm
+          name: dshm
+      volumes:
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: neural-pulse-pvc-rw
+      - name: dshm
+        emptyDir:
+          medium: Memory
+          sizeLimit: "32Gi"

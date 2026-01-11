@@ -34,8 +34,10 @@ class GenerationTrace:
     prompt: str
     generated_text: str
     generated_tokens: List[str]
-    entropy_trace: List[float]  # H(t) for each token t
-    attention_trace: List[float]  # A(t) for each token t
+    entropy_trace: List[float]  # H(t) - Token probability entropy
+    attention_trace: List[float]  # A(t) - Attention to context mass
+    perplexity_trace: List[float]  # P(t) - Perplexity (exp(entropy))
+    attention_entropy_trace: List[float]  # H_attn(t) - Attention distribution entropy
     logits_trace: Optional[List[torch.Tensor]] = None  # Raw logits (optional)
     attention_weights: Optional[List[torch.Tensor]] = None  # Raw attention (optional)
 
@@ -102,10 +104,32 @@ class LlamaSignalHook:
         Returns:
             Entropy value [0, log(vocab_size)]
         """
-        probs = torch.softmax(logits, dim=-1)
-        # Add epsilon to avoid log(0)
-        log_probs = torch.log(probs + 1e-10)
-        entropy = -torch.sum(probs * log_probs).item()
+        # Convert to float32 to avoid precision issues with float16
+        logits_f32 = logits.float()
+
+        # Compute probabilities
+        probs = torch.softmax(logits_f32, dim=-1)
+
+        # Compute entropy using stable formula
+        # Use epsilon appropriate for float32
+        epsilon = 1e-9
+
+        # Clamp probabilities to avoid log(0)
+        probs_clamped = torch.clamp(probs, min=epsilon)
+
+        # Compute log probabilities
+        log_probs = torch.log(probs_clamped)
+
+        # Compute entropy: -sum(p * log(p))
+        # Zero out contributions where prob is effectively zero to avoid 0*-inf = nan
+        entropy_terms = torch.where(
+            probs > epsilon,
+            probs * log_probs,
+            torch.zeros_like(probs)
+        )
+
+        entropy = -torch.sum(entropy_terms).item()
+
         return entropy
 
     def compute_attention_dispersion_v2(
@@ -115,76 +139,129 @@ class LlamaSignalHook:
         generated_length: int
     ) -> float:
         """
-        Compute Attention Dispersion v2 (sink-removed, normalized).
+        Compute Attention to Context (v3 - FIXED).
 
-        Improvements over v1:
-        1. Removes first token (attention sink) to avoid bias
-        2. Tracks MAX attention to ANY context token (not average)
-        3. Normalizes by total attention budget
-        4. Result in [0, 1] independent of sequence length
+        This measures how much the model attends to the original context (prompt)
+        when generating new tokens. Attention weights are already normalized
+        (sum to 1.0 via softmax), so we just need to sum attention mass over context.
 
         Formula:
-            A(t) = max_i(attention_to_context_token_i) / mean(attention_to_all_tokens)
+            A(t) = sum(attention[last_token, context_tokens])
 
-        Where:
-        - i ranges over context tokens (excluding sink)
-        - Denominator normalizes by total attention budget
+        Where context_tokens excludes the attention sink (first token).
 
         Args:
-            attention_weights: Attention tensor [n_layers, n_heads, seq_len, seq_len]
+            attention_weights: Attention tensor tuple (one per layer)
+                              Each: [batch, n_heads, seq_len, seq_len]
             context_length: Number of context (prompt) tokens
             generated_length: Number of generated tokens so far
 
         Returns:
-            Attention dispersion value [0, 1]
+            Attention to context value [0, 1]
+            - 1.0 = All attention on context (high engagement)
+            - 0.0 = No attention on context (detachment)
         """
-        # Extract attention from last token (currently being generated)
-        # Shape: [n_layers, n_heads, seq_len, seq_len]
-        # We want: last_token_attention = attention[:, :, -1, :]
-
         if attention_weights is None or len(attention_weights) == 0:
             logger.warning("No attention weights available")
             return 0.0
 
-        # Stack all layers
-        # attention_weights is tuple of tensors, one per layer
-        stacked_attention = torch.stack(attention_weights, dim=0)  # [n_layers, batch, n_heads, seq_len, seq_len]
+        # Get last layer attention (most relevant for final predictions)
+        # Shape: [batch, n_heads, seq_len, seq_len]
+        last_layer_attn = attention_weights[-1]
 
-        # Get last token's attention (what the new token attends to)
-        # Shape: [n_layers, batch, n_heads, seq_len]
-        last_token_attn = stacked_attention[:, 0, :, -1, :]  # Assume batch_size=1
+        # Average across heads: [batch, seq_len, seq_len]
+        # Shape: [seq_len, seq_len] after squeezing batch dim
+        attn_avg_heads = last_layer_attn.mean(dim=1).squeeze(0)
 
-        # Average across layers and heads
+        # Extract attention from last generated token
         # Shape: [seq_len]
-        avg_attn = last_token_attn.mean(dim=0).mean(dim=0)
+        last_token_attn = attn_avg_heads[-1, :]
 
-        # Remove attention sink (first token)
-        # Shape: [seq_len - 1]
-        if avg_attn.size(0) > 1:
-            avg_attn_no_sink = avg_attn[1:]  # Remove index 0
-        else:
-            return 0.0  # Edge case: only one token
+        # Attention weights should sum to 1.0 (verify)
+        # total_mass = last_token_attn.sum().item()
+        # assert 0.99 <= total_mass <= 1.01, f"Attention doesn't sum to 1: {total_mass}"
 
-        # Split into context and generated regions
-        # Context: tokens [1, context_length) (excluding sink at 0)
-        # Generated: tokens [context_length, seq_len)
-
+        # Remove attention sink (first token at index 0)
+        # Context tokens: [1, context_length)
         if context_length <= 1:
-            return 0.0  # No context to attend to
+            return 0.0  # No context besides sink
 
-        context_attn = avg_attn_no_sink[:context_length-1]  # Exclude sink
-        total_attn = avg_attn_no_sink.mean().item()
+        # Sum attention mass over context tokens (excluding sink)
+        context_attn_mass = last_token_attn[1:context_length].sum().item()
 
-        if total_attn == 0:
+        # This is already in [0, 1] since attention sums to 1
+        # High value = model attends to context
+        # Low value = model ignores context (attends to generated tokens)
+
+        return context_attn_mass
+
+    def compute_attention_entropy(
+        self,
+        attention_weights: torch.Tensor,
+        context_length: int
+    ) -> float:
+        """
+        Compute entropy of attention distribution (v3 - NEW).
+
+        Measures how "scattered" or "focused" the attention is.
+        - High entropy = attention spread across many tokens (confused/searching)
+        - Low entropy = attention focused on few tokens (confident)
+
+        Formula:
+            H_attn(t) = -sum(p_i * log(p_i))
+
+        where p_i is attention weight to token i.
+
+        Args:
+            attention_weights: Attention tensor tuple
+            context_length: Number of context tokens
+
+        Returns:
+            Attention entropy value [0, log(seq_len)]
+        """
+        if attention_weights is None or len(attention_weights) == 0:
             return 0.0
 
-        # Compute MAX attention to ANY context token
-        max_context_attn = context_attn.max().item() if context_attn.numel() > 0 else 0.0
+        # Get last layer, last token attention
+        last_layer_attn = attention_weights[-1]
+        attn_avg_heads = last_layer_attn.mean(dim=1).squeeze(0)
+        last_token_attn = attn_avg_heads[-1, :]
 
-        # Normalize by total attention
-        A_t = max_context_attn / (total_attn + 1e-10)
+        # Convert to float32 for numerical stability (same as entropy fix)
+        probs = last_token_attn.float()
 
-        return A_t
+        # Compute entropy
+        epsilon = 1e-9
+        probs_clamped = torch.clamp(probs, min=epsilon)
+        log_probs = torch.log(probs_clamped)
+
+        entropy_terms = torch.where(
+            probs > epsilon,
+            probs * log_probs,
+            torch.zeros_like(probs)
+        )
+
+        attention_entropy = -torch.sum(entropy_terms).item()
+
+        return attention_entropy
+
+    def compute_perplexity(self, entropy: float) -> float:
+        """
+        Compute perplexity from entropy.
+
+        Perplexity = 2^entropy (or e^entropy depending on log base)
+
+        Since we use natural log, perplexity = e^entropy.
+        This amplifies differences - useful for visualization.
+
+        Args:
+            entropy: Entropy value
+
+        Returns:
+            Perplexity value
+        """
+        import math
+        return math.exp(entropy)
 
     def generate_with_signals(
         self,
@@ -232,6 +309,8 @@ class LlamaSignalHook:
         # Storage for signals
         entropy_trace = []
         attention_trace = []
+        perplexity_trace = []
+        attention_entropy_trace = []
         logits_trace = [] if return_raw_data else None
         attention_weights_trace = [] if return_raw_data else None
         generated_tokens = []
@@ -250,16 +329,23 @@ class LlamaSignalHook:
                 logits = outputs.logits[0, -1, :]  # Last token logits
                 attention_weights = outputs.attentions  # Tuple of attention tensors
 
-                # Compute signals
+                # Compute all signals
                 H_t = self.compute_entropy(logits)
                 A_t = self.compute_attention_dispersion_v2(
                     attention_weights,
                     context_length=context_length,
                     generated_length=step + 1
                 )
+                P_t = self.compute_perplexity(H_t)
+                H_attn_t = self.compute_attention_entropy(
+                    attention_weights,
+                    context_length=context_length
+                )
 
                 entropy_trace.append(H_t)
                 attention_trace.append(A_t)
+                perplexity_trace.append(P_t)
+                attention_entropy_trace.append(H_attn_t)
 
                 if return_raw_data:
                     logits_trace.append(logits.cpu())
@@ -293,6 +379,8 @@ class LlamaSignalHook:
             generated_tokens=generated_tokens,
             entropy_trace=entropy_trace,
             attention_trace=attention_trace,
+            perplexity_trace=perplexity_trace,
+            attention_entropy_trace=attention_entropy_trace,
             logits_trace=logits_trace,
             attention_weights=attention_weights_trace
         )
@@ -343,11 +431,15 @@ class LlamaSignalHook:
                     'generated_tokens': t.generated_tokens,
                     'entropy_trace': t.entropy_trace,
                     'attention_trace': t.attention_trace,
+                    'perplexity_trace': t.perplexity_trace,
+                    'attention_entropy_trace': t.attention_entropy_trace,
                     'signals': {
                         'avg_entropy': np.mean(t.entropy_trace) if t.entropy_trace else 0.0,
                         'max_entropy': np.max(t.entropy_trace) if t.entropy_trace else 0.0,
                         'avg_attention': np.mean(t.attention_trace) if t.attention_trace else 0.0,
-                        'min_attention': np.min(t.attention_trace) if t.attention_trace else 0.0
+                        'min_attention': np.min(t.attention_trace) if t.attention_trace else 0.0,
+                        'avg_perplexity': np.mean(t.perplexity_trace) if t.perplexity_trace else 0.0,
+                        'avg_attention_entropy': np.mean(t.attention_entropy_trace) if t.attention_entropy_trace else 0.0
                     }
                 }
                 for t in traces

@@ -45,6 +45,7 @@ class LLMProposer:
     - openai: GPT-4o-mini, GPT-4, etc.
     - gemini: gemini-2.0-flash-exp, gemini-pro, etc.
     - claude: claude-3-5-sonnet-20241022, etc.
+    - ellm: NRP Nautilus ELLM (gemma3, etc.) - OpenAI-compatible
     """
 
     def __init__(self, provider: str, model: str):
@@ -52,8 +53,8 @@ class LLMProposer:
         Initialize LLM proposer.
 
         Args:
-            provider: 'openai', 'gemini', or 'claude'
-            model: Model name (e.g., 'gpt-4o-mini', 'gemini-2.0-flash-exp')
+            provider: 'openai', 'gemini', 'claude', or 'ellm'
+            model: Model name (e.g., 'gpt-4o-mini', 'gemini-2.0-flash-exp', 'gemma3')
         """
         self.provider = provider.lower()
         self.model = model
@@ -80,8 +81,19 @@ class LLMProposer:
                 raise ValueError("ANTHROPIC_API_KEY or CLAUDE_API_KEY not found in environment")
             self.client = anthropic.Anthropic(api_key=api_key)
 
+        elif self.provider == 'ellm':
+            # NRP Nautilus ELLM - OpenAI-compatible endpoint
+            import openai
+            api_key = os.getenv('LLM_TOKEN') or os.getenv('LLM_API_KEY')
+            if not api_key:
+                raise ValueError("LLM_TOKEN or LLM_API_KEY not found in environment")
+            self.client = openai.OpenAI(
+                api_key=api_key,
+                base_url="https://ellm.nrp-nautilus.io/v1"
+            )
+
         else:
-            raise ValueError(f"Unsupported provider: {provider}. Use 'openai', 'gemini', or 'claude'")
+            raise ValueError(f"Unsupported provider: {provider}. Use 'openai', 'gemini', 'claude', or 'ellm'")
 
         logger.info(f"Initialized {provider} proposer with model: {model}")
 
@@ -116,7 +128,7 @@ Rephrased: "What is the product of 7 and 8? (A) 54 (B) 56 (C) 58 (D) 60"
         user_prompt = f"Rephrase this question while preserving its exact meaning:\n\n{prompt}"
 
         try:
-            if self.provider == 'openai':
+            if self.provider in ('openai', 'ellm'):
                 response = self.client.chat.completions.create(
                     model=self.model,
                     messages=[
@@ -516,7 +528,7 @@ def main():
     parser.add_argument('--output', type=str, required=True, help='Path to output attacks JSON')
     parser.add_argument('--num_attacks', type=int, default=10, help='Number of attacks to generate')
     parser.add_argument('--provider', type=str, default='gemini',
-                       choices=['openai', 'gemini', 'claude'], help='LLM provider')
+                       choices=['openai', 'gemini', 'claude', 'ellm'], help='LLM provider')
     parser.add_argument('--model', type=str, default='gemini-2.0-flash-exp',
                        help='Model name for the provider')
     parser.add_argument('--target_model', type=str, default='meta-llama/Llama-3.1-8B-Instruct',
