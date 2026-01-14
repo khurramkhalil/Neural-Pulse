@@ -1,0 +1,230 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: neural-pulse-phase1-hybrid
+  namespace: gp-engine-mizzou-dcps
+spec:
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+        app: neural-pulse-phase1-hybrid
+    spec:
+      restartPolicy: Never
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: nvidia.com/gpu.product
+                operator: In
+                values:
+                - NVIDIA-A100-SXM4-80GB
+                - NVIDIA-A100-80GB-PCIe
+      tolerations:
+      - key: "nautilus.io/reservation"
+        operator: "Equal"
+        value: "mizzou"
+        effect: "NoSchedule"
+      containers:
+      - name: neural-pulse-phase1
+        image: khurramkhalil/neural-pulse:latest
+        imagePullPolicy: Always
+        workingDir: /workspace/Neural-Pulse
+        command: ["/bin/bash", "-c"]
+        args:
+          - |
+            set -e  # Exit on error
+
+            echo "=========================================="
+            echo "INSTALLING DEPENDENCIES"
+            echo "=========================================="
+            echo "Installing bitsandbytes for 4-bit quantization..."
+            pip install -q bitsandbytes>=0.41.0 accelerate>=0.20.0
+            echo "✓ bitsandbytes installed"
+            echo ""
+
+            echo "=========================================="
+            echo "PHASE 1 HYBRID: SECA ATTACK GENERATION"
+            echo "=========================================="
+            echo "Strategy: Option B (Hybrid Local + ELLM)"
+            echo ""
+            echo "Architecture (2x A100 GPUs):"
+            echo "  - GPU 0: Llama-70B (4-bit) proposer - FULLY UTILIZED"
+            echo "  - GPU 1: Llama-8B (8-bit) target + DeBERTa checker - FULLY UTILIZED"
+            echo "  - ELLM validation for final candidates"
+            echo "  - 20 parallel attacks for maximum throughput"
+            echo "  - Within-attack parallelization (3 rephrasings)"
+            echo ""
+            echo "Expected Performance:"
+            echo "  - Time: 4-6 hours for 1000 attacks"
+            echo "  - GPU 0 Utilization: 80-90% (proposer)"
+            echo "  - GPU 1 Utilization: 70-80% (target+checker)"
+            echo "  - API Costs: $1-2 (1000 ELLM calls)"
+            echo ""
+            echo "Data Format: 100% compatible with original generator"
+            echo "=========================================="
+            echo ""
+
+            # Check for API key
+            if [ -z "$LLM_TOKEN" ] && [ -z "$LLM_API_KEY" ]; then
+                echo "ERROR: LLM_TOKEN or LLM_API_KEY not found in environment"
+                echo "Please ensure neural-pulse-secrets contains ELLM credentials"
+                exit 1
+            fi
+
+            # Load source data
+
+
+
+
+            echo "Step 1: Checking source data..."
+            if [ ! -f "/data/filtered_mmlu.json" ]; then
+                echo "ERROR: /data/filtered_mmlu.json not found"
+                echo "Please ensure filtered MMLU dataset is available"
+                exit 1
+            fi
+
+            SOURCE_SIZE=$(jq '. | length' /data/filtered_mmlu.json)
+            echo "Source dataset: ${SOURCE_SIZE} prompts available"
+
+            # Determine number of attacks to generate
+            NUM_ATTACKS=${NUM_ATTACKS:-1000}
+            echo "Target: ${NUM_ATTACKS} attacks"
+
+            if [ "$NUM_ATTACKS" -gt "$SOURCE_SIZE" ]; then
+                echo "WARNING: Requested ${NUM_ATTACKS} attacks but only ${SOURCE_SIZE} prompts available"
+                NUM_ATTACKS=$SOURCE_SIZE
+                echo "Adjusted to: ${NUM_ATTACKS} attacks"
+            fi
+
+            echo ""
+            echo "Step 2: Generating SECA attacks with Hybrid Generator..."
+            echo "This will take approximately 4-6 hours for 1000 attacks"
+            echo ""
+            echo "Progress indicators:"
+            echo "  - [Attack X] Starting: Local iterations beginning"
+            echo "  - [Attack X] Iteration N: Progress updates every 10 iterations"
+            echo "  - [Attack X] ELLM refinement: Triggered if local failed"
+            echo "  - [Attack X] Completed: Final result"
+            echo ""
+
+            START_TIME=$(date +%s)
+
+            python datasets/generate_seca_attacks_hybrid.py \
+              --source /data/filtered_mmlu.json \
+              --output /data/seca_attacks_hybrid_${NUM_ATTACKS}.json \
+              --num_attacks ${NUM_ATTACKS} \
+              --local_model meta-llama/Llama-3.1-70B-Instruct \
+              --ellm_model glm-4.7 \
+              --target_model meta-llama/Llama-3.1-8B-Instruct \
+              --max_iterations 100 \
+              --max_parallel ${MAX_PARALLEL:-10}
+
+            END_TIME=$(date +%s)
+            ELAPSED=$((END_TIME - START_TIME))
+            HOURS=$((ELAPSED / 3600))
+            MINUTES=$(((ELAPSED % 3600) / 60))
+
+            echo ""
+            echo "=========================================="
+            echo "PHASE 1 HYBRID COMPLETE!"
+            echo "=========================================="
+            echo ""
+            echo "Runtime: ${HOURS}h ${MINUTES}m"
+            echo ""
+            echo "Output Files:"
+            echo "  - /data/seca_attacks_hybrid_${NUM_ATTACKS}.json"
+            echo ""
+
+            # Display results
+            echo "Results Summary:"
+            python -c "
+            import json
+
+            with open('/data/seca_attacks_hybrid_${NUM_ATTACKS}.json') as f:
+                data = json.load(f)
+
+            stats = data['statistics']
+            gen_info = data['generator']
+
+            print(f\"\nGenerator Configuration:\")
+            print(f\"  Type: {gen_info['type']}\")
+            print(f\"  Local Proposer: {gen_info['local_proposer']}\")
+            print(f\"  ELLM Validator: {gen_info['ellm_validator']}\")
+            print(f\"  Max Iterations: {gen_info['max_iterations']}\")
+            print(f\"  Max Parallel: {gen_info['max_parallel_attacks']}\")
+            print()
+            print(f\"Attack Statistics:\")
+            print(f\"  Total attacks: {stats['total']}\")
+            print(f\"  Successful: {stats['successful']} ({stats['successful']/stats['total']*100:.1f}%)\")
+            print(f\"  Avg iterations: {stats['avg_iterations']:.1f}\")
+            print(f\"  Avg adversarial score: {stats['avg_adversarial_score']:.4f}\")
+            print()
+
+            # Success rate by score threshold
+            attacks = data['attacks']
+            high_quality = sum(1 for a in attacks if a['adversarial_score'] > 0.7)
+            medium_quality = sum(1 for a in attacks if 0.5 < a['adversarial_score'] <= 0.7)
+            low_quality = sum(1 for a in attacks if a['adversarial_score'] <= 0.5)
+
+            print(f\"Quality Distribution:\")
+            print(f\"  High quality (score > 0.7): {high_quality} ({high_quality/stats['total']*100:.1f}%)\")
+            print(f\"  Medium quality (0.5-0.7): {medium_quality} ({medium_quality/stats['total']*100:.1f}%)\")
+            print(f\"  Low quality (< 0.5): {low_quality} ({low_quality/stats['total']*100:.1f}%)\")
+            "
+
+            echo ""
+            echo "Performance Metrics:"
+            echo "  - Total runtime: ${HOURS}h ${MINUTES}m"
+            echo "  - Attacks per hour: $((NUM_ATTACKS * 3600 / ELAPSED))"
+            echo "  - Seconds per attack: $((ELAPSED / NUM_ATTACKS))"
+            echo ""
+            echo "Next Steps:"
+            echo "  1. Review output file: /data/seca_attacks_hybrid_${NUM_ATTACKS}.json"
+            echo "  2. Check success rate (target: >80%)"
+            echo "  3. Verify adversarial scores (target: avg >0.6)"
+            echo "  4. If quality insufficient, consider:"
+            echo "     - Increasing max_iterations (100 → 150)"
+            echo "     - Enabling ELLM refinement for more attacks"
+            echo "     - Adjusting equivalence threshold"
+            echo ""
+            echo "For Phase 2 (Signal Analysis):"
+            echo "  - Use output file as input to trace generation"
+            echo "  - Filter high-quality attacks (score > 0.7)"
+            echo "  - Generate traces with llama_hook.py"
+            echo ""
+        resources:
+          requests:
+            nvidia.com/a100: 2
+            memory: "64Gi"
+            cpu: "16"
+          limits:
+            nvidia.com/a100: 2
+            memory: "76Gi"
+            cpu: "24"
+        env:
+          - name: OUTPUT_DIR
+            value: "/data"
+          - name: PYTHONUNBUFFERED
+            value: "1"
+          - name: NUM_ATTACKS
+            value: "1000"
+          - name: MAX_PARALLEL
+            value: "20"
+        envFrom:
+          - secretRef:
+              name: neural-pulse-secrets
+        volumeMounts:
+        - mountPath: /data
+          name: data-volume
+        - mountPath: /dev/shm
+          name: dshm
+      volumes:
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: neural-pulse-pvc-rw
+      - name: dshm
+        emptyDir:
+          medium: Memory
+          sizeLimit: "32Gi"

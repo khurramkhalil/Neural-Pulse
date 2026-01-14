@@ -86,9 +86,10 @@ def generate_traces_batch(
                 'prompt': attack['original_prompt'],
                 'generated_text': original_trace.generated_text,
                 'entropy_trace': original_trace.entropy_trace,
-                'attention_trace': original_trace.attention_trace,
-                'perplexity_trace': original_trace.perplexity_trace,
-                'attention_entropy_trace': original_trace.attention_entropy_trace,
+                'attention_trace': original_trace.attention_trace,  # DEPRECATED (Phase 2 - failed)
+                'perplexity_trace': original_trace.perplexity_trace,  # DEPRECATED (Phase 2 - wrong sign)
+                'attention_entropy_trace': original_trace.attention_entropy_trace,  # DEPRECATED (Phase 2 - weak)
+                'semantic_drift_trace': original_trace.semantic_drift_trace,  # PHASE 2a - PRIMARY SIGNAL
                 'attack_id': i,
                 'is_adversarial': False
             })
@@ -106,9 +107,10 @@ def generate_traces_batch(
                 'prompt': attack['adversarial_prompt'],
                 'generated_text': adversarial_trace.generated_text,
                 'entropy_trace': adversarial_trace.entropy_trace,
-                'attention_trace': adversarial_trace.attention_trace,
-                'perplexity_trace': adversarial_trace.perplexity_trace,
-                'attention_entropy_trace': adversarial_trace.attention_entropy_trace,
+                'attention_trace': adversarial_trace.attention_trace,  # DEPRECATED (Phase 2 - failed)
+                'perplexity_trace': adversarial_trace.perplexity_trace,  # DEPRECATED (Phase 2 - wrong sign)
+                'attention_entropy_trace': adversarial_trace.attention_entropy_trace,  # DEPRECATED (Phase 2 - weak)
+                'semantic_drift_trace': adversarial_trace.semantic_drift_trace,  # PHASE 2a - PRIMARY SIGNAL
                 'attack_id': i,
                 'is_adversarial': True
             })
@@ -149,19 +151,20 @@ def generate_traces_batch(
     print(f"  - Generated traces: {len(traces)} (2 per attack: original + adversarial)")
     print(f"  - Validation labels: {len(validations)}")
     print(f"\nSignals Computed (per trace):")
-    print(f"  ✓ Entropy trace (token probability uncertainty)")
-    print(f"  ✓ Attention trace (context engagement [0,1])")
-    print(f"  ✓ Perplexity trace (exponential entropy)")
-    print(f"  ✓ Attention Entropy trace (attention scatteredness)")
+    print(f"  ✓ Entropy trace (token probability uncertainty) - Phase 2: VALIDATED")
+    print(f"  ✓ Semantic Drift trace (cosine similarity to prompt) - Phase 2a: PRIMARY SIGNAL")
+    print(f"  ✓ Attention trace (context engagement) - Phase 2: DEPRECATED (failed)")
+    print(f"  ✓ Perplexity trace (exponential entropy) - Phase 2: DEPRECATED (wrong sign)")
+    print(f"  ✓ Attention Entropy trace (scatteredness) - Phase 2: DEPRECATED (weak)")
     print(f"\nTrace Statistics:")
     hallucination_count = sum(1 for v in validations if v['is_hallucination'])
     normal_count = len(validations) - hallucination_count
     print(f"  - Hallucination traces: {hallucination_count}")
     print(f"  - Normal traces: {normal_count}")
-    print(f"\nReady for Phase 2 Analysis:")
+    print(f"\nReady for Phase 2a Analysis:")
     print(f"  - Statistical analysis: python analysis/statistical_analysis.py")
-    print(f"  - Visualization: python analysis/visualize_signals.py")
-    print(f"  - STL formula mining: python analysis/formula_mining.py")
+    print(f"  - Multi-signal classifier: python analysis/multi_signal_classifier.py")
+    print(f"  - Focus: Entropy + Semantic Drift (drop weak signals)")
     print("\n")
 
 

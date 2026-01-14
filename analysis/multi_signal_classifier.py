@@ -78,10 +78,12 @@ class MultiSignalClassifier:
 
         Args:
             signals: List of signal names to use.
-                    Default: ['entropy', 'attention', 'perplexity', 'attention_entropy']
+                    Default (Phase 2a): ['entropy', 'semantic_drift'] - drop weak signals
         """
         if signals is None:
-            self.signals = ['entropy', 'attention', 'perplexity', 'attention_entropy']
+            # PHASE 2a: Use only validated signals (Entropy + Semantic Drift)
+            # Drop: Attention (AUC 0.38), Perplexity (wrong sign), Attention Entropy (weak)
+            self.signals = ['entropy', 'semantic_drift']
         else:
             self.signals = signals
 
@@ -160,9 +162,11 @@ class MultiSignalClassifier:
 
             # Compute AUC
             # For entropy, perplexity, attention_entropy: higher = attack
-            # For attention: lower = attack (inverted)
-            if signal == 'attention':
-                # Invert for attention (lower attention = attack)
+            # For attention, semantic_drift: lower = attack (inverted)
+            if signal in ['attention', 'semantic_drift']:
+                # Invert for these signals (lower value = attack)
+                # - Attention: lower attention mass = detachment (DEPRECATED - failed)
+                # - Semantic Drift: lower similarity = drifting away (PHASE 2a - PRIMARY)
                 auc = roc_auc_score(y, -feature)
             else:
                 auc = roc_auc_score(y, feature)

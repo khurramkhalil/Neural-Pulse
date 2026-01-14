@@ -7,6 +7,8 @@ WORKDIR /workspace/Neural-Pulse
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
+    jq \
+    build-essential \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
@@ -17,6 +19,8 @@ COPY requirements.txt .
 RUN pip install --upgrade pip && \
     grep -v "torch" requirements.txt > requirements_no_torch.txt && \
     pip install --no-cache-dir -r requirements_no_torch.txt
+
+RUN pip install --force-reinstall --no-cache-dir bitsandbytes
 
 # Copy source code
 COPY . .

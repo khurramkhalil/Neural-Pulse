@@ -35,9 +35,10 @@ class GenerationTrace:
     generated_text: str
     generated_tokens: List[str]
     entropy_trace: List[float]  # H(t) - Token probability entropy
-    attention_trace: List[float]  # A(t) - Attention to context mass
-    perplexity_trace: List[float]  # P(t) - Perplexity (exp(entropy))
-    attention_entropy_trace: List[float]  # H_attn(t) - Attention distribution entropy
+    attention_trace: List[float]  # A(t) - Attention to context mass (DEPRECATED - noisy)
+    perplexity_trace: List[float]  # P(t) - Perplexity (exp(entropy)) (DEPRECATED - wrong sign)
+    attention_entropy_trace: List[float]  # H_attn(t) - Attention distribution entropy (DEPRECATED - weak)
+    semantic_drift_trace: List[float]  # D(t) - Cosine similarity to prompt embedding (PHASE 2a - PRIMARY)
     logits_trace: Optional[List[torch.Tensor]] = None  # Raw logits (optional)
     attention_weights: Optional[List[torch.Tensor]] = None  # Raw attention (optional)
 
@@ -263,6 +264,50 @@ class LlamaSignalHook:
         import math
         return math.exp(entropy)
 
+    def compute_semantic_drift(
+        self,
+        prompt_embedding: torch.Tensor,
+        current_hidden_state: torch.Tensor
+    ) -> float:
+        """
+        Compute semantic drift as cosine similarity to prompt embedding.
+
+        PHASE 2a PRIMARY SIGNAL - Semantic Drift Trajectory
+
+        Theory: Hallucinations progressively drift away from the semantic
+        anchor of the prompt. Normal generations stay grounded.
+
+        Args:
+            prompt_embedding: Average-pooled hidden state of prompt tokens [hidden_dim]
+            current_hidden_state: Hidden state of current generation step [hidden_dim]
+
+        Returns:
+            Cosine similarity in [0, 1] (1 = perfectly aligned, 0 = orthogonal)
+        """
+        # Ensure both are 1D vectors
+        if prompt_embedding.dim() > 1:
+            prompt_embedding = prompt_embedding.squeeze()
+        if current_hidden_state.dim() > 1:
+            current_hidden_state = current_hidden_state.squeeze()
+
+        # Compute cosine similarity
+        # cos(θ) = (A · B) / (||A|| ||B||)
+        dot_product = torch.dot(prompt_embedding, current_hidden_state)
+        norm_prompt = torch.norm(prompt_embedding)
+        norm_current = torch.norm(current_hidden_state)
+
+        # Avoid division by zero
+        if norm_prompt < 1e-8 or norm_current < 1e-8:
+            return 0.0
+
+        cosine_sim = dot_product / (norm_prompt * norm_current)
+
+        # Clamp to [0, 1] range (cosine can be [-1, 1], but we expect positive)
+        # If negative similarity, it means complete semantic reversal (very bad!)
+        cosine_sim = torch.clamp(cosine_sim, min=0.0, max=1.0)
+
+        return cosine_sim.item()
+
     def generate_with_signals(
         self,
         prompt: str,
@@ -311,6 +356,7 @@ class LlamaSignalHook:
         attention_trace = []
         perplexity_trace = []
         attention_entropy_trace = []
+        semantic_drift_trace = []
         logits_trace = [] if return_raw_data else None
         attention_weights_trace = [] if return_raw_data else None
         generated_tokens = []
@@ -319,15 +365,28 @@ class LlamaSignalHook:
         with torch.no_grad():
             current_input_ids = inputs['input_ids']
 
+            # PHASE 2a: Extract prompt embedding (once, before generation loop)
+            # Get hidden states for prompt tokens
+            prompt_outputs = self.model(
+                input_ids=inputs['input_ids'],
+                output_hidden_states=True,
+                output_attentions=False  # Don't need attention for prompt
+            )
+            # Use last layer hidden states, average-pool over prompt tokens
+            prompt_hidden_states = prompt_outputs.hidden_states[-1]  # [batch, seq, hidden]
+            prompt_embedding = prompt_hidden_states[0, :, :].mean(dim=0)  # [hidden_dim]
+
             for step in range(max_new_tokens):
                 # Forward pass
                 outputs = self.model(
                     input_ids=current_input_ids,
-                    output_attentions=True
+                    output_attentions=True,
+                    output_hidden_states=True  # PHASE 2a: Need hidden states for drift
                 )
 
                 logits = outputs.logits[0, -1, :]  # Last token logits
                 attention_weights = outputs.attentions  # Tuple of attention tensors
+                hidden_states = outputs.hidden_states  # Tuple of hidden state tensors
 
                 # Compute all signals
                 H_t = self.compute_entropy(logits)
@@ -342,10 +401,15 @@ class LlamaSignalHook:
                     context_length=context_length
                 )
 
+                # PHASE 2a: Compute semantic drift
+                current_hidden_state = hidden_states[-1][0, -1, :]  # Last layer, last token
+                D_t = self.compute_semantic_drift(prompt_embedding, current_hidden_state)
+
                 entropy_trace.append(H_t)
                 attention_trace.append(A_t)
                 perplexity_trace.append(P_t)
                 attention_entropy_trace.append(H_attn_t)
+                semantic_drift_trace.append(D_t)
 
                 if return_raw_data:
                     logits_trace.append(logits.cpu())
@@ -381,6 +445,7 @@ class LlamaSignalHook:
             attention_trace=attention_trace,
             perplexity_trace=perplexity_trace,
             attention_entropy_trace=attention_entropy_trace,
+            semantic_drift_trace=semantic_drift_trace,
             logits_trace=logits_trace,
             attention_weights=attention_weights_trace
         )

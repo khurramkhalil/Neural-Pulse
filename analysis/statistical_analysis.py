@@ -389,16 +389,19 @@ class SignalAnalyzer:
         attack_attention = []
         attack_perplexity = []
         attack_attention_entropy = []
+        attack_semantic_drift = []  # PHASE 2a - PRIMARY SIGNAL
         normal_entropy = []
         normal_attention = []
         normal_perplexity = []
         normal_attention_entropy = []
+        normal_semantic_drift = []  # PHASE 2a - PRIMARY SIGNAL
 
         for trace, validation in zip(traces, validations):
             entropy_trace = trace.get('entropy_trace', [])
             attention_trace = trace.get('attention_trace', [])
             perplexity_trace = trace.get('perplexity_trace', [])
             attention_entropy_trace = trace.get('attention_entropy_trace', [])
+            semantic_drift_trace = trace.get('semantic_drift_trace', [])  # PHASE 2a
 
             if len(entropy_trace) == 0:
                 continue
@@ -407,17 +410,20 @@ class SignalAnalyzer:
             mean_attention = np.mean(attention_trace) if len(attention_trace) > 0 else 0.0
             mean_perplexity = np.mean(perplexity_trace) if len(perplexity_trace) > 0 else 0.0
             mean_attention_entropy = np.mean(attention_entropy_trace) if len(attention_entropy_trace) > 0 else 0.0
+            mean_semantic_drift = np.mean(semantic_drift_trace) if len(semantic_drift_trace) > 0 else 0.0  # PHASE 2a
 
             if validation['is_hallucination']:
                 attack_entropy.append(mean_entropy)
                 attack_attention.append(mean_attention)
                 attack_perplexity.append(mean_perplexity)
                 attack_attention_entropy.append(mean_attention_entropy)
+                attack_semantic_drift.append(mean_semantic_drift)  # PHASE 2a
             else:
                 normal_entropy.append(mean_entropy)
                 normal_attention.append(mean_attention)
                 normal_perplexity.append(mean_perplexity)
                 normal_attention_entropy.append(mean_attention_entropy)
+                normal_semantic_drift.append(mean_semantic_drift)  # PHASE 2a
 
         # Compute statistics
         results = {
@@ -453,11 +459,20 @@ class SignalAnalyzer:
                 'comparison': self.compare_distributions(attack_attention_entropy, normal_attention_entropy)
             }
 
+        # PHASE 2a: Add semantic drift signal
+        if len(attack_semantic_drift) > 0 and any(d > 0 for d in attack_semantic_drift):
+            results['semantic_drift'] = {
+                'attack_stats': asdict(self.compute_signal_statistics(attack_semantic_drift)),
+                'normal_stats': asdict(self.compute_signal_statistics(normal_semantic_drift)),
+                'comparison': self.compare_distributions(attack_semantic_drift, normal_semantic_drift)
+            }
+
         # ROC curves
         all_entropy = attack_entropy + normal_entropy
         all_attention = attack_attention + normal_attention
         all_perplexity = attack_perplexity + normal_perplexity
         all_attention_entropy = attack_attention_entropy + normal_attention_entropy
+        all_semantic_drift = attack_semantic_drift + normal_semantic_drift  # PHASE 2a
         all_labels = [True] * len(attack_entropy) + [False] * len(normal_entropy)
 
         fpr_entropy, tpr_entropy, auc_entropy = self.compute_roc_curve(
@@ -501,6 +516,18 @@ class SignalAnalyzer:
                 'auc': float(auc_attn_ent)
             }
 
+        # PHASE 2a: Add semantic drift ROC
+        if len(all_semantic_drift) > 0 and any(d > 0 for d in all_semantic_drift):
+            # For semantic drift: LOWER is attack (drifting away from prompt)
+            fpr_drift, tpr_drift, auc_drift = self.compute_roc_curve(
+                all_semantic_drift, all_labels, 'semantic_drift', higher_is_attack=False
+            )
+            results['roc_curves']['semantic_drift'] = {
+                'fpr': fpr_drift.tolist(),
+                'tpr': tpr_drift.tolist(),
+                'auc': float(auc_drift)
+            }
+
         # Optimal thresholds
         threshold_entropy, analysis_entropy = self.find_optimal_threshold(
             all_entropy, all_labels, metric='f1', higher_is_attack=True
@@ -537,6 +564,16 @@ class SignalAnalyzer:
             results['optimal_thresholds']['attention_entropy'] = {
                 'threshold': threshold_attn_ent,
                 'analysis': asdict(analysis_attn_ent)
+            }
+
+        # PHASE 2a: Add semantic drift threshold
+        if len(all_semantic_drift) > 0 and any(d > 0 for d in all_semantic_drift):
+            threshold_drift, analysis_drift = self.find_optimal_threshold(
+                all_semantic_drift, all_labels, metric='f1', higher_is_attack=False  # LOWER is attack
+            )
+            results['optimal_thresholds']['semantic_drift'] = {
+                'threshold': threshold_drift,
+                'analysis': asdict(analysis_drift)
             }
 
         # Save if path provided

@@ -1,0 +1,317 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: neural-pulse-phase2-analysis
+  namespace: gp-engine-mizzou-dcps
+spec:
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+        app: neural-pulse-phase2
+    spec:
+      restartPolicy: Never
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: nvidia.com/gpu.product
+                operator: In
+                values:
+                - NVIDIA-A100-SXM4-80GB
+                - NVIDIA-A100-80GB-PCIe
+      tolerations:
+      - key: "nautilus.io/reservation"
+        operator: "Equal"
+        value: "mizzou"
+        effect: "NoSchedule"
+      containers:
+      - name: neural-pulse-phase2
+        image: khurramkhalil/neural-pulse:latest
+        imagePullPolicy: Always
+        workingDir: /workspace/Neural-Pulse
+        command: ["/bin/bash", "-c"]
+        args:
+          - |
+            set -e  # Exit on error
+
+            echo "=========================================="
+            echo "PHASE 2a: SEMANTIC DRIFT SIGNAL ANALYSIS"
+            echo "=========================================="
+            echo "Changes from Phase 2:"
+            echo "  - NEW: Semantic Drift signal (cosine similarity to prompt)"
+            echo "  - FOCUS: Entropy + Semantic Drift (2 signals)"
+            echo "  - KEPT: All 5 signals computed (backward compatibility)"
+            echo "  - DROPPED from classifier: Attention, Perplexity, Attention Entropy"
+            echo ""
+
+            # Step 1: Extract Top Attacks
+            echo ""
+            echo "Step 1: Extracting Top Attacks (score > 0.01)..."
+            python scripts/extract_top_attacks.py \
+              --input /data/seca_attacks_pilot_100.json \
+              --output /data/top_attacks.json \
+              --threshold 0.01 \
+              --min-equivalence 0.85
+
+            # Step 2: Generate Traces for All Attacks (NOW WITH SEMANTIC DRIFT!)
+            echo ""
+            echo "Step 2: Generating Traces with ALL 5 SIGNALS..."
+            echo "Signals computed:"
+            echo "  1. Entropy (token probability uncertainty) - Phase 2: VALIDATED"
+            echo "  2. Semantic Drift (cosine similarity to prompt) - Phase 2a: PRIMARY"
+            echo "  3. Attention (context engagement) - Phase 2: DEPRECATED"
+            echo "  4. Perplexity (exponential entropy) - Phase 2: DEPRECATED"
+            echo "  5. Attention Entropy (scatteredness) - Phase 2: DEPRECATED"
+            echo ""
+            echo "This will take ~30-60 minutes for 100 attacks (2 traces each)"
+            python scripts/generate_traces_batch.py \
+              --attacks /data/seca_attacks_pilot_100.json \
+              --output /data/pilot_traces.json \
+              --validation /data/pilot_validation.json \
+              --model meta-llama/Llama-3.1-8B-Instruct \
+              --max-tokens 100
+
+            # Step 3: Statistical Analysis (WITH SEMANTIC DRIFT!)
+            echo ""
+            echo "Step 3: Running Statistical Analysis (all 5 signals)..."
+            python -c "
+            import json
+            from analysis.statistical_analysis import SignalAnalyzer
+
+            # Load data first
+            with open('/data/pilot_traces.json') as f:
+                traces = json.load(f)
+            with open('/data/pilot_validation.json') as f:
+                validations = json.load(f)
+
+            # Run analysis with lists, not file paths
+            analyzer = SignalAnalyzer()
+            results = analyzer.analyze_dataset(
+                traces=traces,
+                validations=validations,
+                output_path='/data/phase2_statistics.json'
+            )
+
+            print('\n=== Statistical Analysis Complete ===')
+            print(f\"Entropy AUC: {results['roc_curves']['entropy']['auc']:.3f}\")
+            print(f\"Attention AUC: {results['roc_curves']['attention']['auc']:.3f}\")
+
+            # Print new signals if they exist
+            if 'perplexity' in results['roc_curves']:
+                print(f\"Perplexity AUC: {results['roc_curves']['perplexity']['auc']:.3f}\")
+            if 'attention_entropy' in results['roc_curves']:
+                print(f\"Attention Entropy AUC: {results['roc_curves']['attention_entropy']['auc']:.3f}\")
+            if 'semantic_drift' in results['roc_curves']:
+                print(f\"Semantic Drift AUC: {results['roc_curves']['semantic_drift']['auc']:.3f} *** PHASE 2a PRIMARY ***\")
+
+            print(f\"\\nOptimal Entropy Threshold: {results['optimal_thresholds']['entropy']['threshold']:.3f}\")
+            print(f\"Optimal Attention Threshold: {results['optimal_thresholds']['attention']['threshold']:.3f}\")
+
+            if 'perplexity' in results['optimal_thresholds']:
+                print(f\"Optimal Perplexity Threshold: {results['optimal_thresholds']['perplexity']['threshold']:.3f}\")
+            if 'attention_entropy' in results['optimal_thresholds']:
+                print(f\"Optimal Attention Entropy Threshold: {results['optimal_thresholds']['attention_entropy']['threshold']:.3f}\")
+            if 'semantic_drift' in results['optimal_thresholds']:
+                print(f\"Optimal Semantic Drift Threshold: {results['optimal_thresholds']['semantic_drift']['threshold']:.3f} *** PHASE 2a PRIMARY ***\")
+            "
+
+            # Step 4: Generate Visualizations (INCLUDING SEMANTIC DRIFT!)
+            echo ""
+            echo "Step 4: Generating Visualizations (all signals)..."
+            mkdir -p /data/phase2_figures
+            python -c "
+            from analysis.visualize_signals import SignalVisualizer
+
+            # SignalVisualizer expects file paths, not loaded data
+            visualizer = SignalVisualizer(output_dir='/data/phase2_figures')
+            visualizer.generate_all_visualizations(
+                traces_path='/data/pilot_traces.json',
+                validation_path='/data/pilot_validation.json',
+                prefix='phase2'
+            )
+
+            print('\n=== Visualizations Complete ===')
+            print('Saved to: /data/phase2_figures/')
+            "
+
+            # Step 5: STL Formula Mining (SKIPPED in Phase 2a - focus on classifier)
+            # echo ""
+            # echo "Step 5: Mining Optimal STL Formula Parameters..."
+            # echo "SKIPPED in Phase 2a - focusing on multi-signal classifier"
+
+            # Step 6: Multi-Signal Classifier (ENTROPY + SEMANTIC DRIFT ONLY!)
+            echo ""
+            echo "Step 6: Training Multi-Signal Classifier (Entropy + Semantic Drift)..."
+            echo "NOTE: Using ONLY 2 signals (dropped weak signals from Phase 2)"
+            python analysis/multi_signal_classifier.py \
+              --traces /data/pilot_traces.json \
+              --validation /data/pilot_validation.json \
+              --output /data/multi_signal_classifier_results.json \
+              --figures-dir /data/multi_signal_figures
+
+            # Step 7: Run Corrected Analysis
+            echo ""
+            echo "Step 7: Running Corrected Pilot Analysis..."
+            python analysis/analyze_pilot_results_corrected.py
+
+            # Step 8: Test Neural Pulse Monitor (Task 3)
+            echo ""
+            echo "=========================================="
+            echo "TASK 3: NEURAL PULSE MONITOR TESTS"
+            echo "=========================================="
+            echo "Running comprehensive test suite for Neural Pulse Monitor..."
+            echo "Tests include:"
+            echo "  - Initialization and configuration"
+            echo "  - Entropy computation accuracy"
+            echo "  - Detection on normal vs attack prompts"
+            echo "  - Mode behavior (MONITOR, BLOCK, SANITIZE)"
+            echo "  - Threshold calibration"
+            echo ""
+            python tests/test_neural_pulse.py
+
+            if [ $? -eq 0 ]; then
+                echo "✅ All Neural Pulse Monitor tests PASSED"
+            else
+                echo "❌ Some Neural Pulse Monitor tests FAILED"
+                echo "   Review test output above for details"
+            fi
+
+            # Step 9: Run Latency Benchmark (Task 2)
+            echo ""
+            echo "=========================================="
+            echo "TASK 2: LATENCY BENCHMARK"
+            echo "=========================================="
+            echo "Comparing Neural Pulse vs Multi-Pass Defenses..."
+            echo "This will measure:"
+            echo "  1. Baseline generation (no defense)"
+            echo "  2. Neural Pulse (single-pass entropy monitoring)"
+            echo "  3. SemanticSmooth (5x generation + voting)"
+            echo "  4. SelfCheckGPT (10x generation + consistency)"
+            echo ""
+            echo "Expected runtime: ~10-15 minutes"
+            python benchmarks/latency_test.py
+
+            # Copy benchmark results to data volume
+            if [ -f "benchmarks/latency_comparison.png" ]; then
+                cp benchmarks/latency_comparison.png /data/latency_comparison.png
+                echo "✅ Latency benchmark visualization saved to /data/latency_comparison.png"
+            fi
+
+            # Step 10: Summary Report (PHASE 2a)
+            echo ""
+            echo "=========================================="
+            echo "PHASE 2a COMPLETE!"
+            echo "=========================================="
+            echo ""
+            echo "Output Files:"
+            echo "  - /data/top_attacks.json                       (27 successful attacks)"
+            echo "  - /data/pilot_traces.json                      (200 traces with 5 signals each)"
+            echo "  - /data/pilot_validation.json                  (200 validation labels)"
+            echo "  - /data/phase2_statistics.json                 (Individual signal statistics)"
+            echo "  - /data/multi_signal_classifier_results.json   (Combined model: Entropy + Drift)"
+            echo "  - /data/phase2_figures/*.png                   (Signal visualizations)"
+            echo "  - /data/multi_signal_figures/*.png             (Classifier visualizations)"
+            echo "  - /data/results/pilot_analysis_corrected/      (Corrected analysis)"
+            echo "  - /data/latency_comparison.png                 (Latency benchmark chart - Task 2)"
+            echo ""
+            echo "Key Findings:"
+            python -c "
+            import json
+
+            # Load statistics
+            with open('/data/phase2_statistics.json') as f:
+                stats = json.load(f)
+
+            # Load multi-signal classifier results
+            with open('/data/multi_signal_classifier_results.json') as f:
+                multi = json.load(f)
+
+            print('')
+            print('Individual Signals:')
+            print(f\"  - Entropy AUC:           {stats['roc_curves']['entropy']['auc']:.3f}\")
+            print(f\"  - Attention AUC:         {stats['roc_curves']['attention']['auc']:.3f} (DEPRECATED)\")
+
+            if 'perplexity' in stats['roc_curves']:
+                print(f\"  - Perplexity AUC:        {stats['roc_curves']['perplexity']['auc']:.3f} (DEPRECATED)\")
+            if 'attention_entropy' in stats['roc_curves']:
+                print(f\"  - Attention Entropy AUC: {stats['roc_curves']['attention_entropy']['auc']:.3f} (DEPRECATED)\")
+            if 'semantic_drift' in stats['roc_curves']:
+                print(f\"  - Semantic Drift AUC:    {stats['roc_curves']['semantic_drift']['auc']:.3f} *** PHASE 2a PRIMARY ***\")
+
+            print('')
+            print('Multi-Signal Classifier (Entropy + Semantic Drift):')
+            print(f\"  - Test AUC:              {multi['test_auc']:.3f}\")
+            print(f\"  - Test F1 Score:         {multi['f1_score']:.3f}\")
+            print(f\"  - Test Accuracy:         {multi['accuracy']:.3f}\")
+
+            improvement = multi['test_auc'] - max(multi['individual_aucs'].values())
+            print(f\"  - Improvement:           +{improvement:.3f} over best single signal\")
+
+            print('')
+            print('Phase 2a Success Criteria:')
+            if multi['test_auc'] >= 0.85:
+                print('✅ SUCCESS: AUC >= 0.85 (publication target reached!)')
+            elif multi['test_auc'] >= 0.75:
+                gap = 0.85 - multi['test_auc']
+                print(f\"⚠️  CLOSE: AUC {multi['test_auc']:.3f} is {gap:.3f} points below 0.85 target\")
+                print('   Next step: Scale to 500-1000 attacks')
+            else:
+                gap = 0.85 - multi['test_auc']
+                print(f\"❌ INSUFFICIENT: AUC {multi['test_auc']:.3f} is {gap:.3f} points below 0.85 target\")
+                print('   Next step: Try post-generation semantic analysis')
+
+            print('')
+            print('Comparison to Phase 2:')
+            print('  Phase 2 (4 signals):  Test AUC 0.654 (WORSE than best individual!)')
+            print(f\"  Phase 2a (2 signals): Test AUC {multi['test_auc']:.3f}\")
+            phase2_to_phase2a = multi['test_auc'] - 0.654
+            print(f\"  Change: {phase2_to_phase2a:+.3f}\")
+
+            if stats['roc_curves']['entropy']['auc'] > 0.7:
+                print('\n✅ WAFFLING SIGNATURE CONFIRMED!')
+                print('   High-score attacks show distinct entropy patterns.')
+            else:
+                print('\n⚠️ WAFFLING SIGNATURE UNCLEAR')
+                print('   May need more data or different signals.')
+            "
+
+            echo ""
+            echo "Next Steps:"
+            echo "  1. Review semantic drift visualizations in /data/phase2_figures/"
+            echo "  2. Check if Entropy + Drift > 0.75 AUC"
+            echo "  3. If >= 0.85: Proceed to Phase 3 (Real-time Monitor)"
+            echo "  4. If 0.75-0.85: Scale to 500-1000 attacks"
+            echo "  5. If < 0.75: Pivot to post-generation semantic analysis"
+            echo ""
+        resources:
+          requests:
+            nvidia.com/a100: 1
+            memory: "32Gi"
+            cpu: "8"
+          limits:
+            nvidia.com/a100: 1
+            memory: "64Gi"
+            cpu: "16"
+        env:
+          - name: OUTPUT_DIR
+            value: "/data"
+          - name: PYTHONUNBUFFERED
+            value: "1"
+        envFrom:
+          - secretRef:
+              name: neural-pulse-secrets
+        volumeMounts:
+        - mountPath: /data
+          name: data-volume
+        - mountPath: /dev/shm
+          name: dshm
+      volumes:
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: neural-pulse-pvc-rw
+      - name: dshm
+        emptyDir:
+          medium: Memory
+          sizeLimit: "32Gi"

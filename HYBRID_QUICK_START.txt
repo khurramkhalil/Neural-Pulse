@@ -1,0 +1,51 @@
+HYBRID SECA GENERATOR - 2 GPU DEPLOYMENT
+=========================================
+
+ARCHITECTURE:
+- GPU 0: Llama-70B (4-bit) proposer - 80-90% utilization
+- GPU 1: Llama-8B (8-bit) target + DeBERTa checker - 70-80% utilization
+- 20 parallel attacks
+- 4-6 hour runtime for 1000 attacks
+
+DEPLOY:
+kubectl apply -f k8s/phase1-hybrid-job.yaml
+
+MONITOR:
+kubectl logs -f -n gp-engine-mizzou-dcps job/neural-pulse-phase1-hybrid
+
+CHECK GPU UTILIZATION:
+POD=$(kubectl get pods -n gp-engine-mizzou-dcps -l app=neural-pulse-phase1-hybrid -o jsonpath='{.items[0].metadata.name}')
+kubectl exec -n gp-engine-mizzou-dcps $POD -- nvidia-smi
+
+EXPECTED OUTPUT:
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 535.xx                 Driver Version: 535.xx       CUDA Version: 12.2     |
+|-------------------------------+----------------------+----------------------+
+|   0  NVIDIA A100-SXM4-80GB   | 85% util  |  350W  |  55GB / 80GB  |
+|   1  NVIDIA A100-SXM4-80GB   | 75% util  |  250W  |  25GB / 80GB  |
++-----------------------------------------------------------------------------+
+
+VERIFY MODEL LOADING:
+kubectl logs -n gp-engine-mizzou-dcps job/neural-pulse-phase1-hybrid | grep "Loading"
+
+Expected:
+INFO: Loading 70B proposer on cuda:0 (GPU 0)
+INFO: Loading feasibility checker on cuda:1 (GPU 1)
+INFO: Loading target model on cuda:1 (GPU 1)
+
+SUCCESS CRITERIA:
+✓ Both GPUs show 70-90% utilization
+✓ No OOM errors
+✓ ~100-150 attacks completed in 30 minutes (10-15% progress)
+✓ ETA: 4-6 hours total
+
+FILES MODIFIED:
+1. datasets/generate_seca_attacks_hybrid.py
+   - Line 89-98: Proposer → GPU 0
+   - Line 335-341: Checker → GPU 1
+   - Line 343-370: Target → GPU 1
+
+2. k8s/phase1-hybrid-job.yaml
+   - Line 191-195: Request 2 GPUs
+   - Line 207: MAX_PARALLEL=20
+   - Line 203-204: CUDA_VISIBLE_DEVICES=0,1
