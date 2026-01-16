@@ -587,9 +587,18 @@ class HybridSECAGenerator:
         logger.info("=" * 80)
 
         # Create results directory for incremental saves
-        results_dir = "/data/results/phase_1"
-        os.makedirs(results_dir, exist_ok=True)
-        incremental_path = os.path.join(results_dir, "seca_attacks_incremental.json")
+        # Use OUTPUT_DIR env var, or fall back to same directory as output_path
+        base_dir = os.getenv('OUTPUT_DIR', os.path.dirname(output_path) or '.')
+        results_dir = os.path.join(base_dir, "results", "phase_1")
+        try:
+            os.makedirs(results_dir, exist_ok=True)
+            incremental_path = os.path.join(results_dir, "seca_attacks_incremental.json")
+            logger.info(f"Incremental saves will be written to: {incremental_path}")
+        except PermissionError:
+            # Fall back to same directory as output file
+            results_dir = os.path.dirname(output_path) or '.'
+            incremental_path = os.path.join(results_dir, "seca_attacks_incremental.json")
+            logger.warning(f"Could not create results/phase_1, using: {incremental_path}")
         
         # Thread-safe list for collecting results
         completed_results = []
