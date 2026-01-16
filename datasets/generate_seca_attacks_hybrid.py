@@ -572,6 +572,7 @@ class HybridSECAGenerator:
     ) -> List[SECAAttackResult]:
         """
         Generate SECA attacks in parallel (10-20 concurrent).
+        Saves results incrementally as attacks complete.
 
         Args:
             prompts_with_answers: List of {'prompt': str, 'answer': str}
@@ -584,6 +585,15 @@ class HybridSECAGenerator:
         logger.info(f"STARTING PARALLEL ATTACK GENERATION: {len(prompts_with_answers)} attacks")
         logger.info(f"Max parallel: {self.max_parallel_attacks}")
         logger.info("=" * 80)
+
+        # Create results directory for incremental saves
+        results_dir = "/data/results/phase_1"
+        os.makedirs(results_dir, exist_ok=True)
+        incremental_path = os.path.join(results_dir, "seca_attacks_incremental.json")
+        
+        # Thread-safe list for collecting results
+        completed_results = []
+        results_lock = asyncio.Lock()
 
         # Create semaphore to limit concurrency
         semaphore = asyncio.Semaphore(self.max_parallel_attacks)
@@ -598,6 +608,43 @@ class HybridSECAGenerator:
                 # Clean up GPU memory after each attack to prevent OOM
                 if torch.cuda.is_available():
                     torch.cuda.empty_cache()
+                
+                # Save incrementally after each completed attack
+                async with results_lock:
+                    completed_results.append(result)
+                    
+                    # Save to incremental file
+                    incremental_data = {
+                        'generator': {
+                            'type': 'hybrid_local_ellm',
+                            'status': 'in_progress',
+                            'completed': len(completed_results),
+                            'total': len(prompts_with_answers)
+                        },
+                        'attacks': [
+                            {
+                                'original_prompt': r.original_prompt,
+                                'adversarial_prompt': r.adversarial_prompt,
+                                'iterations': r.iterations,
+                                'success': r.success,
+                                'adversarial_score': r.final_adversarial_score,
+                                'equivalence_score': r.semantic_equivalence_score
+                            }
+                            for r in completed_results
+                        ],
+                        'statistics': {
+                            'total': len(completed_results),
+                            'successful': sum(1 for r in completed_results if r.success),
+                            'avg_adversarial_score': sum(r.final_adversarial_score for r in completed_results) / len(completed_results) if completed_results else 0
+                        }
+                    }
+                    
+                    with open(incremental_path, 'w') as f:
+                        json.dump(incremental_data, f, indent=2)
+                    
+                    if result.success:
+                        logger.info(f"[Attack {idx}] ✅ SAVED to {incremental_path} (successful, score={result.final_adversarial_score:.4f})")
+                    
                 return result
 
         # Generate all attacks concurrently (with concurrency limit)

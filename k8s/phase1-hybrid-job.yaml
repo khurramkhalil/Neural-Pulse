@@ -133,8 +133,18 @@ spec:
             echo ""
             echo "Runtime: ${HOURS}h ${MINUTES}m"
             echo ""
+            
+            # Save results to organized directory structure
+            echo "Saving results to /data/results/phase_1/..."
+            mkdir -p /data/results/phase_1
+            cp /data/seca_attacks_hybrid_${NUM_ATTACKS}.json /data/results/phase_1/
+            cp /data/filtered_mmlu.json /data/results/phase_1/
+            echo "✓ Results saved to /data/results/phase_1/"
+            echo ""
             echo "Output Files:"
             echo "  - /data/seca_attacks_hybrid_${NUM_ATTACKS}.json"
+            echo "  - /data/results/phase_1/seca_attacks_hybrid_${NUM_ATTACKS}.json"
+            echo "  - /data/results/phase_1/filtered_mmlu.json"
             echo ""
 
             # Display results
